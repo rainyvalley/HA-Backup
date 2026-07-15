@@ -6,6 +6,7 @@ config/gitupdate.sh
 config/wyze_config.ini
 config/.storage/
 config/additional_ca/
+config/webostv.conf
 
 # --- runtime state, not config ---
 config/.cache/

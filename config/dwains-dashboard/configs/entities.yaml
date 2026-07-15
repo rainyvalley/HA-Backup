@@ -1,0 +1,692 @@
+binary_sensor.living_room_lamp_update_available_2:
+  disabled: true
+binary_sensor.living_room_motion:
+  disabled: true
+button.living_room_identify:
+  disabled: true
+button.identify_elements_8f9c:
+  disabled: true
+device_tracker.unifi_34_7e_5c_f3_2d_54_default:
+  disabled: true
+device_tracker.particle_sensor:
+  disabled: true
+device_tracker.unifi_ec_a9_07_10_8d_53_default:
+  disabled: true
+number.living_room_bass:
+  disabled: true
+media_player.living_room_2:
+  disabled: false
+  custom_card: true
+number.living_room_treble:
+  disabled: true
+number.living_room_sonos_balance:
+  disabled: true
+remote.living_room:
+  disabled: true
+select.living_room_mood_lighting_color_power_on_behavior:
+  disabled: true
+select.fireplace_power_on_behavior:
+  disabled: true
+sensor.particulate_matter_2_5um_concentration:
+  disabled: true
+sensor.particulate_matter_10_0um_concentration:
+  disabled: true
+sensor.particulate_matter_1_0um_concentration:
+  disabled: true
+sensor.living_room_lamp_energy:
+  disabled: true
+sensor.living_room_battery:
+  hidden: true
+sensor.living_room_lamp_power:
+  disabled: true
+update.living_room_lamp:
+  disabled: true
+switch.living_room_loudness:
+  disabled: true
+switch.living_room_mood_lighting_do_not_disturb:
+  disabled: true
+binary_sensor.athom_smart_plug_status_3:
+  disabled: true
+binary_sensor.office_sonos_remote_update_available:
+  disabled: true
+binary_sensor.office_lamp_update_available:
+  disabled: true
+binary_sensor.gun_safe_sensor_battery_low:
+  disabled: true
+binary_sensor.office_motion:
+  disabled: true
+button.athom_smart_plug_restart_3:
+  disabled: true
+button.restart_with_factory_default_settings_2:
+  disabled: true
+button.office_identify:
+  disabled: true
+cover.office_blinds:
+  custom_card: true
+device_tracker.goat_pc:
+  disabled: true
+device_tracker.unifi_34_7e_5c_f2_6f_98_default:
+  disabled: true
+device_tracker.office_blinds:
+  disabled: true
+media_player.office:
+  disabled: false
+  custom_card: true
+number.office_bass:
+  disabled: true
+number.office_treble:
+  disabled: true
+number.office_room_balance:
+  disabled: true
+select.office_lamp_power_on_behavior:
+  disabled: true
+select.office_overhead_lights_power_on_behavior:
+  disabled: true
+sensor.athom_smart_plug_voltage_3:
+  disabled: true
+sensor.athom_smart_plug_current_3:
+  disabled: true
+sensor.gun_safe_sensor_battery:
+  hidden: true
+sensor.office_sonos_remote_battery:
+  hidden: true
+sensor.office_battery:
+  hidden: true
+sensor.office_sonos_remote_action:
+  disabled: true
+sensor.office_blinds_down_position:
+  disabled: true
+sensor.office_overhead_lights_power:
+  hidden: true
+sensor.office_overhead_lights_energy:
+  hidden: true
+switch.sonos_office_crossfade:
+  hidden: true
+sensor.athom_smart_plug_power_3:
+  hidden: true
+switch.athom_smart_plug_3:
+  disabled: true
+switch.office_blinds_save_top_position:
+  disabled: true
+switch.office_blinds_save_down_position:
+  disabled: true
+switch.office_blinds_down:
+  disabled: true
+switch.office_blinds_up:
+  disabled: true
+switch.office_blinds_closed:
+  disabled: true
+switch.office_loudness:
+  disabled: true
+update.office_lamp:
+  disabled: true
+binary_sensor.sewing_room_motion_sensor_battery_low:
+  disabled: true
+binary_sensor.athom_smart_plug_v2_status_5:
+  disabled: true
+binary_sensor.sewing_room_occupancy:
+  disabled: true
+button.restart_with_factory_default_settings_4:
+  disabled: true
+binary_sensor.sewing_room_motion_sensor_occupancy:
+  disabled: true
+button.sewing_room_identify:
+  disabled: true
+button.safe_mode_2:
+  disabled: true
+cover.office_blinds_2:
+  custom_card: true
+device_tracker.sonoszp_2:
+  disabled: true
+device_tracker.fox_pc_2:
+  disabled: true
+number.sewing_room_bass:
+  disabled: true
+number.sewing_room_treble:
+  disabled: true
+number.sewing_room_sonos_balance:
+  disabled: true
+select.sewing_room_overhead_lights_power_on_behavior:
+  disabled: true
+sensor.sewing_room_motion_sensor_battery:
+  hidden: true
+sensor.athom_smart_plug_v2_uptime_sensor_5:
+  disabled: true
+sensor.athom_smart_plug_v2_voltage_5:
+  disabled: true
+sensor.athom_smart_plug_v2_current_5:
+  disabled: true
+sensor.athom_smart_plug_v2_power_5:
+  disabled: true
+sensor.athom_smart_plug_v2_total_energy_5:
+  disabled: true
+sensor.athom_smart_plug_v2_total_daily_energy_5:
+  disabled: true
+sensor.sewing_room_battery:
+  hidden: true
+sensor.mac_address_2:
+  disabled: true
+switch.sonos_sewing_room_crossfade:
+  disabled: true
+switch.sewing_room_loudness:
+  disabled: true
+switch.athom_smart_plug_v2_5:
+  disabled: true
+sensor.master_bedroom_dab_lamp_energy:
+  hidden: true
+sensor.master_bedroom_battery:
+  disabled: true
+sensor.master_bedroom_dab_lamp_power:
+  disabled: true
+switch.sonos_bedroom_crossfade:
+  disabled: true
+switch.bedroom_loudness:
+  disabled: true
+fan.master_bedroom_fan:
+  custom_card: true
+binary_sensor.master_bedroom_lamp_update_available:
+  disabled: true
+binary_sensor.master_bedroom_sonos_remote_update_available:
+  disabled: true
+binary_sensor.master_bedroom_dab_lamp_update_available:
+  disabled: true
+binary_sensor.master_bedroom_occupancy:
+  disabled: true
+button.master_bedroom_identify:
+  disabled: true
+cover.bedroom_blinds:
+  custom_card: true
+device_tracker.sonoszp:
+  disabled: true
+media_player.main_bedroom:
+  disabled: false
+  custom_card: true
+  hidden: true
+number.bedroom_bass:
+  disabled: true
+number.bedroom_treble:
+  disabled: true
+number.sonos_bedroom_balance:
+  disabled: true
+remote.main_bedroom:
+  disabled: true
+select.master_bedroom_lamp_power_on_behavior:
+  disabled: true
+sensor.master_bedroom_button_battery:
+  hidden: true
+sensor.master_bedroom_button_action:
+  disabled: true
+sensor.master_bedroom_sonos_remote_battery:
+  hidden: true
+sensor.master_bedroom_sonos_remote_action:
+  disabled: true
+update.master_bedroom_lamp:
+  disabled: true
+update.master_bedroom_sonos_remote:
+  disabled: true
+update.master_bedroom_dab_lamp:
+  disabled: true
+select.dining_room_lights_power_on_behavior:
+  disabled: true
+sensor.dining_room_lights_energy:
+  hidden: true
+sensor.dining_room_lights_power:
+  hidden: true
+binary_sensor.garage_motion_sensor_battery_low:
+  hidden: true
+select.garage_overhead_lights_power_on_behavior:
+  disabled: true
+light.garage_overhead_lamps:
+  hidden: true
+fan.garage_fan:
+  custom_card: true
+cover.fox_door:
+  custom_card: true
+cover.goat_door:
+  custom_card: true
+sensor.garage_temp_sensor_battery:
+  hidden: true
+sensor.goat_door_ble_strength:
+  disabled: true
+switch.athom_smart_plug_v2_2:
+  disabled: true
+switch.athom_smart_plug_v2:
+  disabled: true
+sensor.garage_motion_sensor_battery:
+  hidden: true
+sensor.goat_door_battery_level:
+  hidden: true
+sensor.fox_door_ble_strength:
+  disabled: true
+sensor.fox_door_battery_level:
+  hidden: true
+binary_sensor.roscopup:
+  disabled: true
+binary_sensor.champagne_room_occupancy:
+  disabled: true
+button.champagne_room_identify:
+  disabled: true
+sensor.champagne_room_battery:
+  hidden: true
+select.champagne_room_overhead_lights_power_on_behavior:
+  disabled: true
+remote.champagne_room_2:
+  disabled: true
+media_player.denon_avr_x1300w:
+  custom_card: true
+media_player.champagne_room_2:
+  custom_card: true
+media_player.wolfberg:
+  custom_card: true
+switch.sonos_living_room_crossfade:
+  disabled: true
+binary_sensor.kitchen_occupancy:
+  hidden: true
+button.kitchen_identify:
+  disabled: true
+number.kitchen_bass:
+  disabled: true
+number.kitchen_treble:
+  disabled: true
+number.kitchen_sonos_balance:
+  disabled: true
+select.kitchen_overhead_lights_power_on_behavior:
+  disabled: true
+sensor.kitchen_battery:
+  hidden: true
+sensor.refrigerator_power:
+  hidden: true
+sensor.refrigerator_deltaenergy:
+  disabled: true
+sensor.refrigerator_powerenergy:
+  disabled: true
+sensor.refrigerator_energysaved:
+  disabled: true
+sensor.refrigerator_temperature_measurement:
+  disabled: true
+sensor.refrigerator_thermostat_cooling_setpoint:
+  disabled: true
+switch.sonos_kitchen_crossfade:
+  disabled: true
+switch.kitchen_loudness:
+  disabled: true
+binary_sensor.upstairs_hallway_motion_sensor_battery_low:
+  disabled: true
+button.hallway_identify:
+  disabled: true
+button.hallway_clear_hold:
+  disabled: true
+sensor.upstairs_hallway_motion_sensor_battery:
+  hidden: true
+device_tracker.outdoor_particle_sensor:
+  disabled: true
+select.kitchen_outdoor_light_power_on_behavior:
+  disabled: true
+select.sliding_door_outdoor_light_power_on_behavior:
+  disabled: true
+select.front_outdoor_lights_power_on_behavior:
+  disabled: true
+sensor.milk_crate_sensor_battery:
+  hidden: true
+sensor.mailbox_sensor_battery:
+  hidden: true
+sensor.outdoor_network_battery:
+  hidden: true
+sensor.particulate_matter_1_0um_concentration_2:
+  disabled: true
+sensor.particulate_matter_2_5um_concentration_2:
+  disabled: true
+sensor.particulate_matter_10_0um_concentration_2:
+  disabled: true
+binary_sensor.upstairs_bathroom_motion_sensor_battery_low:
+  disabled: true
+sensor.upstairs_bathroom_motion_sensor_battery:
+  hidden: true
+sensor.upstairs_bathroom_temperature_sensor_battery:
+  hidden: true
+sensor.upstairs_bathroom_light_power:
+  disabled: true
+sensor.upstairs_bathroom_light_energy:
+  disabled: true
+sensor.upstairs_bathroom_light_usage_running_total:
+  disabled: true
+sensor.downstairs_bathroom_temp_sensor_battery:
+  hidden: true
+sensor.downstairs_bath_lights_power:
+  disabled: true
+sensor.downstairs_bath_lights_energy:
+  disabled: true
+sensor.downstiars_bath_lights_power_running_total:
+  disabled: true
+sensor.downstairs_bath_lights_daily_usage:
+  disabled: true
+climate.hallway:
+  disabled: true
+sensor.downstairs_hall_light_energy:
+  disabled: true
+select.downstairs_hall_light_power_on_behavior:
+  disabled: true
+sensor.downstairs_hall_light_power:
+  disabled: true
+device_tracker.bedroom_blinds:
+  disabled: true
+select.master_bathroom_lights_power_on_behavior:
+  disabled: true
+sensor.master_bathroom_sensor_battery:
+  hidden: true
+switch.bedroom_blinds_save_top_position:
+  disabled: true
+switch.bedroom_blinds_save_down_position:
+  disabled: true
+switch.bedroom_blinds_down:
+  disabled: true
+switch.bedroom_blinds_up:
+  disabled: true
+switch.bedroom_blinds_closed:
+  disabled: true
+sensor.bedroom_blinds_down_position:
+  disabled: true
+select.entryway_lights_power_on_behavior:
+  disabled: true
+sensor.goatzone_cpu_utilization_total:
+  disabled: true
+sensor.athom_smart_plug_v2_total_daily_energy_2:
+  disabled: true
+light.all_bedroom_lights:
+  custom_card: true
+light.plate01_backlight:
+  custom_card: true
+light.master_bedroom_lamp:
+  custom_card: true
+light.master_bedroom_dab_lamp:
+  custom_card: true
+media_player.bedroom:
+  custom_card: true
+media_player.living_room:
+  custom_card: true
+light.plate02_backlight:
+  custom_card: true
+light.living_room_mood_lighting:
+  custom_card: true
+light.living_room_lamp_2:
+  custom_card: true
+light.office_lamp:
+  custom_card: true
+light.office_overhead_lights_2:
+  custom_card: true
+light.snake_lights:
+  custom_card: true
+  hidden: false
+  excluded: false
+  disabled: false
+  friendly_name: ''
+  col_span: '1'
+  row_span: '1'
+  col_span_lg: '1'
+  row_span_lg: '1'
+  col_span_xl: '1'
+  row_span_xl: '1'
+  custom_popup: false
+light.sewing_room_overhead_lights:
+  custom_card: true
+media_player.sewing_room:
+  custom_card: true
+sensor.athom_smart_plug_v2_energy_5:
+  hidden: true
+sensor.connected_ssid_2:
+  disabled: true
+light.sewing_room_lamp:
+  hidden: true
+light.dining_room_lights:
+  custom_card: true
+light.garage_overhead_lights:
+  custom_card: true
+light.champagne_room_lamp:
+  custom_card: true
+light.champagne_room_overhead_lights:
+  custom_card: true
+light.downstairs_bedroom_light:
+  custom_card: true
+select.downstairs_bedroom_light_power_on_behavior:
+  disabled: true
+sensor.downstairs_bedroom_light_power:
+  disabled: true
+sensor.downstairs_bedroom_light_energy:
+  disabled: true
+device_tracker.unifi_34_7e_5c_f3_c0_46_default:
+  custom_card: true
+  disabled: true
+media_player.kitchen:
+  custom_card: true
+light.kitchen_overhead_lights:
+  custom_card: true
+sensor.refrigerator_energy:
+  disabled: true
+light.upstairs_hallway_lights:
+  custom_card: true
+light.kitchen_outdoor_light:
+  custom_card: true
+light.sliding_door_outdoor_light:
+  custom_card: true
+light.front_outdoor_lights:
+  custom_card: true
+light.upstairs_bathroom_light:
+  custom_card: true
+light.downstairs_bath_lights:
+  custom_card: true
+light.downstairs_hall_light:
+  custom_card: true
+light.master_bathroom_light:
+  custom_card: true
+light.entryway_lights:
+  custom_card: true
+device_tracker.unifi_1c_b3_c9_26_34_41_default:
+  disabled: true
+button.identify_canvas_46f4:
+  disabled: true
+remote.main_bedroom_apple_mini:
+  disabled: true
+remote.wolfberg_tv:
+  disabled: true
+remote.garage_apple_mini:
+  disabled: true
+remote.office_apple_mini:
+  disabled: true
+remote.kitchen_apple_mini:
+  disabled: true
+sensor.kitchen_temperature:
+  disabled: true
+sensor.entryway_lights_energy:
+  hidden: true
+sensor.entryway_lights_power:
+  hidden: true
+sensor.front_door_lock_battery:
+  hidden: true
+remote.champagne_room:
+  hidden: true
+media_player.champagne_room:
+  custom_card: true
+media_player.office_apple_mini_2:
+  custom_card: true
+media_player.garage_apple_mini:
+  custom_card: true
+media_player.main_bedroom_apple_mini:
+  hidden: false
+  custom_card: true
+light.first_led_hardware_instance:
+  hidden: true
+camera.first_led_hardware_instance:
+  hidden: true
+sensor.downstairs_motion_pressure:
+  disabled: true
+sensor.downstairs_motion_temperature:
+  disabled: true
+sensor.downstairs_motion_name_temperature:
+  hidden: false
+  excluded: false
+  disabled: false
+  friendly_name: Downstairs Temperature
+  col_span: '1'
+  row_span: '1'
+  col_span_lg: '1'
+  row_span_lg: '1'
+  col_span_xl: '1'
+  row_span_xl: '1'
+  custom_card: false
+  custom_popup: false
+sensor.downstairs_motion_name_pressure:
+  hidden: false
+  excluded: false
+  disabled: false
+  friendly_name: Downstairs Pressure
+  col_span: '1'
+  row_span: '1'
+  col_span_lg: '1'
+  row_span_lg: '1'
+  col_span_xl: '1'
+  row_span_xl: '1'
+  custom_card: false
+  custom_popup: false
+sensor.downstairs_motion_name_humidity:
+  hidden: false
+  excluded: false
+  disabled: false
+  friendly_name: Downstairs Humidity
+  col_span: '1'
+  row_span: '1'
+  col_span_lg: '1'
+  row_span_lg: '1'
+  col_span_xl: '1'
+  row_span_xl: '1'
+  custom_card: false
+  custom_popup: false
+select.upstairs_hallway_lights_power_on_behavior:
+  disabled: true
+sensor.hallway_current_humidity:
+  hidden: false
+sensor.upstairs_motion_name_humidity:
+  hidden: true
+sensor.upstairs_motion_name_temperature:
+  hidden: true
+switch.first_led_hardware_instance_component_led_device:
+  hidden: false
+  excluded: false
+  disabled: false
+  friendly_name: TV Mood Lighting
+  col_span: '1'
+  row_span: '1'
+  col_span_lg: '1'
+  row_span_lg: '1'
+  col_span_xl: '1'
+  row_span_xl: '1'
+  custom_card: false
+  custom_popup: false
+sensor.office_temperature:
+  disabled: true
+device_tracker.unifi_8c_aa_b5_16_23_a4_default:
+  disabled: true
+binary_sensor.office_motion_motion:
+  disabled: true
+binary_sensor.athom_fox_pc_status_5:
+  disabled: true
+binary_sensor.fox_pc_status:
+  disabled: true
+sensor.fox_pc_voltage:
+  disabled: true
+sensor.fox_pc_current:
+  disabled: true
+sensor.fox_pc_total_energy:
+  disabled: true
+sensor.athom_fox_pc_current_5:
+  disabled: true
+sensor.athom_fox_pc_power_5:
+  disabled: true
+sensor.athom_fox_pc_voltage_5:
+  disabled: true
+switch.athom_fox_pc_5:
+  disabled: true
+sensor.athom_fox_pc_total_daily_energy_5:
+  disabled: true
+button.canvas_46f4_identify:
+  disabled: true
+sensor.humidity_switch_wifi_connect_count:
+  disabled: true
+sensor.humidity_switch_last_restart_time:
+  disabled: true
+sensor.humidity_switch_mqtt_connect_count:
+  disabled: true
+sensor.humidity_switch_aht2x_dewpoint:
+  disabled: true
+sensor.humidity_switch_restart_reason:
+  disabled: true
+sensor.humidity_switch_ssid:
+  disabled: true
+device_tracker.tasmota_374d17_3351:
+  disabled: true
+sensor.downstairs_bathroom_temp_sensor_temperature:
+  disabled: true
+sensor.humidity_switch_last_restart_time_2:
+  disabled: true
+device_tracker.esp_16044c:
+  disabled: true
+sensor.humidity_switch_wifi_connect_count_2:
+  disabled: true
+sensor.humidity_switch_mqtt_connect_count_2:
+  disabled: true
+sensor.humidity_switch_restart_reason_2:
+  disabled: true
+sensor.humidity_switch_ssid_2:
+  disabled: true
+select.hallway_temperature_display_units:
+  disabled: true
+select.hallway_current_mode:
+  disabled: true
+switch.humidity_downstairs_humidity_switch_downstairs_relay:
+  custom_card: true
+switch.main_bath_fan_humidity_main_bath_relay:
+  custom_card: true
+fan.main_bath_humidity_humidity_main_bath_relay:
+  custom_card: true
+fan.downstairs_bath_humidity_switch_downstairs_relay:
+  custom_card: true
+sensor.humidity_upstairs_humidity_switch_downstairs_temperature:
+  disabled: true
+sensor.humidity_upstairs_humidity_switch_downstairs_humidity:
+  disabled: true
+device_tracker.tasmota_374d35_3381:
+  disabled: true
+sensor.upstairs_bath_fan_humidity_switch_downstairs_temperature:
+  disabled: true
+sensor.upstairs_bath_fan_humidity_switch_downstairs_humidity:
+  disabled: true
+fan.upstairs_bath_fan_humidity_switch_downstairs_relay:
+  hidden: false
+  custom_card: true
+button.front_door_wake:
+  hidden: true
+switch.athom_3d_printer_plug:
+  disabled: true
+switch.relay2:
+  disabled: true
+sensor.athom_fox_pc_wifi_signal_2:
+  disabled: true
+sensor.athom_fox_pc_total_energy_5:
+  disabled: true
+sensor.athom_fox_pc_energy_5:
+  disabled: true
+sensor.fox_pc_power:
+  disabled: true
+sensor.fox_pc_total_daily_energy:
+  disabled: true
+switch.fox_pc_fox_pc:
+  disabled: true
+switch.relay1:
+  disabled: true
+sensor.front_gate_sensor_battery:
+  hidden: true
+sensor.back_gate_sensor_battery:
+  hidden: true
+sensor.upstairs_bath_motion_humidity:
+  hidden: true
+sensor.front_door_battery_2:
+  hidden: true

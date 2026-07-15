@@ -1,0 +1,2 @@
+binary_sensor.heiman_warningdevice_ef_3_0_f30f93fe_ias_zone:
+  device_class: sound

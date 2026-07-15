@@ -1,0 +1,132 @@
+cards:
+- elements:
+  - style:
+      color: white
+      font-size: 175%
+      left: 5%
+      top: 35%
+      transform: initial
+    text: Appliances
+    type: custom:text-element
+  image: /local/title-dark.png
+  type: picture-elements
+- elements:
+  - image: /local/washer-500.png
+    style:
+      left: 18%
+      top: 44%
+      width: 28%
+    type: image
+  - entity: sensor.washer_progress
+    fill: rgba(66, 66, 66)
+    font_style:
+      font-size: 0
+      text-align: center
+    max: 100
+    show_card: false
+    stroke_width: 15
+    style:
+      left: 15%
+      top: 48%
+      width: 80px
+    type: custom:circle-sensor-card
+  - entity: sensor.washer_remaining_time
+    style:
+      color: '#99d6ff'
+      left: 21%
+      top: 4.5%
+      transform: initial
+    type: state-label
+  - entity: sensor.washer_state
+    style:
+      left: 18%
+      top: 75%
+    type: state-label
+  - style:
+      bottom: 2%
+      left: 18%
+    text: Washer
+    type: custom:text-element
+  - image: /local/dryer-500.png
+    style:
+      left: 50%
+      top: 44%
+      width: 28%
+    type: image
+  - entity: sensor.dryer_progress
+    fill: rgba(66, 66, 66)
+    font_style:
+      font-size: 0
+      text-align: center
+    max: 100
+    show_card: false
+    stroke_width: 15
+    style:
+      left: 47%
+      top: 48%
+      width: 80px
+    type: custom:circle-sensor-card
+  - entity: sensor.dryer_remaining_time
+    style:
+      color: '#99d6ff'
+      left: 53%
+      top: 4.5%
+      transform: initial
+    type: state-label
+  - entity: sensor.dryer_state
+    style:
+      left: 50%
+      top: 75%
+    type: state-label
+  - style:
+      bottom: 2%
+      left: 50%
+    text: Dryer
+    type: custom:text-element
+  - image: /local/dishwasher-500.png
+    style:
+      left: 82%
+      top: 44%
+      width: 28%
+    type: image
+  - entity: sensor.dishwasher_progress
+    fill: rgba(66, 66, 66, 0)
+    font_style:
+      font-size: 0
+      text-align: center
+    max: 100
+    show_card: false
+    stroke_width: 15
+    style:
+      left: 79%
+      top: 48%
+      width: 80px
+    type: custom:circle-sensor-card
+  - entity: sensor.dishwasher_remaining_time
+    style:
+      color: '#99d6ff'
+      left: 85%
+      top: 4.5%
+      transform: initial
+    type: state-label
+  - entity: sensor.dishwasher_state
+    style:
+      left: 82%
+      top: 75%
+    type: state-label
+  - style:
+      bottom: 2%
+      left: 82%
+    text: Dishwasher
+    type: custom:text-element
+  image: /local/background200.png
+  type: picture-elements
+col_span: '2'
+col_span_lg: '2'
+col_span_xl: '2'
+position: top
+row_span: '1'
+row_span_lg: '1'
+row_span_xl: '1'
+title: null
+type: custom:vertical-stack-in-card

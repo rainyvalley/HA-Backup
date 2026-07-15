@@ -1,0 +1,153 @@
+blueprint:
+  custom_cards:
+  - flower-card
+  - mini-graph-card
+  - card-mod
+  description: Plants card by Michel Jourdain
+  input:
+    01_plant_entity:
+      description: Plant entity
+      name: Plant entity
+      type: entity-picker
+    02_plants_species:
+      description: Plant species
+      name: Plant species
+      type: text-field
+    03_translate_temprerature:
+      description: Translate temperature in your language
+      name: Translate temperature
+      type: text-field
+    04_plant_entity_temprerature:
+      description: Plant entity temprerature
+      name: Plant entity temprerature
+      type: entity-picker
+    05_translate_moisture:
+      description: Translate moisture in your language
+      name: Translate moisture
+      type: text-field
+    06_plant_entity_moisture:
+      description: Plant entity moisture
+      name: Plant entity moisture
+      type: entity-picker
+    07_translate_illuminance:
+      description: Translate illuminance in your language
+      name: Translate illuminance
+      type: text-field
+    08_plant_entity_illuminance:
+      description: Plant entity illuminance
+      name: Plant entity illuminance
+      type: entity-picker
+    09_translate_conductivity:
+      description: Translate conductivity in your language
+      name: Translate conductivity
+      type: text-field
+    10_plant_entity_iconductivity:
+      description: Plant entity conductivity
+      name: Plant entity conductivity
+      type: entity-picker
+    11_plant_entity_battery:
+      description: Plant entity battery
+      name: Plant entity battery
+      type: entity-picker
+  name: Plants card Blueprint
+  type: card
+  version: '1.0'
+card:
+  cards:
+  - cards:
+    - entity: $01_plant_entity$
+      species: $02_plants_species$
+      type: custom:flower-card
+    - align_header: right
+      entities:
+      - entity: $04_plant_entity_temprerature$
+      font_size: 70
+      hour24: true
+      hours_to_show: 24
+      icon: mdi:thermometer
+      item_classes: col-xs-6 col-md-3
+      name: $03_translate_temprerature$
+      points_per_hour: 1
+      show:
+        extrema: true
+        graph: line
+        name: true
+        points: hover
+      smoothing: true
+      type: custom:mini-graph-card
+    - align_header: right
+      entities:
+      - entity: $06_plant_entity_moisture$
+      font_size: 70
+      hour24: true
+      hours_to_show: 24
+      icon: mdi:water-percent
+      item_classes: col-xs-6 col-md-3
+      name: $05_translate_moisture$
+      points_per_hour: 1
+      show:
+        extrema: true
+        graph: line
+        name: true
+        points: hover
+      smoothing: true
+      type: custom:mini-graph-card
+    - align_header: right
+      entities:
+      - entity: $08_plant_entity_illuminance$
+      font_size: 70
+      hour24: true
+      hours_to_show: 24
+      icon: mdi:white-balance-sunny
+      item_classes: col-xs-6 col-md-3
+      name: $07_translate_illuminance$
+      points_per_hour: 1
+      show:
+        extrema: true
+        graph: line
+        name: true
+        points: hover
+      smoothing: true
+      type: custom:mini-graph-card
+    - align_header: right
+      entities:
+      - entity: $10_plant_entity_iconductivity$
+      font_size: 70
+      hour24: true
+      hours_to_show: 24
+      icon: mdi:leaf
+      item_classes: col-xs-6 col-md-3
+      name: $09_translate_conductivity$
+      points_per_hour: 1
+      show:
+        extrema: true
+        graph: line
+        name: true
+        points: hover
+      smoothing: true
+      type: custom:mini-graph-card
+    - entities:
+      - entity: $11_plant_entity_battery$
+        icon: mdi:battery
+      item_classes: col-xs-12
+      positions:
+        indicator: 'off'
+        name: 'off'
+      severity:
+      - color: Red
+        from: 0
+        to: 25
+      - color: Orange
+        from: 26
+        to: 50
+      - color: Green
+        from: 51
+        to: 100
+      style: "bar-card-value {\n  margin-right: auto;\n  font-size: 13px;\n  font-weight:\
+        \ bold;\n  text-shadow: 1px 1px #0005;\n}"
+      type: custom:bar-card
+    items_classes: col-xs-12 col-sm-12 col-sm-12
+    padding: true
+    type: custom:dwains-flexbox-card
+  items_classes: col-xs-12
+  type: custom:dwains-flexbox-card

@@ -1,0 +1,74 @@
+col_span: '1'
+col_span_lg: '1'
+col_span_xl: '1'
+entities:
+- entity: sensor.mainsailos_bed_power
+  name: Bed Power
+- entity: sensor.mainsailos_bed_target
+  name: Bed Target
+- entity: sensor.mainsailos_bed_temperature
+  name: Bed Temperature
+- entity: sensor.mainsailos_controller_fan
+  name: Controller Fan
+- entity: sensor.mainsailos_current_display_message
+  name: Current Display Message
+- entity: sensor.mainsailos_current_layer
+  name: Current Layer
+- entity: sensor.mainsailos_current_print_message
+  name: Current Print Message
+- entity: sensor.mainsailos_current_print_state
+  name: Current Print State
+- entity: sensor.mainsailos_extruder_power
+  name: Extruder Power
+- entity: sensor.mainsailos_extruder_target
+  name: Extruder Target
+- entity: sensor.mainsailos_extruder_temperature
+  name: Extruder Temperature
+- entity: sensor.mainsailos_fan_speed
+  name: Fan speed
+- entity: sensor.mainsailos_filament_used
+  name: Filament Used
+- entity: sensor.mainsailos_filename
+  name: Filename
+- entity: sensor.mainsailos_hotend_fan
+  name: Hotend Fan
+- entity: sensor.mainsailos_longest_print
+  name: Longest Print
+- entity: sensor.mainsailos_print_duration
+  name: Print Duration
+- entity: sensor.mainsailos_print_eta
+  name: Print ETA
+- entity: sensor.mainsailos_print_projected_total_duration
+  name: Print Projected Total Duration
+- entity: sensor.mainsailos_print_time_left
+  name: Print Time Left
+- entity: sensor.mainsailos_printer_message
+  name: Printer Message
+- entity: sensor.mainsailos_printer_state
+  name: Printer State
+- entity: sensor.mainsailos_progress
+  name: Progress
+- entity: sensor.mainsailos_slicer_print_duration_estimate
+  name: Slicer Print Duration Estimate
+- entity: sensor.mainsailos_slicer_print_time_left_estimate
+  name: Slicer Print Time Left Estimate
+- entity: sensor.mainsailos_toolhead_position_x
+  name: Toolhead position X
+- entity: sensor.mainsailos_toolhead_position_y
+  name: Toolhead position Y
+- entity: sensor.mainsailos_toolhead_position_z
+  name: Toolhead position Z
+- entity: sensor.mainsailos_total_layer
+  name: Total Layer
+- entity: sensor.mainsailos_totals_filament_used
+  name: Totals Filament Used
+- entity: sensor.mainsailos_totals_jobs
+  name: Totals jobs
+- entity: sensor.mainsailos_totals_print_time
+  name: Totals Print Time
+position: top
+row_span: '2'
+row_span_lg: '3'
+row_span_xl: '4'
+title: mainsailos
+type: entities

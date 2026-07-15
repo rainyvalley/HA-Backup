@@ -1,0 +1,9 @@
+  printer:
+    name: Printer Status
+    entities:
+      - sensor.page_count
+      - sensor.cyan_toner_level
+      - sensor.yellow_toner_level
+      - sensor.magenta_toner_level
+      - sensor.black_toner_level
+

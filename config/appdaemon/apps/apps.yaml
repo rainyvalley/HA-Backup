@@ -1,0 +1,31 @@
+---
+hello_world:
+  module: hello
+  class: HelloWorld
+
+Office_knob:
+  module: controllerx
+  class: E1744MediaPlayerController
+  controller: 14:b4:57:ff:fe:51:6d:7d
+  integration: zha
+  media_player: media_player.office
+  volume_steps: 20
+  Delay: 15
+
+Bedroom_knob:
+  module: controllerx
+  class: E1744MediaPlayerController
+  controller: 14:b4:57:ff:fe:6c:47:cd
+  integration: zha
+  media_player: media_player.bedroom
+  volume_steps: 20
+  Delay: 15
+
+Kitchen_knob:
+  module: controllerx
+  class: E1744MediaPlayerController
+  controller: 14:b4:57:ff:fe:6f:db:c1
+  integration: zha
+  media_player: media_player.living_room
+  volume_steps: 20
+  Delay: 15

@@ -1,0 +1,2312 @@
+config:
+  title: Home
+  views:
+  - cards: []
+    max_columns: 6
+    path: Homeview
+    sections:
+    - cards:
+      - cards:
+        - entity: person.rosco
+          icon_type: entity-picture
+          type: custom:mushroom-person-card
+        - entity: person.zarek
+          icon_type: entity-picture
+          type: custom:mushroom-person-card
+        - entity: person.mark
+          icon_type: entity-picture
+          type: custom:mushroom-person-card
+        type: horizontal-stack
+      - area: champagne_room
+        camera_image: camera.champagne_room
+        camera_view: image
+        entities:
+        - light.champagne_room_overhead_lights
+        - light.champagne_room_lamp
+        - light.champagne_room_moode_lights_wled
+        - media_player.champagne_room
+        - media_player.denon_avr_x1300w
+        - binary_sensor.champagne_room_motion_2
+        - sensor.champagne_room_temperature
+        hide_unavailable: falsetrue
+        state_color: true
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/champagne-room/
+        title: Champagne Room
+        type: custom:minimalistic-area-card
+      - area: garage
+        camera_image: camera.garage
+        camera_view: image
+        entities:
+        - sensor.garage_motion_humidity
+        - sensor.garage_motion_pressure
+        - sensor.garage_motion_temperature
+        - binary_sensor.garage_motion_motion
+        - media_player.garage_apple_mini
+        - fan.garage_fan
+        - light.garage_overhead_lights
+        - cover.garage_door
+        - cover.garage_door_2
+        hide_unavailable: false
+        state_color: true
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/garage
+        title: Garage
+        type: custom:minimalistic-area-card
+      - area: entryway
+        camera_image: camera.front_door
+        camera_view: image
+        entities:
+        - light.entryway_lights
+        - lock.front_door
+        - binary_sensor.front_door_all_occupancy
+        hide_unavailable: false
+        state_color: true
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/front-door
+        title: Front Door / Entryway
+        type: custom:minimalistic-area-card
+      - area: living_room
+        camera_image: camera.front_hall
+        camera_view: image
+        entities:
+        - switch.fireplace
+        - media_player.living_room_2
+        - media_player.living_room
+        - light.living_room
+        - sensor.living_room_temperature
+        - binary_sensor.living_room_motion
+        hide_unavailable: false
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/living-room
+        title: Living Room
+        type: custom:minimalistic-area-card
+      - area: kitchen
+        camera_image: camera.kitchen
+        camera_view: image
+        entities:
+        - binary_sensor.kitchen_motion_2
+        - sensor.kitchen_temperature
+        - media_player.kitchen
+        - light.kitchen_overhead_lights
+        - binary_sensor.refrigerator_cooler_door
+        hide_unavailable: false
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/kitchen
+        title: Kitchen
+        type: custom:minimalistic-area-card
+      - area: upstairs_hall
+        camera_image: camera.upstairs_hall
+        camera_view: image
+        entities:
+        - light.upstairs_hallway_lights
+        - sensor.upstairs_motion_humidity
+        - binary_sensor.upstairs_motion_motion
+        - sensor.upstairs_motion_pressure
+        - sensor.upstairs_motion_temperature
+        hide_unavailable: false
+        tap_action:
+          action: navigate
+          navigation_path: /config/areas/area/champagne_room
+        title: Upstairs Hall
+        type: custom:minimalistic-area-card
+      - area: outside
+        camera_image: camera.right_back_yard
+        camera_view: image
+        entities:
+        - sensor.acurite_5n1_a_144_temperature
+        - sensor.acurite_5n1_a_144_humidity
+        - sensor.acurite_5n1_a_144_wind_average
+        - sensor.acurite_5n1_a_144_wind_direction
+        - light.front_outdoor_lights
+        - binary_sensor.mailbox_sensor_door
+        - binary_sensor.front_gate_sensor_door
+        - binary_sensor.back_gate_sensor_door
+        - light.h705a_6534
+        hide_unavailable: false
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/outdoors
+        title: Outdoors
+        type: custom:minimalistic-area-card
+      - area: dining_room
+        camera_image: camera.birds
+        entities:
+        - light.dining_room_lights
+        - media_player.dining_room_apple_mini_2
+        - binary_sensor.kitchen_all_occupancy
+        hide_unavailable: false
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/dining-room
+        title: Dining Room
+        type: custom:minimalistic-area-card
+      type: grid
+    - cards:
+      - area: master_bedroom
+        entities:
+        - cover.bedroom_blinds_2
+        - media_player.main_bedroom
+        - media_player.bedroom
+        - light.all_bedroom_lights
+        - fan.master_bedroom_fan
+        - binary_sensor.master_bedroom_motion
+        hide_unavailable: false
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/main-bedroom
+        title: Main Bedroom
+        type: custom:minimalistic-area-card
+      - area: office
+        entities:
+        - media_player.office_apple_mini_2
+        - media_player.office
+        - sensor.office_motion_humidity
+        - binary_sensor.office_motion_motion
+        - sensor.office_motion_pressure
+        - sensor.office_motion_temperature
+        - cover.office_blinds_3
+        - light.office_overhead_lights_2
+        - binary_sensor.gun_safe_sensor_contact
+        hide_unavailable: false
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/office
+        title: Office
+        type: custom:minimalistic-area-card
+      - area: sewing_room
+        entities:
+        - cover.sewingroom_blinds_sewingroom_blinds
+        - binary_sensor.sewing_room_motion
+        - sensor.sewing_room_temperature
+        - light.sewing_room_overhead_lights
+        - media_player.sewing_room
+        hide_unavailable: false
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/sewing-room
+        title: Sewing Room
+        type: custom:minimalistic-area-card
+      - area: main_bath
+        entities:
+        - sensor.master_bath_lux_motion_illuminance
+        - binary_sensor.master_bath_lux_motion_occupancy
+        - fan.main_bath_humidity_humidity_main_bath_relay
+        - sensor.main_bath_fan_humidity
+        - sensor.main_bath_fan_temperature
+        - light.master_bathroom_light
+        hide_unavailable: false
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/main-bath
+        title: Main Bath
+        type: custom:minimalistic-area-card
+      - area: upstairs_bath
+        entities:
+        - fan.upstairs_bath_fan_humidity_switch_upstairs_relay
+        - sensor.upstairs_bath_motion_humidity
+        - binary_sensor.upstairs_bath_motion_motion
+        - sensor.upstairs_bath_motion_pressure
+        - sensor.upstairs_bath_motion_temperature
+        - light.upstairs_bathroom_light
+        hide_unavailable: false
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/upstairs-bath
+        title: Upstairs Bath
+        type: custom:minimalistic-area-card
+      - area: downstairs_bath
+        entities:
+        - fan.downstairs_bath_humidity_humidity_switch_downstairs_relay
+        - sensor.humidity_downstairs_humidity_switch_downstairs_humidity
+        - sensor.humidity_downstairs_humidity_switch_downstairs_temperature
+        - light.downstairs_bath_lights
+        hide_unavailable: false
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/downstairs-bath
+        title: Downstairs Bath
+        type: custom:minimalistic-area-card
+      - area: guest_room
+        entities:
+        - light.downstairs_bedroom_light
+        - media_player.wolfberg_tv
+        hide_unavailable: false
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/mark-room
+        title: Downstairs Bedroom
+        type: custom:minimalistic-area-card
+      - area: guest_room
+        entities:
+        - light.downstairs_hall_light
+        - binary_sensor.downstairs_motion_motion
+        - sensor.downstairs_motion_temperature
+        hide_unavailable: false
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/downstairs-hall
+        title: Downstairs Hall
+        type: custom:minimalistic-area-card
+      type: grid
+    - cards:
+      - entity: climate.hallway
+        name: Thermostat
+        type: thermostat
+      - entities:
+        - calendar.ridwell
+        - calendar.google_family_events
+        - calendar.google_goat_events
+        - calendar.google_smart_home_reminders
+        initial_view: listWeek
+        title: House Calendar
+        type: calendar
+      type: grid
+    - cards:
+      - entity: weather.home
+        forecast_type: daily
+        show_current: true
+        show_forecast: true
+        type: weather-forecast
+      - entity: alarm_control_panel.wyze_home_monitoring_system
+        states:
+        - arm_home
+        - arm_away
+        type: alarm-panel
+      - entities:
+        - entity: switch.opt_in_to_next_pickup
+          name: Opt-in to next pickup
+        - entity: sensor.ridwell_pickup_21_73rd_st_sw
+        - entity: calendar.ridwell
+        title: Ridwell
+        type: entities
+      - cards:
+        - entities:
+          - entity: script.goat_bleat
+          - entity: script.media_play_soups_on_every_pony
+          title: Notifiers
+          type: entities
+        - entity: script.announce_living_room
+          icon_height: 30px
+          show_icon: true
+          show_name: true
+          type: button
+        type: vertical-stack
+      type: grid
+    subview: false
+    title: Home Page
+    type: sections
+  - cards: []
+    max_columns: 3
+    path: 3d-printer
+    sections:
+    - cards:
+      - device_id: ba49d815bf6ca29aea5c9445b02efce1
+        type: custom:device-card
+      type: grid
+    - cards:
+      - cameras:
+        - camera_entity: camera.voronklipper_webcam
+        type: custom:frigate-card
+      type: grid
+    - cards:
+      - cards:
+        - align_state: center
+          entities:
+          - color: green
+            entity: sensor.mainsailos_extruder_temperature
+            name: Hotend
+          - color: red
+            entity: sensor.mainsailos_bed_temperature
+            name: Bed
+          hour24: true
+          hours_to_show: 2
+          icon: mdi:thermometer-lines
+          name: Temperature
+          points_per_hour: 60
+          show:
+            fill: true
+            labels: true
+          type: custom:mini-graph-card
+        - card_mod:
+            style: "div#states.card-content {\n  padding: 0px 16px 16px 16px !important;\n\
+              }\n"
+          entities:
+          - card_mod:
+              style: "ha-card.type-markdown {\n  font-size: 17px !important;\n  display:\
+                \ flex !important;\n  justify-content: center !important;\n}\nha-card\
+                \ {\n  border-width: 0px !important;\n}\nha-markdown {\n  padding:\
+                \ 16px 16px 0px !important;\n}  \n"
+            card_type: markdown
+            content: 'Eaton 1500LCD - 3D Printer - {{states(''sensor.printerups_status'')}}
+
+              '
+            type: custom:hui-element
+          - card_type: vertical-stack
+            cards:
+            - cards:
+              - card_mod:
+                  style: "ha-card {\n  border-width: 0px !important;\n}\n"
+                image: /local/1500LCD.png
+                type: picture
+              - card_mod:
+                  style: "ha-card {\n  border-width: 0px !important;\n  place-self:\
+                    \ flex-start !important;\n}\ndiv#name.ellipsis {\n  place-self:\
+                    \ flex-start !important;\n}\ndiv#state.ellipsis {\n  place-self:\
+                    \ flex-start !important;\n}\n"
+                entity: sensor.printerups_battery_runtime
+                icon: mdi:battery-high
+                layout: icon_name_state2nd
+                name: 'Remaining:'
+                show_icon: true
+                show_state: true
+                type: custom:button-card
+              layout:
+                grid-template-columns: 50% 50%
+                place-items: center
+              layout_type: custom:grid-layout
+              type: custom:layout-card
+            type: custom:hui-element
+          - card_mod:
+              style: "ha-card { \n  --paper-item-icon-color: var(--primary-text-color);\n\
+                \  border-width: 0px !important;\n}\n"
+            columns: 2
+            entities:
+            - entity: sensor.printerups_battery_charge
+              icon: mdi:battery-high
+              name: Battery
+              severity:
+              - color: '#d70000'
+                from: 0
+                to: 17
+              - color: '#d45e00'
+                from: 18
+                to: 34
+              - color: '#cf9000'
+                from: 35
+                to: 51
+              - color: '#cfd300'
+                from: 52
+                to: 68
+              - color: '#84cf00'
+                from: 69
+                to: 84
+              - color: '#30d000'
+                from: 85
+                to: 100
+              unit_of_measurement: '%'
+            - entity: sensor.printerups_load
+              icon: mdi:gauge
+              name: Load
+              severity:
+              - color: '#3498db'
+                value: 50
+              - color: '#f39c12'
+                value: 75
+              - color: '#e45e65'
+                value: 100
+              unit_of_measurement: '%'
+            entity_row: true
+            positions:
+              icon: inside
+              indicator: 'off'
+              name: inside
+              value: inside
+            type: custom:bar-card
+          - card_mod:
+              style: "ha-card { \n  --paper-item-icon-color: var(--primary-text-color);\n\
+                \  border-width: 0px !important;\n}\n"
+            card_type: entities
+            entities:
+            - entity: sensor.printerups_input_voltage
+              name: Input Voltage
+            - entity: sensor.printerups_output_voltage
+              name: Battery Output Voltage
+            type: custom:hui-element
+          type: entities
+        type: vertical-stack
+      type: grid
+    subview: true
+    title: 3D Printer
+    type: sections
+  - badges:
+    - entity: sensor.champagne_room_temperature
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    - entity: binary_sensor.champagne_room_motion_2
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    cards: []
+    header:
+      card:
+        content: '#'
+        title: Champagne Room
+        type: markdown
+    max_columns: 3
+    path: champagne-room
+    sections:
+    - cards:
+      - heading: New section
+        type: heading
+      - entity: light.champagne_room_overhead_lights
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: light.champagne_room_moode_lights_wled
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: media_player.champagne_room_tv
+        media_controls:
+        - on_off
+        type: custom:mushroom-media-player-card
+        volume_controls: []
+      - entity: media_player.champagne_room
+        media_controls:
+        - previous
+        - play_pause_stop
+        - next
+        - shuffle
+        - on_off
+        type: custom:mushroom-media-player-card
+        volume_controls: []
+      - entity: media_player.denon_avr_x1300w
+        media_controls:
+        - on_off
+        type: custom:mushroom-media-player-card
+        volume_controls:
+        - volume_set
+        - volume_buttons
+        - volume_mute
+      type: grid
+    - cards:
+      - heading: New section
+        type: heading
+      - cameras:
+        - camera_entity: camera.champagne_room
+        type: custom:frigate-card
+      - entity: switch.lenovo_starview_screensaver
+        type: tile
+      - entity: switch.lenovo_starview_screen
+        type: tile
+      - entity: media_player.lenovo_starview
+        type: tile
+      type: grid
+    - cards:
+      - heading: New section
+        type: heading
+      - entity: vacuum.first_floor_vacuum_janet
+        map: camera.first_floor_vacuum_janet_camera
+        type: custom:vacuum-card
+      type: grid
+    subview: true
+    title: Champagne Room
+    type: sections
+  - cards:
+    - cards:
+      - card:
+          entities:
+          - label: Synology RS1221+
+            type: section
+          - card_type: vertical-stack
+            cards:
+            - cards:
+              - image: /local/1221+.png
+                style: "ha-card { \n    --paper-card-background-color: 'rgba(0, 0,\
+                  \ 0, 0.0)';\n    --ha-card-background: \"rgba(0, 0, 0, 0.0)\";\n\
+                  \    --ha-card-box-shadow: 'none';\n}\n"
+                type: picture
+              - entity: sensor.goatzone_last_boot
+                icon: mdi:clock-outline
+                layout: icon_name_state2nd
+                name: Last Boot
+                show_icon: true
+                show_state: true
+                styles:
+                  card:
+                  - --ha-card-background: rgba(0, 0, 0, 0.0)
+                  - --ha-card-box-shadow: none
+                  grid:
+                  - grid-template-columns: 50px auto
+                  icon:
+                  - padding: 0px 0px
+                  - height: 30px
+                  - width: 30px
+                  name:
+                  - padding: 0px 10px
+                  - justify-self: start
+                  - color: var(--secondary-text-color)
+                  state:
+                  - padding: 0px 10px
+                  - justify-self: start
+                  - font-family: Roboto, sans-serif
+                  - font-size: 15px
+                type: custom:button-card
+              type: horizontal-stack
+            - align: split
+              columns: 1
+              entities:
+              - entity: sensor.goatzone_volume_1_volume_used
+              entity_row: true
+              max: 100
+              name: Volume 1 Usage
+              positions:
+                icon: inside
+                indicator: inside
+                name: inside
+                value: inside
+              severity:
+              - color: '#018304'
+                from: 0
+                to: 50
+              - color: '#f39c12'
+                from: 50
+                to: 75
+              - color: '#e45e65'
+                from: 75
+                to: 100
+              show_icon: true
+              style: "ha-card { \n    --paper-card-background-color: 'rgba(0, 0, 0,\
+                \ 0.0)';\n    --ha-card-background: \"rgba(0, 0, 0, 0.0)\";\n    --paper-item-icon-color:\
+                \ 'var(--text-primary-color';\n    --ha-card-box-shadow: 'none';\n\
+                }\n"
+              type: custom:bar-card
+              unit_of_measurement: '%'
+            - cards:
+              - align: split
+                columns: 1
+                entity: sensor.goatzone_memory_usage_real
+                entity_row: true
+                max: 100
+                name: RAM
+                positions:
+                  icon: inside
+                  indicator: inside
+                  name: inside
+                  value: inside
+                severity:
+                - color: '#018304'
+                  from: 0
+                  to: 50
+                - color: '#f39c12'
+                  from: 50
+                  to: 75
+                - color: '#e45e65'
+                  from: 75
+                  to: 100
+                show_icon: true
+                style: "ha-card { \n  --paper-card-background-color: 'rgba(0, 0, 0,\
+                  \ 0.0)';\n  --ha-card-background: \"rgba(0, 0, 0, 0.0)\";\n  --paper-item-icon-color:\
+                  \ 'var(--text-primary-color';\n  --ha-card-box-shadow: 'none';\n\
+                  }\n"
+                type: custom:bar-card
+                unit_of_measurement: '%'
+              - align: split
+                columns: 1
+                entity: sensor.goatzone_cpu_utilization_total
+                entity_row: true
+                max: 100
+                name: CPU
+                positions:
+                  icon: inside
+                  indicator: inside
+                  name: inside
+                  value: inside
+                severity:
+                - color: '#018304'
+                  from: 0
+                  to: 50
+                - color: '#f39c12'
+                  from: 50
+                  to: 75
+                - color: '#e45e65'
+                  from: 75
+                  to: 100
+                show_icon: true
+                style: "ha-card { \n  --paper-card-background-color: 'rgba(0, 0, 0,\
+                  \ 0.0)';\n  --ha-card-background: \"rgba(0, 0, 0, 0.0)\";\n  --paper-item-icon-color:\
+                  \ 'var(--text-primary-color';\n  --ha-card-box-shadow: 'none';\n\
+                  }\n"
+                type: custom:bar-card
+                unit_of_measurement: '%'
+              type: horizontal-stack
+            - color_thresholds:
+              - color: '#3498db'
+                value: 100
+              - color: '#f39c12'
+                value: 120
+              - color: '#ff0000'
+                value: 140
+              entities:
+              - sensor.goatzone_temperature
+              font_size: 70
+              height: 30
+              hours_to_show: 168
+              line_width: 2
+              name: Temperature
+              points_per_hour: 1
+              show:
+                extrema: true
+                fill: true
+              style: "ha-card { \n  --ha-card-background: \"rgba(0, 0, 0, 0.0)\";\n\
+                \  --ha-card-box-shadow: 'none';\n  border-radius: 5px;\n}\n.info.flex\
+                \ {\n  font-size: 12px !important;\n}\n"
+              type: custom:mini-graph-card
+            type: custom:hui-element
+          show_header_toggle: 'off'
+          style: ".card-header {\n  padding: 0px 0px 0px 0px !important;\n}\n"
+          type: entities
+        entities:
+        - sensor.disk_use_percent
+        - sensor.homeassistant_version
+        - sensor.disk_total
+        - sensor.disk_use
+        - sensor.memory_use_percent
+        - sensor.processor_use
+        - sensor.processor_temperature
+        id: nuc_status
+        type: custom:config-template-card
+        variables: null
+      - card:
+          entities:
+          - label: Synology RS18017xs+
+            type: section
+          - card_type: vertical-stack
+            cards:
+            - cards:
+              - image: /local/3614.png
+                style: "ha-card { \n    --paper-card-background-color: 'rgba(0, 0,\
+                  \ 0, 0.0)';\n    --ha-card-background: \"rgba(0, 0, 0, 0.0)\";\n\
+                  \    --ha-card-box-shadow: 'none';\n}\n"
+                type: picture
+              - entity: sensor.tinespace_last_boot
+                icon: mdi:clock-outline
+                layout: icon_name_state2nd
+                name: Last Boot
+                show_icon: true
+                show_state: true
+                styles:
+                  card:
+                  - --ha-card-background: rgba(0, 0, 0, 0.0)
+                  - --ha-card-box-shadow: none
+                  grid:
+                  - grid-template-columns: 50px auto
+                  icon:
+                  - padding: 0px 0px
+                  - height: 30px
+                  - width: 30px
+                  name:
+                  - padding: 0px 10px
+                  - justify-self: start
+                  - color: var(--secondary-text-color)
+                  state:
+                  - padding: 0px 10px
+                  - justify-self: start
+                  - font-family: Roboto, sans-serif
+                  - font-size: 15px
+                type: custom:button-card
+              type: horizontal-stack
+            - align: split
+              columns: 1
+              entities:
+              - entity: sensor.tinespace_volume_1_volume_used
+              entity_row: true
+              max: 100
+              name: Volume 1 Usage
+              positions:
+                icon: inside
+                indicator: inside
+                name: inside
+                value: inside
+              severity:
+              - color: '#018304'
+                from: 0
+                to: 50
+              - color: '#f39c12'
+                from: 50
+                to: 75
+              - color: '#e45e65'
+                from: 75
+                to: 100
+              show_icon: true
+              style: "ha-card { \n    --paper-card-background-color: 'rgba(0, 0, 0,\
+                \ 0.0)';\n    --ha-card-background: \"rgba(0, 0, 0, 0.0)\";\n    --paper-item-icon-color:\
+                \ 'var(--text-primary-color';\n    --ha-card-box-shadow: 'none';\n\
+                }\n"
+              type: custom:bar-card
+              unit_of_measurement: '%'
+            - cards:
+              - align: split
+                columns: 1
+                entity: sensor.tinespace_memory_usage_real
+                entity_row: true
+                max: 100
+                name: RAM
+                positions:
+                  icon: inside
+                  indicator: inside
+                  name: inside
+                  value: inside
+                severity:
+                - color: '#018304'
+                  from: 0
+                  to: 50
+                - color: '#f39c12'
+                  from: 50
+                  to: 75
+                - color: '#e45e65'
+                  from: 75
+                  to: 100
+                show_icon: true
+                style: "ha-card { \n  --paper-card-background-color: 'rgba(0, 0, 0,\
+                  \ 0.0)';\n  --ha-card-background: \"rgba(0, 0, 0, 0.0)\";\n  --paper-item-icon-color:\
+                  \ 'var(--text-primary-color';\n  --ha-card-box-shadow: 'none';\n\
+                  }\n"
+                type: custom:bar-card
+                unit_of_measurement: '%'
+              - align: split
+                columns: 1
+                entity: sensor.tinespace_cpu_utilization_total
+                entity_row: true
+                max: 100
+                name: CPU
+                positions:
+                  icon: inside
+                  indicator: inside
+                  name: inside
+                  value: inside
+                severity:
+                - color: '#018304'
+                  from: 0
+                  to: 50
+                - color: '#f39c12'
+                  from: 50
+                  to: 75
+                - color: '#e45e65'
+                  from: 75
+                  to: 100
+                show_icon: true
+                style: "ha-card { \n  --paper-card-background-color: 'rgba(0, 0, 0,\
+                  \ 0.0)';\n  --ha-card-background: \"rgba(0, 0, 0, 0.0)\";\n  --paper-item-icon-color:\
+                  \ 'var(--text-primary-color';\n  --ha-card-box-shadow: 'none';\n\
+                  }\n"
+                type: custom:bar-card
+                unit_of_measurement: '%'
+              type: horizontal-stack
+            - color_thresholds:
+              - color: '#3498db'
+                value: 100
+              - color: '#f39c12'
+                value: 120
+              - color: '#ff0000'
+                value: 140
+              entities:
+              - sensor.tinespace_temperature
+              font_size: 70
+              height: 30
+              hours_to_show: 168
+              line_width: 2
+              name: Temperature
+              points_per_hour: 1
+              show:
+                extrema: true
+                fill: true
+              style: "ha-card { \n  --ha-card-background: \"rgba(0, 0, 0, 0.0)\";\n\
+                \  --ha-card-box-shadow: 'none';\n  border-radius: 5px;\n}\n.info.flex\
+                \ {\n  font-size: 12px !important;\n}\n"
+              type: custom:mini-graph-card
+            type: custom:hui-element
+          show_header_toggle: 'off'
+          style: ".card-header {\n  padding: 0px 0px 0px 0px !important;\n}\n"
+          type: entities
+        entities:
+        - sensor.disk_use_percent
+        - sensor.homeassistant_version
+        - sensor.disk_total
+        - sensor.disk_use
+        - sensor.memory_use_percent
+        - sensor.processor_use
+        - sensor.processor_temperature
+        id: nuc_status
+        type: custom:config-template-card
+        variables: null
+      - card_mod:
+          style: "div#states.card-content {\n  padding: 0px 16px 16px 16px !important;\n\
+            }\n"
+        entities:
+        - card_mod:
+            style: "ha-card.type-markdown {\n  font-size: 17px !important;\n  display:\
+              \ flex !important;\n  justify-content: center !important;\n}\nha-card\
+              \ {\n  border-width: 0px !important;\n}\nha-markdown {\n  padding: 16px\
+              \ 16px 0px !important;\n}  \n"
+          card_type: markdown
+          content: 'Eaton 1500LCD - NAS - {{states(''sensor.ups_status_2'')}}
+
+            '
+          type: custom:hui-element
+        - card_type: vertical-stack
+          cards:
+          - cards:
+            - card_mod:
+                style: "ha-card {\n  border-width: 0px !important;\n}\n"
+              image: /local/1500LCD.png
+              type: picture
+            - card_mod:
+                style: "ha-card {\n  border-width: 0px !important;\n  place-self:\
+                  \ flex-start !important;\n}\ndiv#name.ellipsis {\n  place-self:\
+                  \ flex-start !important;\n}\ndiv#state.ellipsis {\n  place-self:\
+                  \ flex-start !important;\n}\n"
+              entity: sensor.ups_battery_runtime_2
+              icon: mdi:battery-high
+              layout: icon_name_state2nd
+              name: 'Remaining:'
+              show_icon: true
+              show_state: true
+              type: custom:button-card
+            layout:
+              grid-template-columns: 50% 50%
+              place-items: center
+            layout_type: custom:grid-layout
+            type: custom:layout-card
+          type: custom:hui-element
+        - card_mod:
+            style: "ha-card { \n  --paper-item-icon-color: var(--primary-text-color);\n\
+              \  border-width: 0px !important;\n}\n"
+          columns: 2
+          entities:
+          - entity: sensor.ups_battery_charge_2
+            icon: mdi:battery-high
+            name: Battery
+            severity:
+            - color: '#d70000'
+              from: 0
+              to: 17
+            - color: '#d45e00'
+              from: 18
+              to: 34
+            - color: '#cf9000'
+              from: 35
+              to: 51
+            - color: '#cfd300'
+              from: 52
+              to: 68
+            - color: '#84cf00'
+              from: 69
+              to: 84
+            - color: '#30d000'
+              from: 85
+              to: 100
+            unit_of_measurement: '%'
+          - entity: sensor.ups_load_2
+            icon: mdi:gauge
+            name: Load
+            severity:
+            - color: '#3498db'
+              value: 50
+            - color: '#f39c12'
+              value: 75
+            - color: '#e45e65'
+              value: 100
+            unit_of_measurement: '%'
+          entity_row: true
+          positions:
+            icon: inside
+            indicator: 'off'
+            name: inside
+            value: inside
+          type: custom:bar-card
+        - card_mod:
+            style: "ha-card { \n  --paper-item-icon-color: var(--primary-text-color);\n\
+              \  border-width: 0px !important;\n}\n"
+          card_type: entities
+          entities:
+          - entity: sensor.ups_input_voltage_2
+            name: Input Voltage
+          - entity: sensor.ups_output_voltage_2
+            name: Output Voltage
+          type: custom:hui-element
+        type: entities
+      type: vertical-stack
+    - cards:
+      - card:
+          entities:
+          - label: Proxmox PVE
+            type: section
+          - card_type: vertical-stack
+            cards:
+            - cards:
+              - image: /local/r720.png
+                style: "ha-card { \n    --paper-card-background-color: 'rgba(0, 0,\
+                  \ 0, 0.0)';\n    --ha-card-background: \"rgba(0, 0, 0, 0.0)\";\n\
+                  \    --ha-card-box-shadow: 'none';\n}\n"
+                type: picture
+              - entity: sensor.node_pve_last_boot
+                icon: mdi:clock-outline
+                layout: icon_name_state2nd
+                name: Last Boot
+                show_icon: true
+                show_state: true
+                styles:
+                  card:
+                  - --ha-card-background: rgba(0, 0, 0, 0.0)
+                  - --ha-card-box-shadow: none
+                  grid:
+                  - grid-template-columns: 50px auto
+                  icon:
+                  - padding: 0px 0px
+                  - height: 30px
+                  - width: 30px
+                  name:
+                  - padding: 0px 10px
+                  - justify-self: start
+                  - color: var(--secondary-text-color)
+                  state:
+                  - padding: 0px 10px
+                  - justify-self: start
+                  - font-family: Roboto, sans-serif
+                  - font-size: 15px
+                type: custom:button-card
+              type: horizontal-stack
+            - align: split
+              columns: 1
+              entities:
+              - entity: sensor.node_pve_disk_used_percentage
+              entity_row: true
+              max: 100
+              name: Disk Usage
+              positions:
+                icon: inside
+                indicator: inside
+                name: inside
+                value: inside
+              severity:
+              - color: '#018304'
+                from: 0
+                to: 50
+              - color: '#f39c12'
+                from: 50
+                to: 75
+              - color: '#e45e65'
+                from: 75
+                to: 100
+              show_icon: true
+              style: "ha-card { \n    --paper-card-background-color: 'rgba(0, 0, 0,\
+                \ 0.0)';\n    --ha-card-background: \"rgba(0, 0, 0, 0.0)\";\n    --paper-item-icon-color:\
+                \ 'var(--text-primary-color';\n    --ha-card-box-shadow: 'none';\n\
+                }\n"
+              type: custom:bar-card
+              unit_of_measurement: '%'
+            - cards:
+              - align: split
+                columns: 1
+                entity: sensor.node_pve_memory_used_percentage
+                entity_row: true
+                max: 100
+                name: RAM
+                positions:
+                  icon: inside
+                  indicator: inside
+                  name: inside
+                  value: inside
+                severity:
+                - color: '#018304'
+                  from: 0
+                  to: 50
+                - color: '#f39c12'
+                  from: 50
+                  to: 75
+                - color: '#e45e65'
+                  from: 75
+                  to: 100
+                show_icon: true
+                style: "ha-card { \n  --paper-card-background-color: 'rgba(0, 0, 0,\
+                  \ 0.0)';\n  --ha-card-background: \"rgba(0, 0, 0, 0.0)\";\n  --paper-item-icon-color:\
+                  \ 'var(--text-primary-color';\n  --ha-card-box-shadow: 'none';\n\
+                  }\n"
+                type: custom:bar-card
+                unit_of_measurement: '%'
+              - align: split
+                columns: 1
+                entity: sensor.node_pve_cpu_used
+                entity_row: true
+                max: 100
+                name: CPU
+                positions:
+                  icon: inside
+                  indicator: inside
+                  name: inside
+                  value: inside
+                severity:
+                - color: '#018304'
+                  from: 0
+                  to: 50
+                - color: '#f39c12'
+                  from: 50
+                  to: 75
+                - color: '#e45e65'
+                  from: 75
+                  to: 100
+                show_icon: true
+                style: "ha-card { \n  --paper-card-background-color: 'rgba(0, 0, 0,\
+                  \ 0.0)';\n  --ha-card-background: \"rgba(0, 0, 0, 0.0)\";\n  --paper-item-icon-color:\
+                  \ 'var(--text-primary-color';\n  --ha-card-box-shadow: 'none';\n\
+                  }\n"
+                type: custom:bar-card
+                unit_of_measurement: '%'
+              type: horizontal-stack
+            - entities:
+              - sensor.node_pve_total_updates
+              font_size: 70
+              height: 30
+              hours_to_show: 168
+              line_width: 2
+              name: Total Updates
+              points_per_hour: 1
+              show:
+                extrema: true
+                fill: true
+              style: "ha-card { \n  --ha-card-background: \"rgba(0, 0, 0, 0.0)\";\n\
+                \  --ha-card-box-shadow: 'none';\n  border-radius: 5px;\n}\n.info.flex\
+                \ {\n  font-size: 12px !important;\n}\n"
+              type: custom:mini-graph-card
+            type: custom:hui-element
+          show_header_toggle: 'off'
+          style: ".card-header {\n  padding: 0px 0px 0px 0px !important;\n}\n"
+          type: entities
+        entities:
+        - sensor.node_pve_disk_used_percentage
+        - sensor.homeassistant_version
+        - sensor.disk_total
+        - sensor.disk_use
+        - sensor.memory_use_percent
+        - sensor.processor_use
+        - sensor.processor_temperature
+        id: nuc_status
+        type: custom:config-template-card
+        variables: null
+      - card_mod:
+          style: "div#states.card-content {\n  padding: 0px 16px 16px 16px !important;\n\
+            }\n"
+        entities:
+        - card_mod:
+            style: "ha-card.type-markdown {\n  font-size: 17px !important;\n  display:\
+              \ flex !important;\n  justify-content: center !important;\n}\nha-card\
+              \ {\n  border-width: 0px !important;\n}\nha-markdown {\n  padding: 16px\
+              \ 16px 0px !important;\n}  \n"
+          card_type: markdown
+          content: 'Eaton 1500LCD - Server - {{states(''sensor.ups_status'')}}
+
+            '
+          type: custom:hui-element
+        - card_type: vertical-stack
+          cards:
+          - cards:
+            - card_mod:
+                style: "ha-card {\n  border-width: 0px !important;\n}\n"
+              image: /local/1500LCD.png
+              type: picture
+            - card_mod:
+                style: "ha-card {\n  border-width: 0px !important;\n  place-self:\
+                  \ flex-start !important;\n}\ndiv#name.ellipsis {\n  place-self:\
+                  \ flex-start !important;\n}\ndiv#state.ellipsis {\n  place-self:\
+                  \ flex-start !important;\n}\n"
+              entity: sensor.ups_battery_runtime
+              icon: mdi:battery-high
+              layout: icon_name_state2nd
+              name: 'Remaining:'
+              show_icon: true
+              show_state: true
+              type: custom:button-card
+            layout:
+              grid-template-columns: 50% 50%
+              place-items: center
+            layout_type: custom:grid-layout
+            type: custom:layout-card
+          type: custom:hui-element
+        - card_mod:
+            style: "ha-card { \n  --paper-item-icon-color: var(--primary-text-color);\n\
+              \  border-width: 0px !important;\n}\n"
+          columns: 2
+          entities:
+          - entity: sensor.ups_battery_charge
+            icon: mdi:battery-high
+            name: Battery
+            severity:
+            - color: '#d70000'
+              from: 0
+              to: 17
+            - color: '#d45e00'
+              from: 18
+              to: 34
+            - color: '#cf9000'
+              from: 35
+              to: 51
+            - color: '#cfd300'
+              from: 52
+              to: 68
+            - color: '#84cf00'
+              from: 69
+              to: 84
+            - color: '#30d000'
+              from: 85
+              to: 100
+            unit_of_measurement: '%'
+          - entity: sensor.ups_load
+            icon: mdi:gauge
+            name: Load
+            severity:
+            - color: '#3498db'
+              value: 50
+            - color: '#f39c12'
+              value: 75
+            - color: '#e45e65'
+              value: 100
+            unit_of_measurement: '%'
+          entity_row: true
+          positions:
+            icon: inside
+            indicator: 'off'
+            name: inside
+            value: inside
+          type: custom:bar-card
+        - card_mod:
+            style: "ha-card { \n  --paper-item-icon-color: var(--primary-text-color);\n\
+              \  border-width: 0px !important;\n}\n"
+          card_type: entities
+          entities:
+          - entity: sensor.ups_input_voltage
+            name: Input Voltage
+          - entity: sensor.ups_output_voltage
+            name: Output Voltage
+          type: custom:hui-element
+        type: entities
+      - entities:
+        - sensor.speedtest_upload
+        - sensor.speedtest_download
+        type: statistics-graph
+      type: vertical-stack
+    path: servers
+    subview: true
+    title: Servers
+    type: masonry
+  - cards: []
+    max_columns: 4
+    path: downstairs-view
+    sections:
+    - cards:
+      - entity: alarm_control_panel.wyze_home_monitoring_system
+        states:
+        - arm_home
+        - arm_away
+        type: alarm-panel
+      - entity: climate.hallway
+        type: thermostat
+      - entities:
+        - entity: light.champagne_room_lamp
+        - entity: light.champagne_room_overhead_lights
+        - entity: light.champagne_room_moode_lights_wled
+        type: entities
+      - cards:
+        - entities:
+          - entity: script.goat_bleat
+          - entity: script.media_play_soups_on_every_pony
+          title: Notifiers
+          type: entities
+        - entity: script.announce_living_room
+          icon_height: 30px
+          show_icon: true
+          show_name: true
+          type: button
+        type: vertical-stack
+      type: grid
+    - cards:
+      - area: downstairs_bath
+        entities:
+        - fan.downstairs_bath_humidity_humidity_switch_downstairs_relay
+        - sensor.humidity_downstairs_humidity_switch_downstairs_humidity
+        - sensor.humidity_downstairs_humidity_switch_downstairs_temperature
+        - light.downstairs_bath_lights
+        hide_unavailable: false
+        tap_action:
+          action: navigate
+          navigation_path: /config/areas/area/downstairs_bath
+        title: Downstairs Bath
+        type: custom:minimalistic-area-card
+      - area: guest_room
+        entities:
+        - light.downstairs_bedroom_light
+        - media_player.wolfberg_tv
+        hide_unavailable: false
+        tap_action:
+          action: navigate
+          navigation_path: /config/areas/area/guest_room
+        title: Downstairs Bedroom
+        type: custom:minimalistic-area-card
+      - area: champagne_room
+        entities:
+        - light.champagne_room_overhead_lights
+        - light.champagne_room_lamp
+        - light.champagne_room_moode_lights_wled
+        - media_player.champagne_room
+        - media_player.denon_avr_x1300w
+        - binary_sensor.champagne_room_motion_2
+        - sensor.champagne_room_temperature
+        hide_unavailable: falsetrue
+        state_color: true
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/champagne_room
+        title: Champagne Room
+        type: custom:minimalistic-area-card
+      - area: garage
+        camera_image: camera.garage
+        camera_view: image
+        entities:
+        - sensor.garage_motion_humidity
+        - sensor.garage_motion_pressure
+        - sensor.garage_motion_temperature
+        - binary_sensor.garage_motion_motion
+        - media_player.garage_apple_mini
+        - fan.garage_fan
+        - light.garage_overhead_lights
+        - cover.garage_door
+        - cover.garage_door_2
+        hide_unavailable: false
+        state_color: true
+        tap_action:
+          action: navigate
+          navigation_path: /config/areas/area/garage
+        title: Garage
+        type: custom:minimalistic-area-card
+      - area: outside
+        camera_image: camera.right_back_yard
+        camera_view: image
+        entities:
+        - sensor.acurite_5n1_a_144_temperature
+        - sensor.acurite_5n1_a_144_humidity
+        - sensor.acurite_5n1_a_144_wind_average
+        - sensor.acurite_5n1_a_144_wind_direction
+        - light.front_outdoor_lights
+        - binary_sensor.mailbox_sensor_door
+        - binary_sensor.front_gate_sensor_door_2
+        - binary_sensor.back_gate_sensor_door_2
+        - light.h705a_6534
+        hide_unavailable: false
+        tap_action:
+          action: navigate
+          navigation_path: /config/areas/area/outside
+        title: Outdoors
+        type: custom:minimalistic-area-card
+      - cards:
+        - card_config_version: 8
+          custom1_icon: mdi:air-filter
+          custom1_units: <2.5um
+          custom1_value: sensor.2_5mm_concentration_2
+          entity_forecast_icon: weather.home
+          entity_humidity: sensor.acurite_5n1_a_144_humidity
+          entity_rainfall: sensor.rainfall_in_last_24_hours
+          entity_summary: weather.home
+          entity_sun: sun.sun
+          entity_temperature: sensor.acurite_5n1_a_144_temperature
+          entity_wind_bearing: sensor.acurite_5n1_a_144_wind_direction
+          entity_wind_speed: sensor.acurite_5n1_a_144_wind_average
+          section_order:
+          - overview
+          - extended
+          - daily_forecast
+          - slots
+          show_section_daily_forecast: false
+          show_section_extended: false
+          slot_l1: rainfall
+          slot_l2: custom1
+          slot_l3: wind
+          slot_l4: remove
+          slot_l5: remove
+          slot_l6: remove
+          slot_l7: remove
+          slot_l8: remove
+          slot_r1: humidity
+          slot_r2: sun_next
+          slot_r3: sun_following
+          slot_r4: remove
+          slot_r5: remove
+          slot_r6: remove
+          slot_r7: remove
+          slot_r8: remove
+          text_card_title: Acurite Weather Station
+          type: custom:platinum-weather-card
+        - entity: weather.home
+          forecast_type: daily
+          show_current: false
+          show_forecast: true
+          type: weather-forecast
+        type: vertical-stack
+      type: grid
+    subview: true
+    title: Downstairs View
+    type: sections
+  - badges:
+    - entity: sensor.living_room_temperature
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    - entity: binary_sensor.living_room_motion
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    cards: []
+    header:
+      card:
+        content: '#'
+        title: Living Room
+        type: markdown
+    max_columns: 3
+    path: living-room
+    sections:
+    - cards:
+      - entity: light.living_room
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: light.living_room_mood_lighting
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: switch.fireplace
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: media_player.living_room_2
+        grid_options:
+          columns: 12
+          rows: 2
+        media_controls:
+        - on_off
+        - shuffle
+        - previous
+        - play_pause_stop
+        - next
+        type: custom:mushroom-media-player-card
+        volume_controls: []
+      - entity: media_player.living_room_sonos_2
+        type: media-control
+      type: grid
+    - cards:
+      - cameras:
+        - camera_entity: camera.front_hall
+        type: custom:frigate-card
+      - battery_sensor: sensor.myflower_battery
+        display_type: full
+        entity: plant.dracaena_fragrans_plant_sensor_1
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      - battery_sensor: sensor.myflower_battery
+        display_type: full
+        entity: plant.aloe_stritatula_plant_sensor_4
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      - battery_sensor: sensor.myflower_battery
+        entity: plant.dracaena_trifasciata_plant_sensor_2
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      - battery_sensor: sensor.myflower_battery
+        entity: plant.aechmea_fasciata_plant_sensor_3
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      - battery_sensor: sensor.myflower_battery
+        entity: plant.pilea_peperomioides_plant_sensor_5
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      - battery_sensor: sensor.myflower_battery
+        entity: plant.zamioculcas_zamiifolia_plant_sensor_6
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      - battery_sensor: sensor.myflower_battery
+        entity: plant.monstera_adansorii_plant_sensor_9
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      - battery_sensor: sensor.myflower_battery
+        entity: plant.tradescantia_fluminensis_plant_sensor_11
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      - battery_sensor: sensor.myflower_battery
+        display_type: full
+        entity: plant.scindapsus_pictus_plant_sensor_12
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      - battery_sensor: sensor.myflower_battery
+        entity: plant.epipremnum_aureum_plant_sensor_13
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      - battery_sensor: sensor.myflower_battery
+        entity: plant.asparagus_setaceus_plant_sensor_7
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      type: grid
+    - cards:
+      - cards:
+        - device_id: 971c4490c49d5ec6bb6a797c1e2af611
+          type: custom:petkit-device
+        - device_id: 4b468c2ef3e5a5b97320bc2e1fa56ea8
+          type: custom:petkit-device
+        type: vertical-stack
+      type: grid
+    subview: true
+    title: Living Room
+    type: sections
+  - cards: []
+    header:
+      card:
+        content: '#'
+        title: Dinning Room
+        type: markdown
+    max_columns: 3
+    path: dining-room
+    sections:
+    - cards:
+      - entity: light.dining_room_lights
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: light.sliding_door_outdoor_light
+        name: Sliding Door Light
+        show_icon: true
+        show_name: true
+        type: button
+      - battery_sensor: sensor.myflower_battery
+        entity: plant.monstera_deliciosa_plant_sensor_8
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      - battery_sensor: sensor.myflower_battery
+        entity: plant.epipremnum_aureum_iii_plant_sensor_16
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      - battery_sensor: sensor.myflower_battery
+        entity: plant.araucaria_heterophylla_plant_sensor_18
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      type: grid
+    - cards:
+      - cameras:
+        - camera_entity: camera.birds
+        type: custom:frigate-card
+      - cards:
+        - device_id: 62fe8f8d7f83672c8ade9716515f0e9c
+          type: custom:petkit-device
+        - device_id: 694a2903aa7e3b4067b698e8a539f6d3
+          features:
+          - cute_lil_kitty
+          preview_count: '3'
+          type: custom:petkit-device
+        type: vertical-stack
+      type: grid
+    - cards:
+      - cards:
+        - type: custom:valetudo-map-card
+          vacuum: valetudo_unripeancientpig
+        - entity: script.1717446534196
+          icon_height: 30px
+          show_icon: true
+          show_name: true
+          tap_action:
+            action: more-info
+          type: button
+        - entity: script.1717698223923
+          icon_height: 30px
+          show_icon: true
+          show_name: true
+          tap_action:
+            action: toggle
+          type: button
+        type: vertical-stack
+      type: grid
+    subview: true
+    title: Dining Room
+    type: sections
+  - badges:
+    - entity: binary_sensor.master_bedroom_motion
+      type: entity
+    - entity: sensor.master_bedroom_temperature
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    header:
+      card:
+        content: '#'
+        title: Main Bedroom
+        type: markdown
+    max_columns: 3
+    path: main-bedroom
+    sections:
+    - cards:
+      - entity: light.all_bedroom_lights
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: light.nanoleaf
+        name: Nanoleaf
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: light.main_bedroom_dab_lamp
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: light.main_bedroom_lamp
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: cover.bedroom_blinds_2
+        grid_options:
+          columns: 12
+          rows: 2
+        name: Bedroom Blinds
+        show_buttons_control: true
+        show_position_control: true
+        type: custom:mushroom-cover-card
+      - entity: fan.master_bedroom_fan
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: light.plate01_backlight
+        name: Main Bedroom HASPlate
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: media_player.master_bedroom_sonos_2
+        type: media-control
+      type: grid
+    - cards:
+      - heading: New section
+        type: heading
+      - device_id: 1aaad0c3ee9661ecb86ba54d6490d053
+        type: custom:petkit-device
+      type: grid
+    subview: true
+    title: Main Bedroom
+    type: sections
+  - badges:
+    - entity: sensor.office_motion_temperature
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    - entity: binary_sensor.office_motion_motion
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    - entity: sensor.c02_monitor_mh_z19_co2_value
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    cards: []
+    header:
+      card:
+        content: '#'
+        title: Office
+        type: markdown
+    max_columns: 3
+    path: office
+    sections:
+    - cards:
+      - entity: light.office_overhead_lights_2
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: binary_sensor.gun_safe_sensor_contact
+        type: entity
+      - entity: light.hl2sign_half_life_2_rgb_light
+        grid_options:
+          columns: 6
+          rows: 2
+        name: Half Life 2 Sign
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: sensor.office_depth_sensor_full
+        grid_options:
+          columns: 6
+          rows: auto
+        name: Snake Cage Water Tank
+        needle: true
+        type: gauge
+      - entity: light.office_lamp
+        features_position: bottom
+        type: tile
+        vertical: false
+      - entity: cover.office_blinds_3
+        grid_options:
+          columns: 12
+          rows: 1
+        show_buttons_control: true
+        show_position_control: true
+        type: custom:mushroom-cover-card
+      - entity: media_player.office_sonos_2
+        type: media-control
+      - cards:
+        - entities:
+          - input_text.mqtt_title
+          - input_text.input_text_mqtt_message
+          title: Receipt Printer
+          type: entities
+        - name: Publish Message
+          show_icon: true
+          show_name: true
+          tap_action:
+            action: call-service
+            service: script.officereceiptprinter
+          type: button
+        type: vertical-stack
+      type: grid
+    - cards:
+      - cards:
+        - cards:
+          - cards:
+            - columns: 4
+              direction: up
+              entities:
+              - color: MediumTurquoise
+                entity: sensor.cyan_toner_level
+                name: Cyan
+              - color: MediumOrchid
+                entity: sensor.yellow_toner_level
+                name: Magenta
+              - color: Gold
+                entity: sensor.magenta_toner_level
+                name: Yellow
+              - color: Black
+                entity: sensor.black_toner_level
+              height: 200px
+              max: 100
+              min: 0
+              padding: 2px
+              type: custom:bar-card
+              unit_of_measurement: '%'
+              width: 100%
+            title: Printer Ink Levels
+            type: custom:vertical-stack-in-card
+          type: horizontal-stack
+        - entities:
+          - entity: sensor.page_count
+            name: Pages Printed
+          type: glance
+        type: vertical-stack
+      - chart_type: line
+        days_to_show: 2
+        entities:
+        - sensor.c02_monitor_mh_z19_co2_value
+        hide_legend: false
+        logarithmic_scale: false
+        period: 5minute
+        stat_types:
+        - mean
+        title: Internal C02 Levels
+        type: statistics-graph
+      type: grid
+    subview: true
+    title: Office
+    type: sections
+  - badges:
+    - entity: binary_sensor.front_door_motion
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    cards: []
+    header:
+      card:
+        content: '#'
+        title: Front Door
+        type: markdown
+    max_columns: 4
+    path: front-door
+    sections:
+    - cards:
+      - entity: light.entryway_lights
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: light.front_outdoor_lights
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: lock.front_door
+        type: custom:mushroom-lock-card
+      - entity: switch.securitytv_tomada
+        name: Security TV
+        show_icon: true
+        show_name: true
+        type: button
+      type: grid
+    - cards:
+      - cameras:
+        - camera_entity: camera.doorbell
+          live_provider: auto
+        - camera_entity: camera.front_door
+          go2rtc:
+            modes:
+            - webrtc
+        live:
+          microphone:
+            always_connected: true
+          preload: true
+        menu:
+          buttons:
+            microphone:
+              enabled: true
+        type: custom:frigate-card
+      type: grid
+    subview: true
+    title: Front Door
+    type: sections
+  - badges:
+    - entity: sensor.kitchen_temperature
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    - entity: binary_sensor.kitchen_motion_2
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    cards: []
+    header:
+      card:
+        content: '#'
+        title: Kitchen
+        type: markdown
+    max_columns: 3
+    path: kitchen
+    sections:
+    - cards:
+      - entity: light.kitchen_overhead_lights
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: light.kitchen_outdoor_light
+        show_icon: true
+        show_name: true
+        show_state: true
+        type: button
+      - entity: media_player.kitchen_sonos_2
+        type: media-control
+      type: grid
+    - cards:
+      - cameras:
+        - camera_entity: camera.kitchen
+        type: custom:frigate-card
+      - battery_sensor: sensor.myflower_battery
+        entity: plant.epipremnum_aureum_plant_sensor_17_golden_pothos
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      - battery_sensor: sensor.myflower_battery
+        entity: plant.epipremnum_aureum_ii_plant_sensor_14
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      - battery_sensor: sensor.myflower_battery
+        entity: plant.syngorium_podophyllum_plant_sensor_15
+        show_bars:
+        - moisture
+        - conductivity
+        - temperature
+        - humidity
+        type: custom:flower-card
+      type: grid
+    - cards:
+      - heading: Appliances
+        heading_style: title
+        type: heading
+      - device_id: e8bdabe8f0a10b8a5727f7023cdeb0ed
+        type: custom:device-card
+      - device_id: 90748d7f10a39a146bd081c8f9dbd1d2
+        type: custom:device-card
+      - device_id: 36521c158abdfd67178f35a90ce1060b
+        type: custom:device-card
+      type: grid
+    subview: true
+    title: Kitchen
+    type: sections
+  - header:
+      card:
+        content: '#'
+        title: Outdoors
+        type: markdown
+    max_columns: 3
+    path: outdoors
+    sections:
+    - cards:
+      - heading: New section
+        type: heading
+      - entities:
+        - entity: binary_sensor.front_gate_sensor_door
+        - entity: binary_sensor.back_gate_sensor_door
+        - entity: binary_sensor.outdoor_network_door
+        - entity: binary_sensor.shed_motion_sensor_occupancy
+        type: entities
+      - entity: light.h705a_6534
+        icon: mdi:fence-electric
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: light.outdoor_lights
+        show_icon: true
+        show_name: true
+        type: button
+      - current_direction:
+          show_arrow: true
+        data_period:
+          period_back: -200h
+        title: Wind Speed and Direction
+        type: custom:windrose-card
+        wind_direction_entity:
+          entity: sensor.acurite_5n1_a_144_wind_direction
+        windspeed_bar_location: right
+        windspeed_entities:
+        - entity: sensor.acurite_5n1_a_144_wind_average
+          name: Speed
+          speed_range_beaufort: false
+          windspeed_bar_full: false
+      type: grid
+    - cards:
+      - heading: New section
+        type: heading
+      - cameras:
+        - camera_entity: camera.front_left
+        - camera_entity: camera.back_yard
+        - camera_entity: camera.back_yard_2
+        - camera_entity: camera.left_yard
+        - camera_entity: camera.right_back_yard
+        type: custom:frigate-card
+        view:
+          default_cycle_camera: true
+      - cards:
+        - card_config_version: 8
+          custom1_icon: mdi:air-filter
+          custom1_units: <2.5um
+          custom1_value: sensor.2_5mm_concentration_2
+          entity_forecast_icon: weather.home
+          entity_humidity: sensor.acurite_5n1_a_144_humidity
+          entity_rainfall: sensor.rainfall_in_last_24_hours
+          entity_summary: weather.home
+          entity_sun: sun.sun
+          entity_temperature: sensor.acurite_5n1_a_144_temperature
+          entity_wind_bearing: sensor.acurite_5n1_a_144_wind_direction
+          entity_wind_speed: sensor.acurite_5n1_a_144_wind_average
+          section_order:
+          - overview
+          - extended
+          - daily_forecast
+          - slots
+          show_section_daily_forecast: false
+          show_section_extended: false
+          slot_l1: rainfall
+          slot_l2: custom1
+          slot_l3: wind
+          slot_l4: remove
+          slot_l5: remove
+          slot_l6: remove
+          slot_l7: remove
+          slot_l8: remove
+          slot_r1: humidity
+          slot_r2: sun_next
+          slot_r3: sun_following
+          slot_r4: remove
+          slot_r5: remove
+          slot_r6: remove
+          slot_r7: remove
+          slot_r8: remove
+          text_card_title: Acurite Weather Station
+          type: custom:platinum-weather-card
+        - entity: weather.home
+          forecast_type: daily
+          show_current: false
+          show_forecast: true
+          type: weather-forecast
+        - extra_labels: false
+          map_style: Dark
+          show_marker: true
+          show_playback: false
+          show_range: true
+          show_recenter: false
+          show_scale: true
+          show_zoom: true
+          type: custom:weather-radar-card
+          zoom_level: 18
+        type: vertical-stack
+      type: grid
+    - cards:
+      - chart_type: line
+        days_to_show: 7
+        entities:
+        - sensor.2_5mm_concentration_2
+        - sensor.10_0mm_concentration_2
+        - sensor.1_0mm_concentration_2
+        period: hour
+        stat_types:
+        - mean
+        title: Outdoor Air Quality
+        type: statistics-graph
+      - entity: sensor.fr24_aircraft
+        type: custom:fr24-card
+      type: grid
+    subview: true
+    title: Outdoors
+    type: sections
+  - badges:
+    - entity: sensor.garage_motion_temperature
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    - entity: binary_sensor.garage_motion_motion
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    cards: []
+    header:
+      card:
+        content: '#'
+        title: Garage
+        type: markdown
+    max_columns: 3
+    path: garage
+    sections:
+    - cards:
+      - entity: light.garage_combined_lights
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: cover.garage_door_2
+        show_buttons_control: true
+        show_position_control: false
+        type: custom:mushroom-cover-card
+      - entity: cover.garage_door
+        show_buttons_control: true
+        type: custom:mushroom-cover-card
+      - icon: mdi:server
+        icon_height: NaNpx
+        name: Server Information
+        show_icon: true
+        show_name: true
+        show_state: true
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/servers
+        type: button
+      - icon: mdi:printer-3d
+        name: 3D Printer
+        show_icon: true
+        show_name: true
+        tap_action:
+          action: navigate
+          navigation_path: /lovelace/3d-printer
+        type: button
+      - entity: fan.garage_fan
+        show_icon: true
+        show_name: true
+        type: button
+      type: grid
+    - cards:
+      - cameras:
+        - camera_entity: camera.garage
+        type: custom:frigate-card
+      type: grid
+    - cards:
+      - cards:
+        - fields:
+            battery:
+              recommended_target: 80
+              state_of_charge:
+                entity: sensor.2024_ioniq_5_car_battery_level
+              target_state_of_charge:
+                entity: binary_sensor.2024_ioniq_5_ev_battery_charge
+            main:
+              heading:
+                entity: sensor.2024_ioniq_5_ev_range
+          image:
+            max_height: 150
+            src: /local/ionic5.png
+          title: Goat's Ionic 5
+          type: custom:car-card
+        - entities:
+          - entity: number.2024_ioniq_5_dc_charging_limit
+          - entity: number.2024_ioniq_5_ac_charging_limit
+          - entity: lock.2024_ioniq_5_door_lock
+          type: entities
+        type: vertical-stack
+      type: grid
+    subview: true
+    title: Garage
+    type: sections
+  - badges:
+    - entity: sensor.downstairs_motion_temperature
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    - entity: binary_sensor.downstairs_motion_motion
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    header:
+      card:
+        content: '#'
+        title: Downstairs Hall
+        type: markdown
+    max_columns: 3
+    path: downstairs-hall
+    sections:
+    - cards:
+      - heading: Lighting
+        heading_style: title
+        type: heading
+      - entity: light.downstairs_hall_light
+        show_icon: true
+        show_name: true
+        type: button
+      type: grid
+    - cards:
+      - heading: Appliances
+        heading_style: title
+        type: heading
+      - device_id: 30c94d8d66de7a86959f8f8598d9e9d0
+        type: custom:device-card
+      - device_id: 60975a9e3ad9a010c9105bf0ce838c9b
+        type: custom:device-card
+      type: grid
+    subview: true
+    title: Downstairs Hall
+    type: sections
+  - badges:
+    - entity: binary_sensor.sewing_room_motion
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    - entity: sensor.sewing_room_temperature
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    header:
+      card:
+        content: '#'
+        title: Sewing Room
+        type: markdown
+    max_columns: 3
+    path: sewing-room
+    sections:
+    - cards:
+      - entity: light.sewing_room_overhead_lights
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: cover.sewingroom_blinds_sewingroom_blinds
+        show_buttons_control: true
+        show_position_control: true
+        type: custom:mushroom-cover-card
+      - entity: media_player.sewing_room_sonos_2
+        type: media-control
+      type: grid
+    subview: true
+    title: Sewing Room
+    type: sections
+  - badges:
+    - entity: sensor.master_bath_lux_motion_illuminance
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    - entity: binary_sensor.master_bath_lux_motion_occupancy
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    max_columns: 4
+    path: main-bath
+    sections:
+    - cards:
+      - entity: fan.main_bath_humidity_humidity_main_bath_relay
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: light.master_bathroom_light
+        show_icon: true
+        show_name: true
+        type: button
+      - chart_type: line
+        days_to_show: 7
+        entities:
+        - sensor.main_bath_fan_humidity
+        period: 5minute
+        stat_types:
+        - mean
+        title: Humidity
+        type: statistics-graph
+      type: grid
+    subview: true
+    title: Main Bath
+    type: sections
+  - badges:
+    - entity: binary_sensor.upstairs_bath_motion_motion
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    - entity: sensor.upstairs_bath_motion_temperature
+      show_icon: true
+      show_name: false
+      show_state: true
+      type: entity
+    max_columns: 4
+    path: upstairs-bath
+    sections:
+    - cards:
+      - entity: fan.downstairs_bath_humidity_humidity_switch_downstairs_relay
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: light.upstairs_bathroom_light
+        show_icon: true
+        show_name: true
+        type: button
+      - chart_type: line
+        days_to_show: 7
+        entities:
+        - sensor.humidity_upstairs_humidity_switch_upstairs_humidity
+        period: 5minute
+        stat_types:
+        - mean
+        - min
+        - max
+        title: Humidity
+        type: statistics-graph
+      type: grid
+    subview: true
+    title: Upstairs Bath
+    type: sections
+  - cards: []
+    max_columns: 4
+    path: mark-room
+    sections:
+    - cards:
+      - heading: New section
+        type: heading
+      - entity: light.downstairs_bedroom_light
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: sensor.mark_pc_power
+        show_icon: true
+        show_name: true
+        type: button
+      type: grid
+    subview: true
+    title: Mark Room
+    type: sections
+  - max_columns: 4
+    path: downstairs-bath
+    sections:
+    - cards:
+      - entity: fan.downstairs_bath_humidity_humidity_switch_downstairs_relay
+        show_icon: true
+        show_name: true
+        type: button
+      - entity: light.downstairs_bath_lights
+        show_icon: true
+        show_name: true
+        type: button
+      - chart_type: line
+        days_to_show: 7
+        entities:
+        - sensor.humidity_downstairs_humidity_switch_downstairs_humidity
+        period: 5minute
+        stat_types:
+        - mean
+        title: Humidity
+        type: statistics-graph
+      type: grid
+    subview: true
+    title: Downstairs Bath
+    type: sections

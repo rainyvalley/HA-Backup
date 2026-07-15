@@ -1,0 +1,3 @@
+profile,color_x,color_y,brightness,transition,
+light.upstairs_hallway_lights.default,0.323,0.329,254,transition,
+light.entryway_lights.default,0.323,0.329,254,transition,

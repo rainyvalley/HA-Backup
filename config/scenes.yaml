@@ -1,0 +1,1493 @@
+- id: '1640156346373'
+  name: plate off
+  entities:
+    light.plate01_backlight:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 3
+      friendly_name: plate01 backlight
+      supported_features: 0
+      state: 'on'
+    number.plate01_active_page:
+      min: 0
+      max: 11
+      step: 1
+      mode: auto
+      assumed_state: true
+      icon: mdi:page-next-outline
+      friendly_name: plate01 active page
+      state: '1'
+    light.plate01_selected_foreground_color:
+      supported_color_modes:
+      - rgb
+      color_mode: rgb
+      brightness: 1
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 0
+      - 0
+      - 0
+      xy_color:
+      - 0
+      - 0
+      friendly_name: plate01 selected foreground color
+      supported_features: 0
+      state: 'on'
+    light.plate01_selected_background_color:
+      supported_color_modes:
+      - rgb
+      color_mode: rgb
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: plate01 selected background color
+      supported_features: 0
+      state: 'on'
+    light.plate01_unselected_foreground_color:
+      supported_color_modes:
+      - rgb
+      color_mode: rgb
+      brightness: 224
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: plate01 unselected foreground color
+      supported_features: 0
+      state: 'on'
+    light.plate01_unselected_background_color:
+      supported_color_modes:
+      - rgb
+      color_mode: rgb
+      brightness: 96
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: plate01 unselected background color
+      supported_features: 0
+      state: 'on'
+- id: '1640722727400'
+  name: Living Room Movie Time
+  entities:
+    light.kitchen_overhead_lights:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - brightness
+      effect:
+      color_mode: brightness
+      brightness: 255
+      friendly_name: Kitchen Lights
+      supported_features: 44
+      state: 'on'
+    light.living_room_lamp_a_rgbcct_bulb:
+      min_color_temp_kelvin: 3000
+      max_color_temp_kelvin: 6000
+      min_mireds: 166
+      max_mireds: 333
+      supported_color_modes:
+      - color_temp
+      - rgb
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      friendly_name: Athom RGBCCT Bulb RGBCCT_Bulb
+      supported_features: 40
+      state: 'off'
+    select.living_room_lamp_a_power_on_state:
+      options:
+      - Always Off
+      - Always On
+      - Restore Power Off State
+      friendly_name: Athom RGBCCT Bulb Power On State
+      state: Always Off
+    light.living_room_light_b_rgbcct_bulb:
+      min_color_temp_kelvin: 3000
+      max_color_temp_kelvin: 6000
+      min_mireds: 166
+      max_mireds: 333
+      supported_color_modes:
+      - color_temp
+      - rgb
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      friendly_name: Athom RGBCCT Bulb RGBCCT_Bulb
+      supported_features: 40
+      state: 'off'
+    select.living_room_light_b_power_on_state:
+      options:
+      - Always Off
+      - Always On
+      - Restore Power Off State
+      friendly_name: Athom RGBCCT Bulb Power On State
+      state: Always Off
+    light.living_room_lamp_c_rgbcct_bulb:
+      min_color_temp_kelvin: 3000
+      max_color_temp_kelvin: 6000
+      min_mireds: 166
+      max_mireds: 333
+      supported_color_modes:
+      - color_temp
+      - rgb
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      friendly_name: Athom RGBCCT Bulb RGBCCT_Bulb
+      supported_features: 40
+      state: 'off'
+    select.living_room_lamp_c_power_on_state:
+      options:
+      - Always Off
+      - Always On
+      - Restore Power Off State
+      friendly_name: Athom RGBCCT Bulb Power On State
+      state: Always Off
+    light.living_room_lamp_rgbcct_bulb:
+      min_color_temp_kelvin: 3000
+      max_color_temp_kelvin: 6000
+      min_mireds: 166
+      max_mireds: 333
+      supported_color_modes:
+      - color_temp
+      - rgb
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      friendly_name: Athom RGBCCT Bulb RGBCCT_Bulb
+      supported_features: 40
+      state: 'off'
+    select.living_room_lamp_power_on_state:
+      options:
+      - Always Off
+      - Always On
+      - Restore Power Off State
+      friendly_name: Athom RGBCCT Bulb Power On State
+      state: Always Off
+    light.elements_8f9c:
+      min_color_temp_kelvin: 1500
+      max_color_temp_kelvin: 4000
+      min_mireds: 250
+      max_mireds: 666
+      effect_list:
+      - Bloom
+      - Calming Waterfall
+      - Clouds
+      - Ember
+      - Fireflies
+      - Glimmer
+      - Sahara Night
+      - Splash
+      - Sunbeam
+      - Warm Waves
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      friendly_name: Elements 8F9C
+      supported_features: 36
+      state: 'off'
+  metadata: {}
+- id: '1640722934788'
+  name: Living Room-Normal Lighting
+  entities:
+    light.living_room_mood_lighting:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      - colorloop
+      - stop_colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect:
+      color_mode: color_temp
+      brightness: 215
+      color_temp_kelvin: 3521
+      color_temp: 284
+      hs_color:
+      - 27.152
+      - 44.32
+      rgb_color:
+      - 255
+      - 193
+      - 142
+      xy_color:
+      - 0.452
+      - 0.373
+      friendly_name: Living Room Mood Lighting
+      supported_features: 44
+      state: 'on'
+    switch.living_room_mood_lighting_do_not_disturb:
+      friendly_name: Living Room Mood Lighting Do not disturb
+      state: 'off'
+    light.elements_8f9c:
+      min_color_temp_kelvin: 1500
+      max_color_temp_kelvin: 4000
+      min_mireds: 250
+      max_mireds: 666
+      effect_list:
+      - Bloom
+      - Calming Waterfall
+      - Clouds
+      - Ember
+      - Fireflies
+      - Glimmer
+      - Sahara Night
+      - Splash
+      - Sunbeam
+      - Warm Waves
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect:
+      color_mode: color_temp
+      brightness: 183
+      color_temp_kelvin: 3167
+      color_temp: 315
+      hs_color:
+      - 27.571
+      - 52.539
+      rgb_color:
+      - 255
+      - 183
+      - 121
+      xy_color:
+      - 0.48
+      - 0.381
+      friendly_name: Elements 8F9C
+      supported_features: 36
+      state: 'on'
+    light.living_room_lamp_a_rgbcct_bulb:
+      min_color_temp_kelvin: 3000
+      max_color_temp_kelvin: 6000
+      min_mireds: 166
+      max_mireds: 333
+      supported_color_modes:
+      - color_temp
+      - rgb
+      color_mode: color_temp
+      brightness: 185
+      color_temp_kelvin: 3000
+      color_temp: 333
+      hs_color:
+      - 27.825
+      - 56.895
+      rgb_color:
+      - 255
+      - 177
+      - 110
+      xy_color:
+      - 0.496
+      - 0.383
+      friendly_name: Athom RGBCCT Bulb RGBCCT_Bulb
+      supported_features: 40
+      state: 'on'
+    select.living_room_lamp_a_power_on_state:
+      options:
+      - Always Off
+      - Always On
+      - Restore Power Off State
+      friendly_name: Athom RGBCCT Bulb Power On State
+      state: Always Off
+    light.living_room_light_b_rgbcct_bulb:
+      min_color_temp_kelvin: 3000
+      max_color_temp_kelvin: 6000
+      min_mireds: 166
+      max_mireds: 333
+      supported_color_modes:
+      - color_temp
+      - rgb
+      color_mode: color_temp
+      brightness: 185
+      color_temp_kelvin: 3000
+      color_temp: 333
+      hs_color:
+      - 27.825
+      - 56.895
+      rgb_color:
+      - 255
+      - 177
+      - 110
+      xy_color:
+      - 0.496
+      - 0.383
+      friendly_name: Athom RGBCCT Bulb RGBCCT_Bulb
+      supported_features: 40
+      state: 'on'
+    select.living_room_light_b_power_on_state:
+      options:
+      - Always Off
+      - Always On
+      - Restore Power Off State
+      friendly_name: Athom RGBCCT Bulb Power On State
+      state: Always Off
+    light.living_room_lamp_c_rgbcct_bulb:
+      min_color_temp_kelvin: 3000
+      max_color_temp_kelvin: 6000
+      min_mireds: 166
+      max_mireds: 333
+      supported_color_modes:
+      - color_temp
+      - rgb
+      color_mode: color_temp
+      brightness: 185
+      color_temp_kelvin: 3000
+      color_temp: 333
+      hs_color:
+      - 27.825
+      - 56.895
+      rgb_color:
+      - 255
+      - 177
+      - 110
+      xy_color:
+      - 0.496
+      - 0.383
+      friendly_name: Athom RGBCCT Bulb RGBCCT_Bulb
+      supported_features: 40
+      state: 'on'
+    select.living_room_lamp_c_power_on_state:
+      options:
+      - Always Off
+      - Always On
+      - Restore Power Off State
+      friendly_name: Athom RGBCCT Bulb Power On State
+      state: Always Off
+    light.living_room_lamp_rgbcct_bulb:
+      min_color_temp_kelvin: 3000
+      max_color_temp_kelvin: 6000
+      min_mireds: 166
+      max_mireds: 333
+      supported_color_modes:
+      - color_temp
+      - rgb
+      color_mode: color_temp
+      brightness: 185
+      color_temp_kelvin: 3000
+      color_temp: 333
+      hs_color:
+      - 27.825
+      - 56.895
+      rgb_color:
+      - 255
+      - 177
+      - 110
+      xy_color:
+      - 0.496
+      - 0.383
+      friendly_name: Athom RGBCCT Bulb RGBCCT_Bulb
+      supported_features: 40
+      state: 'on'
+    select.living_room_lamp_power_on_state:
+      options:
+      - Always Off
+      - Always On
+      - Restore Power Off State
+      friendly_name: Athom RGBCCT Bulb Power On State
+      state: Always Off
+  metadata: {}
+- id: '1643259612077'
+  name: element on
+  entities:
+    light.elements_8f9c:
+      min_color_temp_kelvin: 1500
+      max_color_temp_kelvin: 4000
+      min_mireds: 250
+      max_mireds: 666
+      effect_list:
+      - Bloom
+      - Calming Waterfall
+      - Clouds
+      - Ember
+      - Fireflies
+      - Glimmer
+      - Sahara Night
+      - Splash
+      - Sunbeam
+      - Warm Waves
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect: Ember
+      color_mode: hs
+      brightness: 254
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: Elements 8F9C
+      supported_features: 36
+      state: 'on'
+  metadata:
+    light.elements_8f9c:
+      entity_only: true
+- id: '1672770077550'
+  name: Alarm Going off
+  entities:
+    light.living_room_mood_lighting:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      - colorloop
+      - stop_colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect:
+      color_mode: xy
+      brightness: 216
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 0
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 0
+      xy_color:
+      - 0.7006
+      - 0.2993
+      friendly_name: Living Room Mood Lighting
+      supported_features: 44
+      state: 'on'
+    light.main_bedroom_dab_lamp:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6493
+      min_mireds: 154
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: xy
+      brightness: 236
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 350.824
+      - 100
+      rgb_color:
+      - 255
+      - 0
+      - 39
+      xy_color:
+      - 0.689
+      - 0.294
+      friendly_name: Main Bedroom Dab Lamp
+      supported_features: 40
+      state: 'on'
+    light.main_bedroom_lamp:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - candle
+      - fireplace
+      - colorloop
+      - finish_effect
+      - stop_effect
+      - stop_hue_effect
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect:
+      color_mode: xy
+      brightness: 255
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 6.378
+      - 99.608
+      rgb_color:
+      - 255
+      - 28
+      - 1
+      xy_color:
+      - 0.696
+      - 0.303
+      friendly_name: Main Bedroom Lamp
+      supported_features: 44
+      state: 'on'
+    light.nanoleaf:
+      min_color_temp_kelvin: 1200
+      max_color_temp_kelvin: 6500
+      min_mireds: 153
+      max_mireds: 833
+      effect_list:
+      - Bedtime
+      - Color Burst
+      - Falling Whites
+      - Fireworks
+      - Fireworks and Firecrackers
+      - Flames
+      - Forest
+      - Inner Peace
+      - Meteor Shower
+      - Nemo
+      - Northern Lights
+      - Paint Splatter
+      - Pulse Pop Beats
+      - Radial Sound Bar
+      - Rhythmic Northern Lights
+      - Romantic
+      - Sound Bar
+      - Streaking Notes
+      supported_color_modes:
+      - color_temp
+      - hs
+      effect:
+      color_mode: hs
+      brightness: 102
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 7
+      - 100
+      rgb_color:
+      - 255
+      - 30
+      - 0
+      xy_color:
+      - 0.694
+      - 0.305
+      friendly_name: Canvas 46F4
+      supported_features: 36
+      state: 'on'
+  metadata: {}
+- id: '1672770122126'
+  name: Alarm-Disarmed
+  entities:
+    light.living_room_mood_lighting:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      - colorloop
+      - stop_colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect:
+      color_mode: color_temp
+      brightness: 215
+      color_temp_kelvin: 5747
+      color_temp: 174
+      hs_color:
+      - 28.91
+      - 9.942
+      rgb_color:
+      - 255
+      - 242
+      - 230
+      xy_color:
+      - 0.346
+      - 0.34
+      friendly_name: Living Room Mood Lighting
+      supported_features: 44
+      state: 'on'
+    light.main_bedroom_dab_lamp:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6493
+      min_mireds: 154
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 236
+      color_temp_kelvin: 5000
+      color_temp: 200
+      hs_color:
+      - 27.001
+      - 19.243
+      rgb_color:
+      - 255
+      - 228
+      - 206
+      xy_color:
+      - 0.371
+      - 0.349
+      friendly_name: Main Bedroom Dab Lamp
+      supported_features: 40
+      state: 'on'
+    light.main_bedroom_lamp:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - candle
+      - fireplace
+      - colorloop
+      - finish_effect
+      - stop_effect
+      - stop_hue_effect
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect:
+      color_mode: color_temp
+      brightness: 255
+      color_temp_kelvin: 5025
+      color_temp: 199
+      hs_color:
+      - 27.028
+      - 18.905
+      rgb_color:
+      - 255
+      - 229
+      - 207
+      xy_color:
+      - 0.37
+      - 0.35
+      friendly_name: Main Bedroom Lamp
+      supported_features: 44
+      state: 'on'
+  metadata: {}
+- id: '1687358660048'
+  name: Outside Off
+  entities:
+    light.sliding_door_outdoor_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - brightness
+      effect:
+      color_mode:
+      brightness:
+      friendly_name: Sliding Door Outdoor Light
+      supported_features: 44
+      state: 'off'
+    light.kitchen_outdoor_light:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - brightness
+      effect:
+      color_mode:
+      brightness:
+      friendly_name: Kitchen Outdoor Light
+      supported_features: 44
+      state: 'off'
+    light.front_outdoor_lights:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - brightness
+      effect:
+      color_mode:
+      brightness:
+      friendly_name: Front Outdoor Lights
+      supported_features: 44
+      state: 'off'
+    light.h705a_6534:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 9009
+      min_mireds: 111
+      max_mireds: 500
+      effect_list:
+      - Active
+      - Afternoon
+      - ARRAKIS
+      - Atlantis
+      - Aurora
+      - Baby Shower
+      - Birthday
+      - Bright
+      - Candlelight
+      - Candy
+      - Carnival
+      - Cherry blossoms
+      - Christmas
+      - Christmas Gift
+      - Christmas Tree
+      - Colorful
+      - Cornfield
+      - Dance Party
+      - Dancing
+      - Dine Together
+      - Downpour
+      - Dreamland
+      - Dreamlike
+      - Easter
+      - Enthusiastic
+      - Fall
+      - Father's Day
+      - Father's DayB
+      - Fire
+      - Firefly
+      - Fireworks
+      - Flow
+      - Flower Field
+      - Fluctuate
+      - Forest
+      - Game Day
+      - Gradient
+      - Halloween
+      - Halloween B
+      - Halloween C
+      - Halloween D
+      - Hanukkah
+      - Happy
+      - Karst Cave
+      - Leisure
+      - Leisurely
+      - Leprechaun
+      - Mavericks
+      - MFFL
+      - Moonlight
+      - Morning
+      - Mother's Day
+      - Mother's Day B
+      - Mysterious
+      - Nebula
+      - New Years
+      - Night
+      - Party
+      - Profound
+      - Quiet
+      - Rainbow
+      - Refreshing
+      - Romantic
+      - Rustling leaves
+      - Saint Patrick's Day
+      - Sled
+      - Soothing
+      - SPICE
+      - Spin
+      - Sports
+      - Spring
+      - Stacking
+      - Star
+      - Summer
+      - Sunrise
+      - Sunset
+      - Sunset Glow
+      - Swing
+      - Thanksgiving
+      - Twilight
+      - Undersea King
+      - Universe
+      - Valentine's Day
+      - Warm
+      - Wave
+      - White Light
+      - Winter
+      - Winter Wonderland
+      supported_color_modes:
+      - color_temp
+      - rgb
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      icon: mdi:outdoor-lamp
+      friendly_name: H705A_6534
+      supported_features: 44
+      state: 'off'
+  metadata:
+    light.h705a_6534:
+      entity_only: true
+- id: '1720620175853'
+  name: EV Charger 80%
+  entities:
+    lock.2024_ioniq_5_door_lock:
+      icon: mdi:lock
+      friendly_name: 2024 IONIQ 5 Door Lock
+      supported_features: 0
+      state: locked
+    number.2024_ioniq_5_ac_charging_limit:
+      min: 50
+      max: 100
+      step: 10
+      mode: slider
+      unit_of_measurement: '%'
+      icon: mdi:ev-plug-type2
+      friendly_name: 2024 IONIQ 5 AC Charging Limit
+      state: '80'
+    number.2024_ioniq_5_dc_charging_limit:
+      min: 50
+      max: 100
+      step: 10
+      mode: slider
+      unit_of_measurement: '%'
+      icon: mdi:ev-plug-ccs2
+      friendly_name: 2024 IONIQ 5 DC Charging Limit
+      state: '80'
+  metadata:
+    number.2024_ioniq_5_ac_charging_limit:
+      entity_only: true
+    number.2024_ioniq_5_dc_charging_limit:
+      entity_only: true
+- id: '1734363784125'
+  name: Goodnight
+  entities:
+    light.living_room:
+      min_color_temp_kelvin: 1500
+      max_color_temp_kelvin: 6535
+      effect_list:
+      - Bloom
+      - Calming Waterfall
+      - Clouds
+      - Ember
+      - Fireflies
+      - Glimmer
+      - Sahara Night
+      - Splash
+      - Sunbeam
+      - Warm Waves
+      - blink
+      - breathe
+      - channel_change
+      - colorloop
+      - finish_effect
+      - okay
+      - stop_colorloop
+      - stop_effect
+      supported_color_modes:
+      - color_temp
+      - hs
+      - rgb
+      - xy
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      hs_color:
+      rgb_color:
+      xy_color:
+      entity_id:
+      - light.living_room_lamp_a_rgbcct_bulb
+      - light.living_room_light_b_rgbcct_bulb
+      - light.living_room_lamp_c_rgbcct_bulb
+      - light.living_room_lamp_rgbcct_bulb
+      - light.elements_8f9c
+      - light.living_room_mood_lighting
+      icon: mdi:lightbulb-group
+      friendly_name: Living Room
+      supported_features: 44
+      state: 'off'
+    light.living_room_mood_lighting:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      - colorloop
+      - stop_colorloop
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect:
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      hs_color:
+      rgb_color:
+      xy_color:
+      friendly_name: Living Room Mood Lighting
+      supported_features: 44
+      state: 'off'
+    light.kitchen_overhead_lights:
+      supported_color_modes:
+      - brightness
+      color_mode:
+      brightness:
+      friendly_name: Kitchen Lights
+      supported_features: 40
+      state: 'off'
+    light.upstairs_hall_lights:
+      effect_list:
+      - blink
+      - breathe
+      - channel_change
+      - finish_effect
+      - okay
+      - stop_effect
+      supported_color_modes:
+      - brightness
+      effect:
+      color_mode:
+      brightness:
+      entity_id:
+      - light.entryway_lights
+      - light.upstairs_hallway_lights
+      icon: mdi:lightbulb-group
+      friendly_name: Upstairs Hall Lights
+      supported_features: 44
+      state: 'off'
+    light.entryway_lights:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - brightness
+      friendly_name: Entryway Lights
+      supported_features: 44
+      state: unavailable
+    light.office_overhead_lights_2:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - brightness
+      effect:
+      color_mode:
+      brightness:
+      friendly_name: Office Overhead Lights
+      supported_features: 44
+      state: 'off'
+    light.sewing_room_overhead_lights:
+      supported_color_modes:
+      - brightness
+      color_mode:
+      brightness:
+      friendly_name: Sewing Room Overhead Lights
+      supported_features: 40
+      state: 'off'
+    light.master_bathroom_light:
+      supported_color_modes:
+      - brightness
+      color_mode:
+      brightness:
+      friendly_name: Main Bathroom Light
+      supported_features: 40
+      state: 'off'
+    light.dining_room_lights:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - brightness
+      friendly_name: Dining Room Lights
+      supported_features: 44
+      state: unavailable
+    alarm_control_panel.wyze_home_monitoring_system:
+      code_format:
+      changed_by:
+      code_arm_required: true
+      attribution: Data provided by Wyze
+      mac: aab1e83fa9794437a0997c9bd9f6b4dd
+      friendly_name: Wyze Home Monitoring System
+      supported_features: 3
+      state: armed_home
+  metadata:
+    light.living_room:
+      entity_only: true
+    light.living_room_mood_lighting:
+      entity_only: true
+    light.kitchen_overhead_lights:
+      entity_only: true
+    light.upstairs_hall_lights:
+      entity_only: true
+    light.entryway_lights:
+      entity_only: true
+    light.office_overhead_lights_2:
+      entity_only: true
+    light.sewing_room_overhead_lights:
+      entity_only: true
+    light.master_bathroom_light:
+      entity_only: true
+    light.dining_room_lights:
+      entity_only: true
+- id: '1740878356358'
+  name: HL2 Sign on
+  entities:
+    light.hl2sign_half_life_2_rgb_light:
+      effect_list:
+      - None
+      - Random Twinkle
+      - Fireworks
+      - Addressable Flicker
+      - Rainbow
+      - Color Wipe
+      - Scan Effect With Custom Values
+      supported_color_modes:
+      - rgb
+      friendly_name: HL2Sign Half Life 2 RGB Light
+      supported_features: 44
+      effect: Addressable Flicker
+      color_mode: rgb
+      brightness: 255
+      hs_color:
+      - 30.622
+      - 94.51
+      rgb_color:
+      - 255
+      - 137
+      - 14
+      xy_color:
+      - 0.598
+      - 0.383
+      state: 'on'
+  metadata:
+    light.hl2sign_half_life_2_rgb_light:
+      entity_only: true
+- id: '1742857505270'
+  name: Champagne Room- Morning
+  entities:
+    light.champagne_room_lamp:
+      supported_color_modes:
+      - onoff
+      color_mode: onoff
+      friendly_name: Champagne Room Lamp
+      supported_features: 0
+      state: 'on'
+    light.champagne_room_moode_lights_wled:
+      effect_list:
+      - Solid
+      - Blink
+      - Breathe
+      - Wipe
+      - Wipe Random
+      - Random Colors
+      - Sweep
+      - Dynamic
+      - Colorloop
+      - Rainbow
+      - Scan
+      - Scan Dual
+      - Fade
+      - Theater
+      - Theater Rainbow
+      - Running
+      - Saw
+      - Twinkle
+      - Dissolve
+      - Dissolve Rnd
+      - Sparkle
+      - Sparkle Dark
+      - Sparkle+
+      - Strobe
+      - Strobe Rainbow
+      - Strobe Mega
+      - Blink Rainbow
+      - Android
+      - Chase
+      - Chase Random
+      - Chase Rainbow
+      - Chase Flash
+      - Chase Flash Rnd
+      - Rainbow Runner
+      - Colorful
+      - Traffic Light
+      - Sweep Random
+      - Chase 2
+      - Aurora
+      - Stream ☾
+      - Scanner
+      - Lighthouse
+      - Fireworks
+      - Rain
+      - Tetrix
+      - Fire Flicker
+      - Gradient
+      - Loading
+      - Rolling Balls
+      - Fairy
+      - Two Dots
+      - Fairytwinkle
+      - Running Dual
+      - RSVD
+      - Chase 3
+      - Tri Wipe
+      - Tri Fade
+      - Lightning
+      - ICU
+      - Multi Comet
+      - Scanner Dual
+      - Stream 2 ☾
+      - Oscillate
+      - Pride 2015
+      - Juggle
+      - Palette
+      - Fire 2012
+      - Colorwaves
+      - Bpm
+      - Fill Noise
+      - Noise 1
+      - Noise 2
+      - Noise 3
+      - Noise 4
+      - Colortwinkles
+      - Lake
+      - Meteor
+      - Meteor Smooth
+      - Railway
+      - Ripple
+      - Twinklefox
+      - Twinklecat
+      - Halloween Eyes
+      - Solid Pattern
+      - Solid Pattern Tri
+      - Spots
+      - Spots Fade
+      - Glitter
+      - Candle
+      - Fireworks Starburst
+      - Fireworks 1D
+      - Bouncing Balls
+      - Sinelon
+      - Sinelon Dual
+      - Sinelon Rainbow
+      - Popcorn
+      - Drip
+      - Plasma
+      - Percent
+      - Ripple Rainbow
+      - Heartbeat
+      - Pacifica
+      - Candle Multi
+      - Solid Glitter
+      - Sunrise
+      - Phased
+      - Twinkleup
+      - Noise Pal
+      - Sine
+      - Phased Noise
+      - Flow
+      - Chunchun
+      - Dancing Shadows
+      - Washing Machine
+      - RSVD
+      - Blends
+      - TV Simulator
+      - Dynamic Smooth
+      - Spaceships
+      - Crazy Bees
+      - Ghost Rider
+      - Blobs
+      - Scrolling Text
+      - Drift Rose
+      - Distortion Waves
+      - Soap
+      - Octopus
+      - Waving Cell
+      - Pixels
+      - Pixelwave
+      - Juggles
+      - Matripix ☾
+      - Gravimeter ☾
+      - Plasmoid
+      - Puddles
+      - Midnoise
+      - Noisemeter
+      - Freqwave
+      - Freqmatrix
+      - GEQ ☾
+      - Waterfall
+      - Freqpixels
+      - RSVD
+      - Noisefire
+      - Puddlepeak
+      - Noisemove
+      - Noise2D
+      - Perlin Move
+      - Ripple Peak
+      - Firenoise
+      - Squared Swirl
+      - RSVD
+      - DNA
+      - Matrix
+      - Metaballs
+      - Freqmap
+      - Gravcenter
+      - Gravcentric
+      - Gravfreq ☾
+      - DJ Light
+      - Funky Plank
+      - RSVD
+      - Pulser
+      - Blurz ☾
+      - Drift
+      - Waverly ☾
+      - Sun Radiation
+      - Colored Bursts
+      - Julia
+      - RSVD
+      - RSVD
+      - RSVD
+      - Game Of Life
+      - Tartan
+      - Polar Lights
+      - Swirl
+      - Lissajous ☾
+      - Frizzles
+      - Plasma Ball
+      - Flow Stripe
+      - Hiphotic
+      - Sindots
+      - DNA Spiral
+      - Black Hole
+      - Wavesins
+      - Rocktaves
+      - Akemi
+      - ⚙️ ARTI-FX ☾
+      - Party jerk
+      - RSVD
+      - Popcorn audio ☾
+      - RSVD
+      - Fw Starburst audio ☾
+      - RSVD
+      - Fireworks audio ☾
+      supported_color_modes:
+      - rgb
+      effect: Solid
+      color_mode: rgb
+      brightness: 255
+      hs_color:
+      - 48
+      - 1.961
+      rgb_color:
+      - 255
+      - 254
+      - 250
+      xy_color:
+      - 0.326
+      - 0.333
+      friendly_name: Champagne Room Moode Lights- WLED
+      supported_features: 36
+      state: 'on'
+    select.champagne_room_moode_lights_wled_playlist:
+      options: []
+      friendly_name: Champagne Room Moode Lights- WLED Playlist
+      state: unavailable
+    select.champagne_room_moode_lights_wled_preset:
+      options:
+      - ~ 01-01 21:42:39 ~
+      friendly_name: Champagne Room Moode Lights- WLED Preset
+      state: unknown
+    light.champagne_room_overhead_lights:
+      effect_list:
+      - blink
+      - breathe
+      - okay
+      - channel_change
+      - finish_effect
+      - stop_effect
+      supported_color_modes:
+      - brightness
+      effect:
+      color_mode: brightness
+      brightness: 255
+      friendly_name: Champagne Room Overhead Lights
+      supported_features: 44
+      state: 'on'
+    light.plate03_backlight:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 255
+      friendly_name: HASplate - Champagne Room plate03 backlight
+      supported_features: 0
+      state: 'on'
+    number.plate03_active_page:
+      min: 0
+      max: 11
+      step: 1
+      mode: auto
+      assumed_state: true
+      icon: mdi:page-next-outline
+      friendly_name: HASplate - Champagne Room plate03 active page
+      state: '3'
+    light.plate03_selected_foreground_color:
+      supported_color_modes:
+      - rgb
+      color_mode: rgb
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 0
+      - 0
+      - 0
+      xy_color:
+      - 0
+      - 0
+      friendly_name: HASplate - Champagne Room plate03 selected foreground color
+      supported_features: 0
+      state: 'on'
+    light.plate03_selected_background_color:
+      supported_color_modes:
+      - rgb
+      color_mode: rgb
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: HASplate - Champagne Room plate03 selected background color
+      supported_features: 0
+      state: 'on'
+    light.plate03_unselected_foreground_color:
+      supported_color_modes:
+      - rgb
+      color_mode: rgb
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: HASplate - Champagne Room plate03 unselected foreground color
+      supported_features: 0
+      state: 'on'
+    light.plate03_unselected_background_color:
+      supported_color_modes:
+      - rgb
+      color_mode: rgb
+      brightness: 255
+      hs_color:
+      - 0
+      - 0
+      rgb_color:
+      - 255
+      - 255
+      - 255
+      xy_color:
+      - 0.323
+      - 0.329
+      friendly_name: HASplate - Champagne Room plate03 unselected background color
+      supported_features: 0
+      state: 'on'
+  metadata: {}

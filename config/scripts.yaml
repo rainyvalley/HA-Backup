@@ -1,0 +1,150 @@
+zigbee2mqtt_rename:
+  alias: Zigbee2MQTT Rename
+  sequence:
+    service: mqtt.publish
+    data_template:
+      topic: zigbee2mqtt/bridge/request/device/rename
+      payload_template: "{\n  \"from\": \"{{ states.input_text.zigbee2mqtt_old_name.state
+        | string }}\",\n  \"to\": \"{{ states.input_text.zigbee2mqtt_new_name.state
+        | string }}\"\n}"
+zigbee2mqtt_remove:
+  alias: Zigbee2MQTT Remove
+  sequence:
+    service: mqtt.publish
+    data_template:
+      topic: zigbee2mqtt/bridge/request/device/remove
+      payload_template: "{\n  \"id\": \"{{ states.input_text.zigbee2mqtt_remove.state
+        | string }}\",\n  \"force\": {% if states.input_boolean.zigbee2mqtt_force_remove.state
+        == \"off\" %}false{% else %}true{% endif %}\n}"
+vacuuum_update:
+  alias: Vacuum Update State
+  sequence:
+  - data:
+      command: update
+    action: vacuum.send_command
+    target:
+      entity_id: vacuum.first_floor_vacuum_janet
+  mode: single
+media_play_soups_on_every_pony:
+  alias: Media Play Soups on every pony
+  use_blueprint:
+    path: SirGoodenough/play_media_file_script.yaml
+    input:
+      speaker_target:
+      - media_player.garage_apple_mini
+      - media_player.office_apple_mini_2
+      - media_player.main_bedroom_apple_mini
+      - media_player.bedroom
+      - media_player.living_room
+      - media_player.kitchen
+      - media_player.lenovo_starview
+      file_2_play: https://ha.rosco.cloud/local/soups-on-every-pony.mp3
+      media_type: music
+      announce: true
+  mode: single
+  icon: mdi:music
+goat_bleat:
+  alias: Goat Bleat
+  use_blueprint:
+    path: SirGoodenough/play_media_file_script.yaml
+    input:
+      speaker_target:
+      - media_player.garage_apple_mini
+      - media_player.main_bedroom_apple_mini
+      - media_player.office_apple_mini_2
+      - media_player.bedroom
+      - media_player.kitchen
+      - media_player.living_room
+      - media_player.office
+      - media_player.lenovo_starview
+      file_2_play: https://ha.rosco.cloud/local/goatbleat.mp3
+      media_type: music
+      announce: true
+  mode: single
+  icon: mdi:music
+media_play_dindong:
+  alias: Media Play Dindong
+  use_blueprint:
+    path: SirGoodenough/play_media_file_script.yaml
+    input:
+      speaker_target:
+      - media_player.garage_apple_mini
+      - media_player.office_apple_mini_2
+      - media_player.main_bedroom_apple_mini
+      - media_player.bedroom
+      - media_player.sewing_room
+      - media_player.kitchen
+      - media_player.office
+      file_2_play: https://ha.rosco.cloud/local/doorbell-6.mp3
+      media_type: music
+      announce: true
+  mode: single
+  icon: mdi:music
+'1717446491163':
+  alias: 'Valetudo: Send Vacuum Command'
+  use_blueprint:
+    path: mundschenk-at/valetudo-send-vacuum-command.yaml
+    input:
+      robot: UnripeAncientPig
+'1717446534196':
+  alias: 'Valetudo: Clean Rooms'
+  use_blueprint:
+    path: mundschenk-at/valetudo-clean-rooms.yaml
+    input:
+      send_robot_command: script.1717446491163
+      robot_map_segments: sensor.valetudo_unripeancientpig_map_segments
+announce_living_room:
+  alias: Announce - Living Room
+  use_blueprint:
+    path: balloob/announce-text-to-speech-on-media-player.yaml
+    input:
+      text_to_speech_engine: tts.piper
+      media_player:
+      - media_player.kitchen_apple_mini_2
+      - media_player.lenovo_starview
+      - media_player.main_bedroom_apple_mini
+'1717698223923':
+  alias: 'Valetudo: Trigger Auto-Empty Dock'
+  use_blueprint:
+    path: mundschenk-at/valetudo-trigger-auto-empty-dock.yaml
+    input:
+      send_robot_command: script.1717446491163
+announce_garage:
+  alias: Announce - Garage
+  use_blueprint:
+    path: balloob/announce-text-to-speech-on-media-player.yaml
+    input:
+      text_to_speech_engine: tts.piper
+      media_player:
+      - media_player.garage_apple_mini
+  description: ''
+print_shopping_list:
+  alias: Send Printer Command
+  sequence:
+  - data:
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "message": "Hello, World!"}'
+    action: mqtt.publish
+  mode: single
+officereceiptprinter:
+  sequence:
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      payload: "{\n  \"printer_name\": \"ReceiptPrinter\",\n  \"title\": \"{{ states('input_text.mqtt_title')
+        }}\",\n  \"message\": \"{{ states('input_text.input_text_mqtt_message') }}\"\n}\n"
+      topic: printer/commands
+  alias: OfficeReceiptPrinter
+  description: ''
+announce_main_bedroom:
+  use_blueprint:
+    path: balloob/announce-text-to-speech-on-media-player.yaml
+    input:
+      text_to_speech_engine: tts.piper
+      media_player:
+      - media_player.master_bedroom_sonos_2
+  alias: Announce- Main Bedroom
+  description: ''

@@ -1,0 +1,24 @@
+col_span: '1'
+col_span_lg: '1'
+col_span_xl: '1'
+entities:
+- entity: sensor.node_rosco1_cpu_used
+  name: CPU used
+- entity: sensor.node_rosco1_disk_used_percentage
+  name: Disk used percentage
+- entity: sensor.node_rosco1_memory_free
+  name: Memory free
+- entity: sensor.node_rosco1_memory_used
+  name: Memory used
+- entity: sensor.node_rosco1_memory_used_percentage
+  name: Memory used percentage
+- entity: binary_sensor.node_rosco1_status
+  name: Status
+- entity: sensor.node_rosco1_uptime
+  name: Uptime
+position: top
+row_span: '1'
+row_span_lg: '1'
+row_span_xl: '1'
+title: Node rosco1
+type: entities

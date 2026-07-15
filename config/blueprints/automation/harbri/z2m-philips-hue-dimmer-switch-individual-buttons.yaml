@@ -1,0 +1,95 @@
+blueprint:
+  name: Z2M - Hue Dimmer switch 4 buttons
+  description: 'Use the individual buttons of the Hue Dimmer Switch to control an
+    action by either a click or a long press. '
+  domain: automation
+  input:
+    dimmer:
+      name: Hue Dimmer switch
+      description: Hue Dimmer switch to use (Zigbee2mqtt Action Sensor)
+      selector:
+        entity:
+          domain: sensor
+    button_1:
+      name: On Button - single click
+      description: Action to run on click of On button
+      default: []
+      selector:
+        action: {}
+    button_2:
+      name: Dim Up Button - single click
+      description: Action to run on click of Dim Up button
+      default: []
+      selector:
+        action: {}
+    button_3:
+      name: Dim Down Button - single click
+      description: Action to run on click of Dim Down button
+      default: []
+      selector:
+        action: {}
+    button_4:
+      name: Off Button - single click
+      description: Action to run on click of Off button
+      default: []
+      selector:
+        action: {}
+    button_5:
+      name: On Button - long press
+      description: Action to run on long press of On button
+      default: []
+      selector:
+        action: {}
+    button_6:
+      name: Dim Up Button - long press
+      description: Action to run on long press of Dim Up button
+      default: []
+      selector:
+        action: {}
+    button_7:
+      name: Dim Down Button - long press
+      description: Action to run on long press of Dim Down button
+      default: []
+      selector:
+        action: {}
+    button_8:
+      name: Off Button - long press
+      description: Action to run on long press of Off button
+      default: []
+      selector:
+        action: {}
+  source_url: https://community.home-assistant.io/t/z2m-philips-hue-dimmer-switch-individual-buttons/284788
+mode: restart
+max_exceeded: silent
+trigger:
+- platform: state
+  entity_id: !input 'dimmer'
+  attribute: action
+action:
+- variables:
+    command: '{{ trigger.to_state.state }}'
+- choose:
+  - conditions:
+    - '{{ command == ''on-press'' }}'
+    sequence: !input 'button_1'
+  - conditions:
+    - '{{ command == ''up-press'' }}'
+    sequence: !input 'button_2'
+  - conditions:
+    - '{{ command == ''down-press'' }}'
+    sequence: !input 'button_3'
+  - conditions:
+    - '{{ command == ''off-press'' }}'
+    sequence: !input 'button_4'
+  - conditions:
+    - '{{ command == ''on-hold'' }}'
+    sequence: !input 'button_5'
+  - conditions:
+    - '{{ command == ''up-hold'' }}'
+    sequence: !input 'button_6'
+  - conditions:
+    - '{{ command == ''down-hold'' }}'
+    sequence: !input 'button_7'
+  - conditions:
+    - '{{ command == ''off-hold'' }}'
+    sequence: !input 'button_8'

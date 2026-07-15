@@ -1,0 +1,26 @@
+cards:
+- fields:
+    battery:
+      recommended_target: 80
+      state_of_charge:
+        entity: sensor.2024_ioniq_5_car_battery_level
+      target_state_of_charge:
+        entity: binary_sensor.2024_ioniq_5_ev_battery_charge
+    main:
+      heading:
+        entity: sensor.2024_ioniq_5_ev_range
+  image:
+    max_height: 150
+    src: /local/ionic5.png
+  title: Goat's Ionic 5
+  type: custom:car-card
+- entity: lock.2024_ioniq_5_door_lock
+  type: custom:mushroom-lock-card
+col_span: '2'
+col_span_lg: '2'
+col_span_xl: '1'
+position: top
+row_span: '2'
+row_span_lg: '2'
+row_span_xl: '2'
+type: vertical-stack

@@ -1,0 +1,13 @@
+col_span: '1'
+col_span_lg: '1'
+col_span_xl: '1'
+entity: script.announce_living_room
+position: top
+row_span: '1'
+row_span_lg: '1'
+row_span_xl: '1'
+show_icon: true
+show_name: true
+tap_action:
+  action: more-info
+type: button

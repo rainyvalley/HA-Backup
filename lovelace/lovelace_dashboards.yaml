@@ -1,0 +1,15 @@
+items:
+- icon: mdi:map
+  id: map
+  mode: storage
+  require_admin: false
+  show_in_sidebar: true
+  title: Map
+  url_path: map
+- icon: mdi:view-dashboard
+  id: lovelace
+  mode: storage
+  require_admin: false
+  show_in_sidebar: true
+  title: Overview
+  url_path: lovelace

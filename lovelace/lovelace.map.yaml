@@ -1,0 +1,9 @@
+config:
+  views:
+  - cards:
+    - auto_fit: true
+      show_all: true
+      type: map
+    icon: mdi:map
+    title: Map
+    type: panel

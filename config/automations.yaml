@@ -1,0 +1,3563 @@
+- id: '1621401785787'
+  alias: office lights
+  description: ''
+  use_blueprint:
+    path: kevinxw/state_based_entity_control.yaml
+    input:
+      trigger_entity: light.office_overhead_lights_2
+      trigger_timeout: '0'
+      target_entity: light.office_lamp
+- id: '1621402143791'
+  alias: Champagne Room lights
+  description: ''
+  use_blueprint:
+    path: kevinxw/state_based_entity_control.yaml
+    input:
+      trigger_timeout: '0'
+      target_entity: light.champagne_room_lamp
+      trigger_entity: light.champagne_room_overhead_lights
+- id: '1622672170928'
+  alias: bedroom fan in the morning
+  description: ''
+  use_blueprint:
+    path: EPMatt/on_off_schedule_state_persistence.yaml
+    input:
+      off_time: 09:30:00
+      on_time: '21:30:00'
+      automation_target:
+        entity_id:
+        - fan.master_bedroom_fan
+- id: '1623787323836'
+  alias: Snake Lamps
+  description: ''
+  use_blueprint:
+    path: EPMatt/on_off_schedule_state_persistence.yaml
+    input:
+      off_time: '20:30:00'
+      on_time: 07:00:00
+      trigger_at_homeassistant_startup: true
+      automation_target:
+        entity_id:
+        - light.snake_lights
+- id: '1624164989496'
+  alias: Lights On At Sunset
+  description: ''
+  use_blueprint:
+    path: CyanAutomation/lights_on_at_sunset.yaml
+    input:
+      target_brightness: 100
+      target_light:
+        area_id: outside
+        entity_id: light.h705a_6534
+- id: '1624165106794'
+  alias: lights off at midnight
+  description: ''
+  trigger:
+  - platform: time
+    at: '23:59:00'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 5377c1b544e4b1ba4a5571f687bfb20d
+    entity_id: light.front_outdoor_lights
+    domain: light
+  - type: turn_off
+    device_id: 7fb7a86dc18ccaca2b2f3280ef6bf49c
+    entity_id: light.kitchen_outdoor_light
+    domain: light
+  - type: turn_off
+    device_id: c0c6ea24af8438ffb85c9577102545fc
+    entity_id: light.sliding_door_outdoor_light
+    domain: light
+  mode: single
+- id: '1626670029639'
+  alias: goodmorning automation bedroom
+  description: ''
+  triggers:
+  - at: '11:30:00'
+    trigger: time
+  conditions: []
+  actions:
+  - type: turn_on
+    device_id: 8f657dfea3bc5bcfae5fbca452fd95ea
+    entity_id: c4597730936737e4e0c7bb012af977c0
+    domain: light
+  - type: turn_on
+    device_id: 71c121bff4c455660746c04388c8f9c2
+    entity_id: 9d5ad1b6a996d91a3fc39bb472c30bc6
+    domain: light
+  - type: turn_on
+    device_id: ff192dce01309b3f2ed93b2f816eea98
+    entity_id: 322fbd3d7eb002e95a1973288abbab07
+    domain: light
+    brightness_pct: 40
+  - device_id: 8660a902fe6792c882a9efa9330e41b1
+    domain: light
+    entity_id: 7270f82df64fa1bcc98260b5510cccdc
+    type: brightness_increase
+  - device_id: fc8413229567686a57413227df78f0c0
+    domain: cover
+    entity_id: 101f48d3890dda5f9860e7758452d78a
+    type: open
+  mode: single
+- id: '1630035680590'
+  alias: Turn Garage Fan ON
+  description: when over 68*
+  triggers:
+  - type: temperature
+    device_id: 3d7f5ef04c52ec1fefd2c98eb57ad1d5
+    entity_id: 1c3e8f9d6939b3ced2bd67b7b8edc609
+    domain: sensor
+    trigger: device
+    above: 65
+  conditions: []
+  actions:
+  - type: turn_on
+    device_id: d7105efca6eb657c66f20f86bb8f69d0
+    entity_id: 14bfba51404bee21e3f6963b6188cb2a
+    domain: switch
+  mode: single
+- id: '1630035742940'
+  alias: Turn Garage Fan OFF
+  description: when below 67*
+  triggers:
+  - type: temperature
+    device_id: 3d7f5ef04c52ec1fefd2c98eb57ad1d5
+    entity_id: 1c3e8f9d6939b3ced2bd67b7b8edc609
+    domain: sensor
+    trigger: device
+    below: 60
+  conditions: []
+  actions:
+  - type: turn_off
+    device_id: d7105efca6eb657c66f20f86bb8f69d0
+    entity_id: 14bfba51404bee21e3f6963b6188cb2a
+    domain: switch
+  mode: single
+- id: '1633459130881'
+  alias: Bedroom Button
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: 2ea00fb51d097c7b542fada0e80e919d
+    type: action
+    subtype: single
+    trigger: device
+  - domain: mqtt
+    device_id: b87dff7a296a3a65c8dfcd6c43bc49c3
+    type: action
+    subtype: single
+    trigger: device
+  conditions: []
+  actions:
+  - type: toggle
+    device_id: 830decc930792b20b22851dc9b8b6814
+    entity_id: switch.master_bedroom_fan
+    domain: switch
+  mode: single
+- id: '1633460464458'
+  alias: Bedroom Button- Double Press
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: 2ea00fb51d097c7b542fada0e80e919d
+    type: action
+    subtype: double
+    trigger: device
+  - domain: mqtt
+    device_id: b87dff7a296a3a65c8dfcd6c43bc49c3
+    type: action
+    subtype: double
+    trigger: device
+  conditions: []
+  actions:
+  - type: toggle
+    device_id: 71c121bff4c455660746c04388c8f9c2
+    entity_id: 9d5ad1b6a996d91a3fc39bb472c30bc6
+    domain: light
+  - type: toggle
+    device_id: 8f657dfea3bc5bcfae5fbca452fd95ea
+    entity_id: c4597730936737e4e0c7bb012af977c0
+    domain: light
+  - type: toggle
+    device_id: 8660a902fe6792c882a9efa9330e41b1
+    entity_id: light.plate01_backlight
+    domain: light
+    enabled: false
+  - type: toggle
+    device_id: ff192dce01309b3f2ed93b2f816eea98
+    entity_id: 322fbd3d7eb002e95a1973288abbab07
+    domain: light
+  mode: single
+- id: '1633461570296'
+  alias: Controller Office Volume Remote
+  description: ''
+  use_blueprint:
+    path: EPMatt/ikea_e1744.yaml
+    input:
+      integration: Zigbee2MQTT
+      controller_entity: sensor.office_sonos_remote_action
+      helper_last_controller_event: input_text.office_symfonisk_text_helper
+      controller_device: 10f3ea5685be771d431939b9bd1b5004
+- id: '1633461646569'
+  alias: Hook - Media Player Office
+  description: ''
+  use_blueprint:
+    path: EPMatt/media_player.yaml
+    input:
+      controller_model: IKEA E1744 SYMFONISK Rotary Remote
+      media_player: media_player.office
+      controller_entity: sensor.office_sonos_remote_action
+      controller_device: 10f3ea5685be771d431939b9bd1b5004
+- id: '1633461807161'
+  alias: Controller - Symfonisk Master Bedroom
+  description: ''
+  use_blueprint:
+    path: EPMatt/ikea_e1744.yaml
+    input:
+      integration: Zigbee2MQTT
+      controller_device: 7a9d5667f7419ea2dc703970ba5c7ecb
+      controller_entity: sensor.master_bedroom_sonos_remote_action
+      helper_last_controller_event: input_text.bedroom_symfonisk_text_helper
+- id: '1633461837314'
+  alias: Hook - Master Bedroom Media Player
+  description: ''
+  use_blueprint:
+    path: EPMatt/media_player.yaml
+    input:
+      controller_device: 7a9d5667f7419ea2dc703970ba5c7ecb
+      controller_entity: sensor.master_bedroom_sonos_remote_action
+      controller_model: IKEA E1744 SYMFONISK Rotary Remote
+      media_player: media_player.bedroom
+- id: '1633538537939'
+  alias: Low battery level detection & notification for all battery sensors
+  description: ''
+  use_blueprint:
+    path: sbyx/low-battery-level-detection-notification-for-all-battery-sensors.yaml
+    input:
+      actions:
+        service: notify.notify
+        data:
+          message: The battery of the sensor(s) {{sensors}} is low.
+- id: '1633548606343'
+  alias: Controller - SYMFONISK kitchen
+  description: ''
+  use_blueprint:
+    path: EPMatt/ikea_e1744.yaml
+    input:
+      integration: Zigbee2MQTT
+      controller_device: fb0bc175083896018a19cd0e0dae0087
+      controller_entity: sensor.kitchen_sonos_remote_action
+      helper_last_controller_event: input_text.kitchen_symfonisk_text_helper
+- id: '1633548857475'
+  alias: Hook - kitchen media player
+  description: ''
+  use_blueprint:
+    path: EPMatt/media_player.yaml
+    input:
+      controller_device: fb0bc175083896018a19cd0e0dae0087
+      controller_entity: sensor.kitchen_sonos_remote_action
+      controller_model: IKEA E1744 SYMFONISK Rotary Remote
+      media_player: media_player.master_bedroom_sonos_2
+- id: '1634749467319'
+  alias: garage lights
+  description: ''
+  use_blueprint:
+    path: kevinxw/state_based_entity_control.yaml
+    input:
+      trigger_entity: light.garage_overhead_lights
+      target_entity: light.garage_overhead_lamps
+      trigger_timeout: '0'
+- id: '1636483579001'
+  alias: Notify - Dishwasher completed
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - binary_sensor.dishwasher_wash_completed
+    from: 'off'
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  conditions:
+  - condition: template
+    value_template: "{{ this.attributes.last_triggered is none or\n   (now() - this.attributes.last_triggered).total_seconds()
+      > 43200 }}\n"
+  actions:
+  - data:
+      message: The Dishwasher has completed it's cycle!
+      data:
+        url: /config/devices/device/e8bdabe8f0a10b8a5727f7023cdeb0ed
+        clickAction: /config/devices/device/e8bdabe8f0a10b8a5727f7023cdeb0ed
+    action: notify.notify
+  mode: single
+- id: '1636926623745'
+  alias: Notify - Washer Completed
+  description: ''
+  triggers:
+  - to: 'on'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+    entity_id:
+    - binary_sensor.front_load_washer_wash_completed
+    trigger: state
+  conditions: []
+  actions:
+  - data:
+      message: The Washer is done! Time to swap your load!
+      data:
+        url: /config/devices/device/30c94d8d66de7a86959f8f8598d9e9d0
+        clickAction: /config/devices/device/30c94d8d66de7a86959f8f8598d9e9d0
+    action: notify.notify
+  mode: single
+- id: '1636926685708'
+  alias: Notify - Dryer Completed
+  description: ''
+  triggers:
+  - type: turned_on
+    device_id: 60975a9e3ad9a010c9105bf0ce838c9b
+    entity_id: 40cecd1e7ca2f726882445b3f93e8f07
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - data:
+      message: The Dryer is done! Time to get your clothes c;
+      data:
+        url: /config/devices/device/60975a9e3ad9a010c9105bf0ce838c9b
+        clickAction: /config/devices/device/60975a9e3ad9a010c9105bf0ce838c9b
+    action: notify.notify
+  mode: single
+- id: '1640111695979'
+  alias: HASPone Core functionality-plate01 (Bedroom)
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Core_Functionality.yaml
+    input:
+      page3font_select: 6 - Noto Sans 32
+      haspdevice: 8660a902fe6792c882a9efa9330e41b1
+      page2font_select: 6 - Noto Sans 32
+      page2page: 8
+      reset_hasp: true
+      page2text: Media
+      page1font_select: 6 - Noto Sans 32
+      page3text: Lights
+      page3page: 4
+      page1text: Info
+- id: '1640111994354'
+  alias: HASPone p[8].b[all] Page 8 displays media controls
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Media_Control_page8.yaml
+    input:
+      haspdevice: 8660a902fe6792c882a9efa9330e41b1
+      mediaplayer: media_player.main_bedroom
+- id: '1640112421263'
+  alias: HASPone p[x].b[y] displays a dimmer with a toggle on/off icon-Bedroom Lights
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Dimmer_with_Icon.yaml
+    input:
+      ycen_select: 0 - Top aligned
+      haspdevice: 8660a902fe6792c882a9efa9330e41b1
+      dimmer: light.bedroom_lights
+      text_on: Bedroom Lights
+- id: '1640112476569'
+  alias: HASPone p[x].b[y] displays a dimmer with a toggle on/off icon-Canvas Plate01
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Dimmer_with_Icon.yaml
+    input:
+      ycen_select: 0 - Top aligned
+      haspdevice: 8660a902fe6792c882a9efa9330e41b1
+      haspbutton: 8
+      dimmer: light.nanoleaf
+      text_on: Bedroom Canvas
+- id: '1640112528674'
+  alias: HASPone p[x].b[y] displays a dimmer with a toggle on/off icon Plate01 Master
+    Bathroom
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Dimmer_with_Icon.yaml
+    input:
+      ycen_select: 0 - Top aligned
+      haspdevice: 8660a902fe6792c882a9efa9330e41b1
+      dimmer: light.master_bathroom_light
+      text_on: Bathroom Lights
+      haspbutton: 9
+- id: '1640112696814'
+  alias: HASPone p[x].b[y] displays the month + date with a calendar icon-Plate01
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Calendar_with_Icon.yaml
+    input:
+      haspdevice: 8660a902fe6792c882a9efa9330e41b1
+- id: '1640112770288'
+  alias: HASPone p[x].b[y] displays the current weather condition with icons Plate01
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Weather_Condition_with_Icon.yaml
+    input:
+      haspbutton: 5
+      haspdevice: 8660a902fe6792c882a9efa9330e41b1
+      weather_provider: weather.home
+- id: '1640112872778'
+  alias: HASPone p[x].b[y] displays the current temperature from a weather provider
+    with icon and colors
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Weather_Temperature_with_Icon_and_Colors.yaml
+    input:
+      suffix_select: °
+      haspbutton: 6
+      haspdevice: 8660a902fe6792c882a9efa9330e41b1
+      weather_provider: weather.home
+- id: '1640722534290'
+  alias: HASPone Core functionality-Plate02 (living Room)
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Core_Functionality.yaml
+    input:
+      page3font_select: 6 - Noto Sans 32
+      haspdevice: 8e405d6827bc66f39639eb3e1d2409e9
+      page2font_select: 6 - Noto Sans 32
+      page2page: 8
+      page1font_select: 6 - Noto Sans 32
+      page3page: 4
+      page1text: Status
+      page2text: Media
+      page3text: Lights
+- id: '1640722608617'
+  alias: HASPone p[8].b[all] Page 8 displays media controls- Plate02
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Media_Control_page8.yaml
+    input:
+      haspdevice: 8e405d6827bc66f39639eb3e1d2409e9
+      mediaplayer: media_player.living_room_2
+- id: '1640722772009'
+  alias: HASPone dims the backlight with the sun-plate02
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Dim_Screen_with_Sun.yaml
+    input:
+      brightnight: 30
+      haspdevice: 8e405d6827bc66f39639eb3e1d2409e9
+- id: '1640722963483'
+  alias: HASPone p[x].b[y] displays a toggle button-plate02  (movie night button)
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Toggle.yaml
+    input:
+      ycen_select: 1 - Centered
+      haspdevice: 8e405d6827bc66f39639eb3e1d2409e9
+      haspbutton: 7
+      text_on: Movie Night
+      text_off: Movie Night (Off)
+      action_on:
+      - scene: scene.living_room_movie_time
+      action_off:
+      - scene: scene.living_room_normal_lighting
+      entity: scene.living_room_movie_time
+      xcen_select: 1 - Centered
+      font_select: 6 - Noto Sans 32
+      wrap: true
+- id: '1640723047017'
+  alias: HASPone p[x].b[y] displays a clock-plate02
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Clock.yaml
+    input:
+      ycen_select: 1 - Centered
+      haspdevice: 8e405d6827bc66f39639eb3e1d2409e9
+      ampm: true
+- id: '1640723250752'
+  alias: HASPone p[x].b[y] displays a dimmer with a toggle on/off icon-plate02 (living
+    room lights)
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Dimmer_with_Icon.yaml
+    input:
+      ycen_select: 0 - Top aligned
+      haspdevice: 8e405d6827bc66f39639eb3e1d2409e9
+      dimmer: light.living_room
+      text_on: Living Room Lights
+      wrap: true
+      xcen_select: 1 - Centered
+      font_select: 6 - Noto Sans 32
+- id: '1640723340391'
+  alias: HASPone p[x].b[y] displays a dimmer with a toggle on/off icon-plate02 (hallway
+    lights)
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Dimmer_with_Icon.yaml
+    input:
+      ycen_select: 0 - Top aligned
+      haspdevice: 8e405d6827bc66f39639eb3e1d2409e9
+      dimmer: light.upstairs_hall_lights
+      text_on: Hall Lights
+      haspbutton: 8
+      wrap: true
+- id: '1640723391104'
+  alias: HASPone p[x].b[y] displays a dimmer with a toggle on/off icon-plate02 (Dining
+    Room)
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Dimmer_with_Icon.yaml
+    input:
+      ycen_select: 0 - Top aligned
+      haspdevice: 8e405d6827bc66f39639eb3e1d2409e9
+      dimmer: light.dining_room_lights
+      text_on: Dining Room
+      haspbutton: 9
+- id: '1640723800596'
+  alias: HASPone p[x].b[y] displays the output of a template
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Template.yaml
+    input:
+      ycen_select: 1 - Centered
+      trigger_entity: sensor.living_room_temperature
+      template: 'Forecast: {{state_attr("sensor.living_room_temp_temperature", "Temp")[0].condition|title}}'
+      haspbutton: 5
+      haspdevice: 8e405d6827bc66f39639eb3e1d2409e9
+- id: '1640723913366'
+  alias: HASPone p[x].b[y] displays a toggle button-Plate02 (normal scene)
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Toggle.yaml
+    input:
+      ycen_select: 1 - Centered
+      haspdevice: 8e405d6827bc66f39639eb3e1d2409e9
+      entity: scene.living_room_normal_lighting
+      action_on:
+      - scene: scene.living_room_normal_lighting
+      text_on: Normal Lighting
+      text_off: Normal Lighting (off)
+      wrap: true
+      haspbutton: 6
+      xcen_select: 1 - Centered
+      font_select: 6 - Noto Sans 32
+- id: '1640724166662'
+  alias: HASPone p[x].b[y] displays the state or attribute value of an entity-plate02
+    (temp)
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Entity_State_or_Attribute.yaml
+    input:
+      ycen_select: 1 - Centered
+      haspdevice: 8e405d6827bc66f39639eb3e1d2409e9
+      haspbutton: 5
+      selected_entity: sensor.living_room_temperature
+      suffix: °F
+      xcen_select: 1 - Centered
+      font_select: 8 - Noto Sans 64
+- id: '1640724363024'
+  alias: HASPone p[x].b[y] displays the state or attribute value of an entity-plate01
+    (temp)
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Entity_State_or_Attribute.yaml
+    input:
+      ycen_select: 1 - Centered
+      haspdevice: 8660a902fe6792c882a9efa9330e41b1
+      haspbutton: 7
+      selected_entity: sensor.master_bedroom_temperature
+      suffix: °F
+      wrap: true
+      xcen_select: 1 - Centered
+      font_select: 8 - Noto Sans 64
+- id: '1640996850248'
+  alias: 'sewing room lights '
+  description: ''
+  use_blueprint:
+    path: kevinxw/state_based_entity_control.yaml
+    input:
+      trigger_entity: light.sewing_room_overhead_lights
+      trigger_timeout: '0'
+      target_entity: light.sewing_room_lamp
+- id: '1641073943644'
+  alias: HASPone activates a selected page after a specified period of inactivity-plate01
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Activate_Page_on_Idle.yaml
+    input:
+      haspdevice: 8660a902fe6792c882a9efa9330e41b1
+      idletime: 60
+- id: '1641073985719'
+  alias: HASPone activates a selected page after a specified period of inactivity-plate02
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Activate_Page_on_Idle.yaml
+    input:
+      haspdevice: 8e405d6827bc66f39639eb3e1d2409e9
+      idletime: 60
+- id: '1641241402576'
+  alias: Notify- Ridwell Notification
+  description: ''
+  triggers:
+  - trigger: time
+    at: '16:00:00'
+  conditions:
+  - condition: device
+    type: is_on
+    device_id: 9a34d8d8f307c0b5009ee5121372c626
+    entity_id: 0cb220ac26c4be3ca42a1a09311dafe1
+    domain: switch
+  - condition: template
+    value_template: "          {% set ridwell_date = states('sensor.ridwell_pickup_21_73rd_st_sw')
+      | as_datetime %}\n          {{ ridwell_date.date() == (now() + timedelta(days=1)).date()
+      }}"
+  actions:
+  - data:
+      message: Time to put everything out for Ridwell- They Come Tomorrow!
+      data:
+        url: /admin-dashboards/Home
+        clickAction: /admin-dashboards/Home
+    action: notify.notify
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: '1'
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Ridwell comes tomorrow-put out the bags/recycling"}'
+  mode: parallel
+  max: 10
+- id: '1641241435040'
+  alias: Notify - Trash Notification
+  description: ''
+  triggers:
+  - event: start
+    entity_id: calendar.google_smart_home_reminders
+    trigger: calendar
+  conditions:
+  - condition: template
+    value_template: '{{ ''Trash'' in trigger.calendar_event.summary }}'
+  actions:
+  - data:
+      message: It's almost Trash Day-Make sure all the trash out!
+    action: notify.notify
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "It''s almost Trash Day-Make sure all the trash
+        out!"}'
+      qos: 0
+  mode: parallel
+  max: 10
+- id: '1643167724181'
+  alias: Goat Garage Door- After 8pm 15 minuites Open
+  description: ''
+  trigger:
+  - platform: device
+    device_id: e1016bde48730abf8106d959ba70e426
+    domain: cover
+    entity_id: 9728287668c9e61bb7bcfa595ea543bd
+    type: opened
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  condition:
+  - condition: time
+    after: '20:00:00'
+    before: 06:00:00
+  action:
+  - device_id: e1016bde48730abf8106d959ba70e426
+    domain: cover
+    entity_id: 9728287668c9e61bb7bcfa595ea543bd
+    type: close
+  - service: notify.notify
+    metadata: {}
+    data:
+      message: Closing Goat Door- Open Late
+      data:
+        url: /dwains-dashboard/home#garage
+        clickAction: /dwains-dashboard/home#garage
+  mode: single
+- id: '1643167752581'
+  alias: Notify - Fox Garage Door- After 8pm 15 minuites Open
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 02e5360f017924e69f13a218c7798258
+    domain: cover
+    entity_id: 53a55c245cd87a80d5eea0cc76426be9
+    type: opened
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  condition:
+  - condition: time
+    after: '20:00:00'
+    before: 06:00:00
+  action:
+  - device_id: 02e5360f017924e69f13a218c7798258
+    domain: cover
+    entity_id: 53a55c245cd87a80d5eea0cc76426be9
+    type: close
+  - service: notify.notify
+    metadata: {}
+    data:
+      message: Closing Foxo Door- Open Late
+      data:
+        url: /dwains-dashboard/home#garage
+        clickAction: /dwains-dashboard/home#garage
+  mode: single
+- id: '1643408516827'
+  alias: Notify - Doorbell
+  description: ''
+  triggers:
+  - trigger: event
+    event_type: amcrest
+    event_data:
+      event: CallNoAnswered
+      payload:
+        action: Start
+  conditions: []
+  actions:
+  - data:
+      message: Someone's at the Door!
+      data:
+        entity_id: /lovelace/front-door
+        push:
+          category: camera
+        url: /lovelace/front-door
+        clickAction: /lovelace/front-door
+    action: notify.notify
+  mode: single
+- id: '1643497442578'
+  alias: Notify - Human Behind House
+  description: ''
+  triggers:
+  - entity_id:
+    - image.left_yard_person
+    to: 'on'
+    trigger: state
+  - type: occupied
+    device_id: 4d8784ebde8188fdace79dfe62c2ae5c
+    entity_id: 645610d2e82055d3d0e7db6365f22798
+    domain: binary_sensor
+    trigger: device
+  conditions:
+  - condition: time
+    after: '23:00:00'
+    before: 05:00:00
+  actions:
+  - action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+    metadata: {}
+    data:
+      title: A Person has been identified behind the house
+      data:
+        image: https://ha.rosco.cloud/api/frigate/notifications/{{trigger.payload_json["after"]["data"]["detections"][0]}}/thumbnail.jpg
+        tag: '{{trigger.payload_json["after"]["id"]}}'
+        when: '{{trigger.payload_json["after"]["start_time"]|int}}'
+        entity_id: camera.{{trigger.payload_json["after"]["camera"] | replace("-","_")
+          | lower}}
+  mode: single
+- id: '1644467411931'
+  alias: rollerblind goodmorning 8am bedroom
+  description: ''
+  triggers:
+  - at: '10:00:00'
+    trigger: time
+  conditions:
+  - condition: state
+    entity_id: binary_sensor.workday_sensor
+    state: 'on'
+  actions:
+  - device_id: fc8413229567686a57413227df78f0c0
+    domain: cover
+    entity_id: 101f48d3890dda5f9860e7758452d78a
+    type: open
+  mode: single
+- id: '1644718915303'
+  alias: Living Room Fireplace
+  description: ''
+  use_blueprint:
+    path: kevinxw/state_based_entity_control.yaml
+    input:
+      target_entity: switch.fireplace_switch
+      trigger_timeout: '0'
+      trigger_entity: switch.fireplace
+- id: '1644877102651'
+  alias: Notify - Shots
+  description: ''
+  triggers:
+  - event: start
+    offset: -0:0:0
+    entity_id: calendar.google_smart_home_reminders
+    trigger: calendar
+  conditions:
+  - condition: template
+    value_template: '{{ ''E-Shot'' in trigger.calendar_event.summary }}'
+  actions:
+  - data:
+      message: Time to take your Estrogen shot!
+      title: Shot Day!
+    action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: '2'
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Time for your E-Shot!"}'
+  mode: parallel
+  max: 10
+- id: '1646976173371'
+  alias: bedroom blind’s close At 9
+  description: ''
+  triggers:
+  - at: '21:00:00'
+    trigger: time
+  conditions: []
+  actions:
+  - device_id: fc8413229567686a57413227df78f0c0
+    domain: cover
+    entity_id: 101f48d3890dda5f9860e7758452d78a
+    type: close
+  mode: single
+- id: '1647718586217'
+  alias: Notify - Power Outage
+  description: ''
+  triggers:
+  - type: battery_level
+    device_id: fe535665d1414c24f91c9c1afc234e3d
+    entity_id: 0a4da0cd562a199ef48aa31983f38376
+    domain: sensor
+    trigger: device
+    below: 95
+  conditions: []
+  actions:
+  - data:
+      message: The Garage Power is out-Is All the Power Out?
+    action: notify.notify
+  mode: single
+- id: '1649960984491'
+  alias: Main Bedroom Button- Double Press (before 11am)
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: b87dff7a296a3a65c8dfcd6c43bc49c3
+    type: action
+    subtype: double
+    trigger: device
+  - domain: mqtt
+    device_id: 2ea00fb51d097c7b542fada0e80e919d
+    type: action
+    subtype: double
+    trigger: device
+  conditions:
+  - condition: time
+    before: '11:00:00'
+    after: 03:00:00
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
+    - sun
+  actions:
+  - type: turn_on
+    device_id: 71c121bff4c455660746c04388c8f9c2
+    entity_id: 9d5ad1b6a996d91a3fc39bb472c30bc6
+    domain: light
+  - type: toggle
+    device_id: 8f657dfea3bc5bcfae5fbca452fd95ea
+    entity_id: c4597730936737e4e0c7bb012af977c0
+    domain: light
+  - type: toggle
+    device_id: ff192dce01309b3f2ed93b2f816eea98
+    entity_id: 322fbd3d7eb002e95a1973288abbab07
+    domain: light
+  - device_id: fc8413229567686a57413227df78f0c0
+    domain: cover
+    entity_id: 101f48d3890dda5f9860e7758452d78a
+    type: open
+  mode: single
+- id: '1649961097688'
+  alias: Main Bath Button- Double Press
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: 237529d84839cf9da10dd47e2815220e
+    type: action
+    subtype: double
+    trigger: device
+  conditions: []
+  actions:
+  - type: turn_on
+    device_id: 35b48320a20ab3d5490c41469b4e840c
+    entity_id: light.master_bathroom_light
+    domain: light
+    brightness_pct: 22
+  mode: single
+- id: '1649961159588'
+  alias: Master Bath Button
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: 237529d84839cf9da10dd47e2815220e
+    type: action
+    subtype: single
+    trigger: device
+  conditions: []
+  actions:
+  - type: turn_on
+    device_id: 35b48320a20ab3d5490c41469b4e840c
+    entity_id: light.master_bathroom_light
+    domain: light
+    brightness_pct: 11
+  mode: single
+- id: '1654016280276'
+  alias: Motion Upstairs Hallway On
+  description: 9am-3pm
+  triggers:
+  - type: occupied
+    device_id: b178852c790847fc32d556a9a7f34a17
+    entity_id: 8c7589706b2d211a3c755cdddff0d332
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - choose:
+    - conditions:
+      - condition: time
+        after: 09:30:00
+        before: '15:00:00'
+        weekday:
+        - sat
+        - sun
+      sequence:
+      - type: turn_on
+        device_id: 994b74d87246800effa6bc0d51598b7a
+        entity_id: 37bc26e960d98df31f906832c450338d
+        domain: light
+    - conditions:
+      - condition: time
+        after: 07:30:00
+        before: '15:00:00'
+        weekday:
+        - fri
+        - thu
+        - wed
+        - tue
+        - mon
+      sequence:
+      - type: turn_on
+        device_id: 994b74d87246800effa6bc0d51598b7a
+        entity_id: 37bc26e960d98df31f906832c450338d
+        domain: light
+  mode: single
+- id: '1654016325561'
+  alias: Motion Office Off
+  description: ''
+  trigger:
+  - type: turned_off
+    platform: device
+    device_id: c16305da60d369fa27924488f310b2a7
+    entity_id: aa1a35283a049121223e078ab9e3dfde
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 30
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: c5eff3f2e34b334706a2097b0a0bdabc
+    entity_id: light.office_overhead_lights_2
+    domain: light
+  mode: single
+- id: '1654016386990'
+  alias: Motion Office On
+  description: ''
+  trigger:
+  - type: turned_on
+    platform: device
+    device_id: c16305da60d369fa27924488f310b2a7
+    entity_id: aa1a35283a049121223e078ab9e3dfde
+    domain: binary_sensor
+  condition:
+  - condition: time
+    before: '21:30:00'
+    after: 06:00:00
+    weekday:
+    - sun
+    - sat
+    - fri
+    - thu
+    - wed
+    - tue
+    - mon
+  action:
+  - type: turn_on
+    device_id: c5eff3f2e34b334706a2097b0a0bdabc
+    entity_id: light.office_overhead_lights_2
+    domain: light
+  mode: single
+- id: '1654016449753'
+  alias: 'Motion Upstairs Bathroom Off '
+  description: ''
+  triggers:
+  - type: no_motion
+    device_id: 9c8033da2f15593a1f68fcaef583fbfa
+    entity_id: 75bdf245e6a192bd76fc81d2202cb42f
+    domain: binary_sensor
+    trigger: device
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  conditions: []
+  actions:
+  - type: turn_off
+    device_id: 42f9cdc18b86a5df7df06a01d130d664
+    entity_id: 79df58e7b2dd73a8dad1a1d0b4cfc5fc
+    domain: light
+  mode: single
+- id: '1654016824433'
+  alias: Motion Upstairs Bathroom On
+  description: ''
+  triggers:
+  - type: occupied
+    device_id: 9c8033da2f15593a1f68fcaef583fbfa
+    entity_id: 75bdf245e6a192bd76fc81d2202cb42f
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+    trigger: device
+  conditions:
+  - condition: time
+    before: '21:30:00'
+    after: 07:00:00
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - sat
+    - fri
+    - sun
+  actions:
+  - type: turn_on
+    device_id: 42f9cdc18b86a5df7df06a01d130d664
+    entity_id: light.upstairs_bathroom_light
+    domain: light
+  mode: single
+- id: '1654016926530'
+  alias: 'Motion Upstairs Hallway Off '
+  description: ''
+  trigger:
+  - type: not_occupied
+    platform: device
+    device_id: b178852c790847fc32d556a9a7f34a17
+    entity_id: 8c7589706b2d211a3c755cdddff0d332
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 994b74d87246800effa6bc0d51598b7a
+    entity_id: light.upstairs_hallway_lights
+    domain: light
+  mode: single
+- id: '1654016996498'
+  alias: Motion Sewing Room On
+  description: ''
+  triggers:
+  - type: occupied
+    device_id: e58dcd512a5fab4c273cfa3954366f37
+    entity_id: 2d5fb6a2b669c4a6627f9d7afc03845a
+    domain: binary_sensor
+    trigger: device
+  conditions:
+  - condition: time
+    before: '21:30:00'
+    after: 08:00:00
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
+    - sun
+  actions:
+  - type: turn_on
+    device_id: b81748280b4065e059924d2155a30be6
+    entity_id: light.sewing_room_overhead_lights
+    domain: light
+  mode: single
+- id: '1654017044380'
+  alias: Motion Sewing Room Off
+  description: ''
+  triggers:
+  - type: not_occupied
+    device_id: e58dcd512a5fab4c273cfa3954366f37
+    entity_id: 2d5fb6a2b669c4a6627f9d7afc03845a
+    domain: binary_sensor
+    trigger: device
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  conditions: []
+  actions:
+  - type: turn_off
+    device_id: b81748280b4065e059924d2155a30be6
+    entity_id: light.sewing_room_overhead_lights
+    domain: light
+  mode: single
+- id: '1654017578760'
+  alias: Motion Champagne Room Off
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.champagne_room_motion_2
+    from: 'on'
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: ac30890d27c2eeee461708e0bc957a0e
+    entity_id: light.champagne_room_overhead_lights
+    domain: light
+  mode: single
+- id: '1654017803392'
+  alias: Motion Downstairs Hall Off
+  description: ''
+  trigger:
+  - type: turned_off
+    platform: device
+    device_id: a7dc56b86b040d49f34e697d42e2426b
+    entity_id: dd883b041f3a16508f925b1c05624f36
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 050afc9bc79c098ede6057a49c5d64b6
+    entity_id: light.downstairs_hall_light
+    domain: light
+  mode: single
+- id: '1654017990516'
+  alias: Motion Garage Off
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 3d7f5ef04c52ec1fefd2c98eb57ad1d5
+    entity_id: 420fca52aad8199517aa0909a87ace50
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: ced90cd6ce25f3fe8459076205a536cb
+    entity_id: light.garage_overhead_lights
+    domain: light
+  - type: turn_off
+    device_id: 03f3c118353f03fcdbdfd54719a1f809
+    entity_id: light.garage_lamp_light_2
+    domain: light
+  mode: single
+- id: '1654018068255'
+  alias: Motion Garage On
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 3d7f5ef04c52ec1fefd2c98eb57ad1d5
+    entity_id: 420fca52aad8199517aa0909a87ace50
+    domain: binary_sensor
+  condition:
+  - condition: time
+    before: '21:30:00'
+    after: 08:00:00
+    weekday:
+    - sat
+    - sun
+    - fri
+    - thu
+    - wed
+    - tue
+    - mon
+  action:
+  - type: turn_on
+    device_id: ced90cd6ce25f3fe8459076205a536cb
+    entity_id: light.garage_overhead_lights
+    domain: light
+  - type: turn_on
+    device_id: 03f3c118353f03fcdbdfd54719a1f809
+    entity_id: light.garage_lamp_light_2
+    domain: light
+  mode: single
+- id: '1654018431578'
+  alias: Motion -  Back Camera
+  description: ''
+  triggers:
+  - type: occupied
+    device_id: f252936b56334ae087fef832b981a746
+    entity_id: 695c4d92e0aeaf97cfa0b2156e9824b5
+    domain: binary_sensor
+    trigger: device
+  - type: occupied
+    device_id: 4d8784ebde8188fdace79dfe62c2ae5c
+    entity_id: 645610d2e82055d3d0e7db6365f22798
+    domain: binary_sensor
+    trigger: device
+  - type: occupied
+    device_id: 4d8784ebde8188fdace79dfe62c2ae5c
+    entity_id: cf1aa8487f609174b4e57c804f60c062
+    domain: binary_sensor
+    trigger: device
+  conditions:
+  - condition: sun
+    after: sunset
+    before: sunrise
+    after_offset: '-1'
+  actions:
+  - type: turn_on
+    device_id: 7fb7a86dc18ccaca2b2f3280ef6bf49c
+    entity_id: light.kitchen_outdoor_light
+    domain: light
+    brightness_pct: 100
+  mode: single
+- id: '1654018499555'
+  alias: 'Motion -  Side Camera '
+  description: ''
+  triggers:
+  - type: occupied
+    device_id: a0feb52dfff0f4ab5b9303bebd400c2f
+    entity_id: d6b81920ca428cf4c97a12a52883fda0
+    domain: binary_sensor
+    trigger: device
+  - type: occupied
+    device_id: 32b4b818001f4ddce1e57017c36742cb
+    entity_id: 5e6817d5d6e7d6e4718be6f7de9a9e79
+    domain: binary_sensor
+    trigger: device
+  - type: occupied
+    device_id: 32b4b818001f4ddce1e57017c36742cb
+    entity_id: 4647c0c472136de145e2a034a1c97d46
+    domain: binary_sensor
+    trigger: device
+  - type: occupied
+    device_id: a0feb52dfff0f4ab5b9303bebd400c2f
+    entity_id: 3e8d7c211edd1997139110588130318e
+    domain: binary_sensor
+    trigger: device
+  conditions:
+  - condition: sun
+    before: sunrise
+    after: sunset
+    after_offset: '-1'
+  actions:
+  - type: turn_on
+    device_id: 5377c1b544e4b1ba4a5571f687bfb20d
+    entity_id: light.front_outdoor_lights
+    domain: light
+    brightness_pct: 100
+  mode: single
+- id: '1654018525313'
+  alias: Motion -  Side Camera/front camera  Off
+  description: ''
+  triggers:
+  - type: turned_on
+    device_id: 5377c1b544e4b1ba4a5571f687bfb20d
+    entity_id: light.front_outdoor_lights
+    domain: light
+    for:
+      hours: 0
+      minutes: 7
+      seconds: 0
+    trigger: device
+  conditions:
+  - condition: not
+    conditions:
+    - condition: time
+      after: '18:00:00'
+      before: 00:01:00
+  - type: is_no_motion
+    condition: device
+    device_id: 32b4b818001f4ddce1e57017c36742cb
+    entity_id: 6295aa23e5733fac75cebdfd010b621f
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  - type: is_no_motion
+    condition: device
+    device_id: 7cc026facdc615ca881580942d8ddbc9
+    entity_id: 93029c9f76d5d61f8b62c2848562733b
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  actions:
+  - type: turn_off
+    device_id: 5377c1b544e4b1ba4a5571f687bfb20d
+    entity_id: light.front_outdoor_lights
+    domain: light
+  mode: single
+- id: '1655153928235'
+  alias: Outside Lights Off at sunrise
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: '-1'
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.outside_off
+    metadata: {}
+  mode: single
+- id: '1660926478441'
+  alias: gage lights 2
+  description: ''
+  use_blueprint:
+    path: kevinxw/state_based_entity_control.yaml
+    input:
+      trigger_entity: light.overhead_garage_light_entity
+      target_entity: switch.garage_lamp_light_2
+      trigger_timeout: '0'
+- id: '1667618074518'
+  alias: Master Bath Light Off
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 4c2e3c775d3bc586383fe36fd57fb36d
+    entity_id: binary_sensor.master_bath_lux_motion_occupancy
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 18
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 35b48320a20ab3d5490c41469b4e840c
+    entity_id: light.master_bathroom_light
+    domain: light
+  mode: single
+- id: '1667618263395'
+  alias: Master Bathroom On
+  description: ''
+  triggers:
+  - type: motion
+    device_id: 4c2e3c775d3bc586383fe36fd57fb36d
+    entity_id: binary_sensor.master_bath_lux_motion_occupancy
+    domain: binary_sensor
+    trigger: device
+  conditions:
+  - condition: time
+    before: '20:00:00'
+    after: 09:00:00
+    weekday:
+    - sun
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
+    - sat
+  - type: is_illuminance
+    condition: device
+    device_id: 4c2e3c775d3bc586383fe36fd57fb36d
+    entity_id: sensor.master_bath_lux_motion_illuminance
+    domain: sensor
+    below: 600
+  actions:
+  - type: turn_on
+    device_id: 35b48320a20ab3d5490c41469b4e840c
+    entity_id: light.master_bathroom_light
+    domain: light
+    brightness_pct: 100
+  mode: single
+- id: '1672770149979'
+  alias: Security System Triggered
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 62a7cd114b67941ac59352ed8e482977
+    domain: alarm_control_panel
+    entity_id: alarm_control_panel.wyze_home_monitoring_system
+    type: triggered
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.alarm_going_off
+    metadata: {}
+  - if:
+    - condition: device
+      device_id: 62a7cd114b67941ac59352ed8e482977
+      domain: alarm_control_panel
+      entity_id: alarm_control_panel.wyze_home_monitoring_system
+      type: is_disarmed
+    then:
+    - service: scene.turn_on
+      target:
+        entity_id: scene.alarm_disarmed
+      metadata: {}
+  - if:
+    - condition: device
+      device_id: 62a7cd114b67941ac59352ed8e482977
+      domain: alarm_control_panel
+      entity_id: alarm_control_panel.wyze_home_monitoring_system
+      type: is_triggered
+    then:
+    - service: media_player.play_media
+      target:
+        entity_id: media_player.bedroom
+      data:
+        media_content_id: media-source://media_source/local/faculty_alarm.wav
+        media_content_type: audio/x-wav
+      metadata:
+        title: faculty_alarm.wav
+        thumbnail:
+        media_class: music
+        children_media_class:
+        navigateIds:
+        - {}
+        - media_content_type: app
+          media_content_id: media-source://media_source
+  mode: single
+- id: '1676837299785'
+  alias: Motion - upstairs hallway 2
+  description: 3pm-8:30PM
+  triggers:
+  - type: occupied
+    device_id: b178852c790847fc32d556a9a7f34a17
+    entity_id: 8c7589706b2d211a3c755cdddff0d332
+    domain: binary_sensor
+    trigger: device
+  conditions:
+  - condition: time
+    before: '20:00:00'
+    after: '15:00:00'
+  actions:
+  - type: turn_on
+    device_id: 994b74d87246800effa6bc0d51598b7a
+    entity_id: light.upstairs_hallway_lights
+    domain: light
+    brightness_pct: 100
+  mode: single
+- id: '1676837352819'
+  alias: Motion - Downstairs Hallway
+  description: ''
+  trigger:
+  - type: turned_on
+    platform: device
+    device_id: a7dc56b86b040d49f34e697d42e2426b
+    entity_id: dd883b041f3a16508f925b1c05624f36
+    domain: binary_sensor
+  condition:
+  - condition: time
+    before: '21:30:00'
+    after: 07:30:00
+  action:
+  - type: turn_on
+    device_id: 050afc9bc79c098ede6057a49c5d64b6
+    entity_id: light.downstairs_hall_light
+    domain: light
+  mode: single
+- id: '1676837422660'
+  alias: Motion Kitchen On
+  description: ''
+  triggers:
+  - type: motion
+    device_id: 95fcf5c1969167b88409abb5c89ae5d5
+    entity_id: 7e297a60b4edfb148fb13351445958ea
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - type: turn_on
+    device_id: 328b6b4ee2c61461f56810acdb2e3393
+    entity_id: light.kitchen_overhead_lights
+    domain: light
+  mode: single
+- id: '1676837495105'
+  alias: Motion Kitchen Off
+  description: ''
+  triggers:
+  - type: not_occupied
+    device_id: 95fcf5c1969167b88409abb5c89ae5d5
+    entity_id: 3890c41b06fbf7aac5d3e43444efb737
+    domain: binary_sensor
+    trigger: device
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  conditions: []
+  actions:
+  - type: turn_off
+    device_id: 328b6b4ee2c61461f56810acdb2e3393
+    entity_id: light.kitchen_overhead_lights
+    domain: light
+  mode: single
+- id: '1682707473286'
+  alias: Notify - Garage Freezer Warning
+  description: ''
+  triggers:
+  - type: temperature
+    device_id: 660878bb77ecfeb22c188bd69bd2dd8f
+    entity_id: 906c01f02c3b6741268a929eaa520510
+    domain: sensor
+    trigger: device
+    above: 2
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  conditions: []
+  actions:
+  - data:
+      message: '"The Garage Freezer is above freezing point! Current temperature:
+        {{ states(''sensor.sensor.acurite_986_2f_647_temperature'') }}°F"'
+      data:
+        url: /config/devices/device/0793b3729961568423039a6e0216035e
+        clickAction: /config/devices/device/0793b3729961568423039a6e0216035e
+    action: notify.notify
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: '2'
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "The Garage Freezer is above freezing point! Current
+        temperature: {{ states(''sensor.sensor.acurite_986_2f_647_temperature'') }}°F"}'
+  mode: single
+- id: '1682707498425'
+  alias: Notify - Kitchen freezer
+  description: ''
+  triggers:
+  - type: temperature
+    device_id: 74fedd543a911b553e207d1008520dbd
+    entity_id: ff0e7ec777a929c17ed6f542214f5e57
+    domain: sensor
+    trigger: device
+    above: 32
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  conditions: []
+  actions:
+  - data:
+      data:
+        url: /config/devices/device/4b7ae3beb1d096d5c99593450729f128
+        clickAction: /config/devices/device/4b7ae3beb1d096d5c99593450729f128
+      message: '"The Kitchen Freezer is above freezing point! Current temperature:
+        {{ states(''sensor.ff0e7ec777a929c17ed6f542214f5e57'') }}°F"'
+    action: notify.notify
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: '2'
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "The Kitchen Freezer is above freezing point!
+        Current temperature: {{ states(''sensor.ff0e7ec777a929c17ed6f542214f5e57'')
+        }}°F"}'
+  mode: single
+- id: '1682820053893'
+  alias: Notify foxdoor open
+  description: ''
+  trigger:
+  - platform: device
+    device_id: 02e5360f017924e69f13a218c7798258
+    domain: cover
+    entity_id: 53a55c245cd87a80d5eea0cc76426be9
+    type: opened
+  condition: []
+  action:
+  - service: notify.mobile_app_fox
+    data:
+      message: Garage Fox Door Opend.
+      data:
+        url: /dwains-dashboard/home#garage
+        clickAction: /dwains-dashboard/home#garage
+  - service: notify.mobile_app_medtronic_dp450_5g_pacemaker
+    data:
+      message: Garage Fox Door Opend.
+      data:
+        url: /dwains-dashboard/home#garage
+        clickAction: /dwains-dashboard/home#garage
+  mode: single
+- id: '1682820169552'
+  alias: Notify goatdoor open
+  description: ''
+  triggers:
+  - device_id: e1016bde48730abf8106d959ba70e426
+    domain: cover
+    entity_id: 9728287668c9e61bb7bcfa595ea543bd
+    type: opened
+    trigger: device
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 2
+  conditions: []
+  actions:
+  - data:
+      message: Garage Goat Door Opend.
+    action: notify.mobile_app_fox
+  - data:
+      message: Garage Goat Door Opend.
+      data:
+        url: /dwains-dashboard/home#garage
+        clickAction: /dwains-dashboard/home#garage
+    action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+  mode: single
+- id: '1682820247243'
+  alias: Notify Front Door open
+  description: ''
+  triggers:
+  - type: opened
+    device_id: 7f1a32373a119f23fb5ba81c5d6bd8b1
+    entity_id: ca19e54d04d530139674588ad6dd8e29
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - action: notify.mobile_app_fox
+    metadata: {}
+    data:
+      message: Front Door Opened.
+  - action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+    metadata: {}
+    data:
+      message: Front Door Opened.
+  mode: single
+- id: '1683039053753'
+  alias: Notify - Side Yard Night Notification
+  description: ''
+  triggers:
+  - entity_id:
+    - image.back_yard_person
+    to: 'on'
+    trigger: state
+  - type: occupied
+    device_id: a0feb52dfff0f4ab5b9303bebd400c2f
+    entity_id: d6b81920ca428cf4c97a12a52883fda0
+    domain: binary_sensor
+    trigger: device
+  conditions:
+  - condition: time
+    after: 00:00:00
+    before: 06:00:00
+    weekday:
+    - sat
+    - thu
+    - fri
+    - tue
+    - wed
+    - mon
+    - sun
+  actions:
+  - data:
+      data:
+        url: /dwains-dashboard/home#outside
+        clickAction: /dwains-dashboard/home#outside
+      message: Person Detected in the MarkBark Zone
+    action: notify.notify
+  mode: single
+- id: '1683088991803'
+  alias: Notify- Mail at Mailbox.
+  description: ''
+  triggers:
+  - type: opened
+    device_id: 23314af670cabf521d9bfbe24dd7b123
+    entity_id: 1fd2b89aa7974e0acc58c34ea583baaa
+    domain: binary_sensor
+    trigger: device
+  conditions:
+  - condition: template
+    value_template: '{{ now() - state_attr(''automation.automation_101'', ''last_triggered'')
+      > timedelta(minutes=300) }}'
+  actions:
+  - data:
+      message: The mail has been delivered!
+    action: notify.notify
+  mode: single
+- id: '1683090829109'
+  alias: Notify- Mail has been picked up
+  description: ''
+  triggers:
+  - type: opened
+    device_id: 23314af670cabf521d9bfbe24dd7b123
+    entity_id: 1fd2b89aa7974e0acc58c34ea583baaa
+    domain: binary_sensor
+    trigger: device
+  conditions:
+  - condition: template
+    value_template: '{{ now() - state_attr(''automation.automation_101'', ''last_triggered'')
+      > timedelta(minutes=2) }}'
+  - condition: template
+    value_template: '{{ now() - state_attr(''automation.notify_mail_has_been_picked_up'',
+      ''last_triggered'')> timedelta(minutes=300) }}'
+  actions:
+  - action: notify.notify
+    data: {}
+  mode: single
+- id: '1684431953889'
+  alias: Notify-Outdoor Network Box
+  description: ''
+  triggers:
+  - type: opened
+    device_id: 188136846b6d3fd0935d52342d6ec1a8
+    entity_id: 640389f0a22d9b072d46b99426bd0c91
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - data:
+      message: Who is fucking with my outdoor network box?
+    action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+  mode: single
+- id: '1686839900146'
+  alias: Fire Tablet - On
+  description: ''
+  trigger:
+  - platform: time
+    at: 06:00:00
+  condition: []
+  action:
+  - type: turn_on
+    device_id: c52c667abc1bf1ae59887024d6484dac
+    entity_id: switch.fire_tablet_motion_detection
+    domain: switch
+  mode: single
+- id: '1686839929930'
+  alias: Motion - Fire Tablet Motion Off
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: '-1'
+  condition: []
+  action:
+  - type: turn_off
+    device_id: c52c667abc1bf1ae59887024d6484dac
+    entity_id: switch.fire_tablet_motion_detection
+    domain: switch
+  mode: single
+- id: '1694223210952'
+  alias: Notify - Charlie Litterbox needs litter
+  description: ''
+  triggers:
+  - type: value
+    device_id: 1aaad0c3ee9661ecb86ba54d6490d053
+    entity_id: d7b529e8c77295041fde050fef1d68a1
+    domain: sensor
+    trigger: device
+    below: 1
+  conditions: []
+  actions:
+  - data:
+      message: Charlie's Needs Litter!
+      title: Charlie's Low on Litter
+    action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+  - data:
+      title: Charlie's Low on Litter- Lets put mroe in!
+      message: Charlie needs more litter!
+    action: notify.mobile_app_fox
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Charlies Litterbox needs litter!"}'
+  mode: parallel
+  max: 10
+- id: '1694981679802'
+  alias: HASPone p[x].b[y] displays a clock plate 01 time
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Clock.yaml
+    input:
+      haspdevice: 8660a902fe6792c882a9efa9330e41b1
+      haspbutton: 7
+      ampm: true
+- id: '1695394459158'
+  alias: Notify - Milk has been delivered
+  description: ''
+  triggers:
+  - type: opened
+    device_id: 94d483c518c05b2362dfdd1b61fb4122
+    entity_id: a3dadc3e1b8b2db21f2a48406a5425da
+    domain: binary_sensor
+    trigger: device
+  conditions:
+  - condition: template
+    value_template: '{{ now() - state_attr(''automation.milk_has_been_delivered'',
+      ''last_triggered'') > timedelta(minutes=600) }}'
+  - condition: template
+    value_template: '{{ now().weekday() in [3, 4] }}'
+  actions:
+  - data:
+      message: The Milk has been delivered!
+    action: notify.notify
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: '2'
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "The Milk has been delivered!"}'
+  mode: single
+- id: '1695394538913'
+  alias: Notify - Milk Picked Up
+  description: ''
+  triggers:
+  - type: opened
+    device_id: 94d483c518c05b2362dfdd1b61fb4122
+    entity_id: a3dadc3e1b8b2db21f2a48406a5425da
+    domain: binary_sensor
+    trigger: device
+  conditions:
+  - condition: template
+    value_template: '{{ now() - state_attr(''automation.milk_has_been_delivered'',
+      ''last_triggered'') > timedelta(minutes=2) }}'
+  - condition: template
+    value_template: '{{ now() - state_attr(''automation.milk_picked_up'', ''last_triggered'')>
+      timedelta(minutes=600) }}'
+  - condition: template
+    value_template: '{{ now().weekday() == 4 }}'
+  actions:
+  - data:
+      message: The Milk has been put away.
+    action: notify.notify
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: '2'
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "The Milk has been put away."}'
+  mode: single
+- id: '1696256027444'
+  alias: Notify - Charlie’s water empty
+  description: ''
+  triggers:
+  - type: problem
+    device_id: 971c4490c49d5ec6bb6a797c1e2af611
+    entity_id: 01fc359526b184beb8c0bbd73b4c87fb
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - data:
+      message: 'Charlie''s water bowl needs filling '
+    action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+  - data:
+      message: Charlie's water bowl needs filling
+    action: notify.mobile_app_fox
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Charlie''s out of water!"}'
+  mode: parallel
+  max: 10
+- id: '1696380835236'
+  alias: plate03- core champagne
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Core_Functionality.yaml
+    input:
+      haspdevice: e78870dc17062e0bb26792a0aa873fae
+      page1text: Info
+      page2text: Media
+      page3text: Lights
+      page2page: 8
+      page1page: 3
+      page3page: 5
+- id: '1696380899095'
+  alias: plate03 clock
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Clock.yaml
+    input:
+      haspdevice: e78870dc17062e0bb26792a0aa873fae
+      hasppage: 3
+- id: '1696380926548'
+  alias: plate03-media page
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Media_Control_page8.yaml
+    input:
+      haspdevice: e78870dc17062e0bb26792a0aa873fae
+      mediaplayer: media_player.champagne_room
+- id: '1696381005445'
+  alias: plate03-WLED
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Dimmer_with_Icon.yaml
+    input:
+      haspdevice: e78870dc17062e0bb26792a0aa873fae
+      hasppage: 5
+      dimmer: light.champagne_room_moode_lights_wled
+      text_on: WLED
+- id: '1696381094318'
+  alias: plate03-dark
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Theme_Dark_on_Light.yaml
+    input:
+      haspdevice: e78870dc17062e0bb26792a0aa873fae
+- id: '1696381227469'
+  alias: plate-03 temp
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Entity_State_or_Attribute.yaml
+    input:
+      haspdevice: e78870dc17062e0bb26792a0aa873fae
+      hasppage: 3
+      haspbutton: 5
+      selected_entity: sensor.champagne_room_temperature
+      suffix: °F
+- id: '1696381295016'
+  alias: plate03-lamp
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Dimmer_with_Icon.yaml
+    input:
+      haspdevice: e78870dc17062e0bb26792a0aa873fae
+      hasppage: 5
+      haspbutton: 8
+      dimmer: light.champagne_room_lamp
+      text_on: Lamp
+- id: '1696381348358'
+  alias: plate03-overhead
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Dimmer_with_Icon.yaml
+    input:
+      haspdevice: e78870dc17062e0bb26792a0aa873fae
+      hasppage: 5
+      haspbutton: 9
+      dimmer: light.champagne_room_lamp
+      text_on: Overhead Light (?)
+- id: '1696381805855'
+  alias: plate03-weather
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Display_Weather_Condition_with_Icon.yaml
+    input:
+      haspdevice: e78870dc17062e0bb26792a0aa873fae
+      hasppage: 3
+      haspbutton: 6
+      weather_provider: weather.home
+- id: '1699409392521'
+  alias: Main Bathroom Fan On
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id:
+    - sensor.main_bath_fan_humidity
+    above: 40
+  condition: []
+  action:
+  - type: turn_on
+    device_id: b3fa687cc390071c31637738a65a1d4e
+    entity_id: dc0bbaf14decb3bcd363da7c327f3a2d
+    domain: fan
+  mode: single
+- id: '1699918652607'
+  alias: Downstiars Bath  Fan On
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id:
+    - sensor.humidity_downstairs_humidity_switch_downstairs_humidity
+    above: 40
+  condition: []
+  action:
+  - type: turn_on
+    device_id: b3af5e3d7ce178620b8d4f940edaa219
+    entity_id: 393d2d8c1f0756e6a6c2c90eee550ce9
+    domain: fan
+  mode: single
+- id: '1700229877401'
+  alias: Main bath fan off
+  description: ''
+  triggers:
+  - type: turned_on
+    device_id: b3fa687cc390071c31637738a65a1d4e
+    entity_id: dc0bbaf14decb3bcd363da7c327f3a2d
+    domain: fan
+    trigger: device
+  conditions: []
+  actions:
+  - delay:
+      hours: 0
+      minutes: 30
+      seconds: 0
+  - if:
+    - type: is_humidity
+      condition: device
+      device_id: b3fa687cc390071c31637738a65a1d4e
+      entity_id: 27e7dd211c59d905a2ac7d6781387d5b
+      domain: sensor
+      above: 40
+    then:
+    - wait_for_trigger:
+      - type: humidity
+        device_id: b3fa687cc390071c31637738a65a1d4e
+        entity_id: 27e7dd211c59d905a2ac7d6781387d5b
+        domain: sensor
+        below: 37
+        trigger: device
+      timeout:
+        hours: 1
+        minutes: 0
+        seconds: 0
+        milliseconds: 0
+    - type: turn_off
+      device_id: b3fa687cc390071c31637738a65a1d4e
+      entity_id: dc0bbaf14decb3bcd363da7c327f3a2d
+      domain: fan
+    else:
+    - type: turn_off
+      device_id: b3fa687cc390071c31637738a65a1d4e
+      entity_id: dc0bbaf14decb3bcd363da7c327f3a2d
+      domain: fan
+  mode: single
+- id: '1700871471404'
+  alias: upstairs bath fan on
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id:
+    - sensor.upstairs_bath_motion_humidity
+    above: 40
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 898761392b5f532f81f4217871d5ffd7
+    entity_id: 35d51ff2e520e9178d1802358f358639
+    domain: fan
+  mode: single
+- id: '1700871594059'
+  alias: Upstairs Bath Fan off
+  description: ''
+  trigger:
+  - platform: device
+    type: turned_on
+    device_id: 898761392b5f532f81f4217871d5ffd7
+    entity_id: cc3eff31982f244d749b8f5b2cae72e0
+    domain: switch
+  condition: []
+  action:
+  - delay:
+      hours: 0
+      minutes: 15
+      seconds: 0
+      milliseconds: 0
+  - if:
+    - type: is_humidity
+      condition: device
+      device_id: 898761392b5f532f81f4217871d5ffd7
+      entity_id: 5dffdf0619185760b05492f39d51720e
+      domain: sensor
+      above: 35
+    then:
+    - wait_for_trigger:
+      - type: humidity
+        platform: device
+        device_id: 898761392b5f532f81f4217871d5ffd7
+        entity_id: 5dffdf0619185760b05492f39d51720e
+        domain: sensor
+        below: 34
+      timeout:
+        hours: 1
+        minutes: 0
+        seconds: 0
+        milliseconds: 0
+    - type: turn_off
+      device_id: 898761392b5f532f81f4217871d5ffd7
+      entity_id: 35d51ff2e520e9178d1802358f358639
+      domain: fan
+    else:
+    - type: turn_off
+      device_id: 898761392b5f532f81f4217871d5ffd7
+      entity_id: 35d51ff2e520e9178d1802358f358639
+      domain: fan
+  mode: single
+- id: '1702266297934'
+  alias: Downstairs fan off
+  description: ''
+  triggers:
+  - type: turned_on
+    device_id: b3af5e3d7ce178620b8d4f940edaa219
+    entity_id: 393d2d8c1f0756e6a6c2c90eee550ce9
+    domain: fan
+    trigger: device
+  conditions: []
+  actions:
+  - delay:
+      hours: 0
+      minutes: 15
+      seconds: 0
+      milliseconds: 0
+  - if:
+    - type: is_humidity
+      condition: device
+      device_id: b3af5e3d7ce178620b8d4f940edaa219
+      entity_id: d07f21a4f43e9b01d96d5ee7d7adc689
+      domain: sensor
+      above: 40
+    then:
+    - wait_for_trigger:
+      - type: humidity
+        device_id: b3af5e3d7ce178620b8d4f940edaa219
+        entity_id: d07f21a4f43e9b01d96d5ee7d7adc689
+        domain: sensor
+        below: 35
+        trigger: device
+      timeout:
+        hours: 0
+        minutes: 30
+        seconds: 0
+    - type: turn_off
+      device_id: b3af5e3d7ce178620b8d4f940edaa219
+      entity_id: 7f0878ce7db84a8123c3c2ab44177a0e
+      domain: switch
+    else:
+    - type: turn_off
+      device_id: b3af5e3d7ce178620b8d4f940edaa219
+      entity_id: 7f0878ce7db84a8123c3c2ab44177a0e
+      domain: switch
+  mode: single
+- id: '1703001665293'
+  alias: Living Room Hyperion-On
+  description: ''
+  triggers:
+  - device_id: 34956010d018c84ae94c9e409b0322bd
+    domain: media_player
+    entity_id: 33346904d3112377f3c65c9bad33b862
+    type: turned_on
+    trigger: device
+  conditions: []
+  actions:
+  - action: switch.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: switch.first_led_hardware_instance_component_led_device
+  mode: single
+- id: '1703001711421'
+  alias: Living room Hyperion Off
+  description: ''
+  triggers:
+  - device_id: 34956010d018c84ae94c9e409b0322bd
+    domain: media_player
+    entity_id: 33346904d3112377f3c65c9bad33b862
+    type: turned_off
+    trigger: device
+  conditions: []
+  actions:
+  - action: switch.turn_off
+    metadata: {}
+    data: {}
+    target:
+      entity_id: switch.first_led_hardware_instance_component_led_device
+  mode: single
+- id: '1709410653816'
+  alias: Plate01- HASPlate dim to sun
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Dim_Screen_with_Sun.yaml
+    input:
+      haspdevice: 8660a902fe6792c882a9efa9330e41b1
+      brightnight: 0
+      elevationnight: 12
+      elevationday: 17
+- id: '1709410693355'
+  alias: Hasplate plate03- dim at night
+  description: ''
+  use_blueprint:
+    path: HASwitchPlate/hasp_Dim_Screen_with_Sun.yaml
+    input:
+      haspdevice: e78870dc17062e0bb26792a0aa873fae
+      brightnight: 10
+      elevationnight: 1
+- id: '1709755575054'
+  alias: Notify - Back Gate 15 minutes open
+  description: ''
+  triggers:
+  - type: opened
+    device_id: 6eb3a137e402d1bef46d59d5713e9f72
+    entity_id: 80a5ba5e818a4366b6c685bcc523b5c5
+    domain: binary_sensor
+    trigger: device
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  conditions: []
+  actions:
+  - data:
+      message: The Back Gate Has Been Open for 15 Minutes!
+      data:
+        url: /dwains-dashboard/home#outside
+        clickAction: /dwains-dashboard/home#outside
+    action: notify.notify
+  mode: single
+- id: '1709755612158'
+  alias: Notify - Front gate 15m notification
+  description: ''
+  triggers:
+  - type: opened
+    device_id: 2be83dfba16a138c8a04286635841441
+    entity_id: f22ab6fe53a5624b6df69b10ffee41e1
+    domain: binary_sensor
+    trigger: device
+    for:
+      hours: 0
+      minutes: 15
+      seconds: 0
+  conditions: []
+  actions:
+  - data:
+      message: The Front Gate Has Been Open for 15 Minutes!
+      data:
+        url: /dwains-dashboard/home#entryway
+        clickAction: /dwains-dashboard/home#entryway
+    action: notify.notify
+  mode: single
+- id: '1709755735956'
+  alias: Notify - Front Gate Opened
+  description: ''
+  triggers:
+  - type: opened
+    device_id: 2be83dfba16a138c8a04286635841441
+    entity_id: f22ab6fe53a5624b6df69b10ffee41e1
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - metadata: {}
+    data:
+      message: Front Gate Opened
+      data:
+        url: /dwains-dashboard/home#entryway
+        clickAction: /dwains-dashboard/home#entryway
+    action: notify.notify
+  mode: single
+- id: '1709755765830'
+  alias: Notify - Back Gate Door Opened
+  description: ''
+  triggers:
+  - type: opened
+    device_id: 6eb3a137e402d1bef46d59d5713e9f72
+    entity_id: 80a5ba5e818a4366b6c685bcc523b5c5
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - metadata: {}
+    data:
+      message: Back Gate Opened
+      data:
+        url: /dwains-dashboard/home#outside
+        clickAction: /dwains-dashboard/home#outside
+    action: notify.notify
+  mode: single
+- id: '1711318963275'
+  alias: Notify - Charlies Low on Food
+  description: ''
+  triggers:
+  - type: problem
+    device_id: 4b468c2ef3e5a5b97320bc2e1fa56ea8
+    entity_id: 1f0e2360bb6745db60e33dfa6f3e97b2
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - data:
+      message: Charlie's low on food!
+      data:
+        url: /admin-dashboards/1
+        clickAction: /admin-dashboards/1
+    action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+  - data:
+      message: Charlie's low on food!
+      data:
+        url: /admin-dashboards/1
+        clickAction: /admin-dashboards/1
+    action: notify.mobile_app_fox
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Charlie is low on food!"}'
+  mode: parallel
+  max: 10
+- id: '1711400424137'
+  alias: Fume Hood On
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: 0
+  condition: []
+  action:
+  - type: turn_on
+    device_id: a5b669c8a70b1b42a8b86e4a4a9cd399
+    entity_id: a81abb7caade394966737d5509c42620
+    domain: switch
+  mode: single
+- id: '1711400437303'
+  alias: Fume Hood Off
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunset
+    offset: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: a5b669c8a70b1b42a8b86e4a4a9cd399
+    entity_id: a81abb7caade394966737d5509c42620
+    domain: switch
+  mode: single
+- id: '1711427893239'
+  alias: espsign- armed
+  description: ''
+  trigger:
+  - type: motion
+    platform: device
+    device_id: 3d7f5ef04c52ec1fefd2c98eb57ad1d5
+    entity_id: 420fca52aad8199517aa0909a87ace50
+    domain: binary_sensor
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: device
+        device_id: 62a7cd114b67941ac59352ed8e482977
+        domain: alarm_control_panel
+        entity_id: dea38360202c4e31a2376f4c3654eac8
+        type: is_armed_home
+      sequence:
+      - type: turn_on
+        device_id: 971e63ef8f6275dc9ddcad2cb5907153
+        entity_id: cb6d882a33b1da5476abf0dd5160699a
+        domain: switch
+      - type: turn_off
+        device_id: 971e63ef8f6275dc9ddcad2cb5907153
+        entity_id: 79a6469fb0ca33a6069220965a1895d9
+        domain: switch
+    - conditions:
+      - condition: device
+        device_id: 62a7cd114b67941ac59352ed8e482977
+        domain: alarm_control_panel
+        entity_id: dea38360202c4e31a2376f4c3654eac8
+        type: is_disarmed
+      sequence:
+      - type: turn_off
+        device_id: 971e63ef8f6275dc9ddcad2cb5907153
+        entity_id: cb6d882a33b1da5476abf0dd5160699a
+        domain: switch
+      - type: turn_on
+        device_id: 971e63ef8f6275dc9ddcad2cb5907153
+        entity_id: 79a6469fb0ca33a6069220965a1895d9
+        domain: switch
+    - conditions:
+      - condition: device
+        device_id: 62a7cd114b67941ac59352ed8e482977
+        domain: alarm_control_panel
+        entity_id: dea38360202c4e31a2376f4c3654eac8
+        type: is_armed_away
+      sequence:
+      - type: turn_on
+        device_id: 971e63ef8f6275dc9ddcad2cb5907153
+        entity_id: cb6d882a33b1da5476abf0dd5160699a
+        domain: switch
+  mode: single
+- id: '1711428891833'
+  alias: espsign - turn off
+  description: ''
+  trigger:
+  - type: no_motion
+    platform: device
+    device_id: 3d7f5ef04c52ec1fefd2c98eb57ad1d5
+    entity_id: 420fca52aad8199517aa0909a87ace50
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 971e63ef8f6275dc9ddcad2cb5907153
+    entity_id: cb6d882a33b1da5476abf0dd5160699a
+    domain: switch
+  - type: turn_off
+    device_id: 971e63ef8f6275dc9ddcad2cb5907153
+    entity_id: 79a6469fb0ca33a6069220965a1895d9
+    domain: switch
+  mode: single
+- id: '1712155746581'
+  alias: Notify - baron low on food
+  description: ''
+  triggers:
+  - type: problem
+    device_id: 62fe8f8d7f83672c8ade9716515f0e9c
+    entity_id: cf53bbf9e68791d890a24f301eff40e4
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - data:
+      message: Baron's low on food!
+      data:
+        url: /admin-dashboards/1
+        clickAction: /admin-dashboards/1
+    action: notify.notify
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Barons out of Food!"}'
+  mode: parallel
+  max: 10
+- id: '1715093838529'
+  alias: Janet - State refresh
+  description: ''
+  use_blueprint:
+    path: Noblewolf/robot-vacuum-auto-status-update-wyze-robot-vac.yaml
+    input:
+      vacuum_name: vacuum.first_floor_vacuum_janet
+      refresh_when_docked: true
+- id: '1715203800757'
+  alias: notify- timmothy vacuum stuck
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.valetudo_unripeancientpig_error
+    from: No error
+    to: Robot stuck or trapped
+  condition: []
+  action:
+  - service: notify.notify
+    data:
+      message: Uh Oh! Timmy 2 Tron is stuck or Trapped- Please check Home Assitant
+      data:
+        url: /admin-dashboards/Home
+        clickAction: /admin-dashboards/Home
+  mode: single
+- id: '1717040667654'
+  alias: Goat charger on
+  description: ''
+  trigger:
+  - platform: device
+    domain: mqtt
+    device_id: a31654a707b0de5de0d709f118cf5e66
+    type: action
+    subtype: single
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 6fec94a3485d6585c5715434e6ff89ef
+    entity_id: 513a4d835480dca893d43884322ba679
+    domain: switch
+  mode: single
+- id: '1718026821080'
+  alias: Notify- EV Charger Offline
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - switch.goat_ev_charger
+    to: unknown
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  condition: []
+  action:
+  - service: notify.notify
+    data:
+      message: Uh Oh! The EV Charger is offline.
+      data:
+        url: /config/devices/device/6fec94a3485d6585c5715434e6ff89ef
+        clickAction: /config/devices/device/6fec94a3485d6585c5715434e6ff89ef
+  mode: single
+- id: '1721053001170'
+  alias: TG Notify and Start Timothy
+  description: ''
+  triggers:
+  - event: start
+    offset: -0:0:0
+    entity_id: calendar.google_smart_home_reminders
+    trigger: calendar
+  conditions:
+  - condition: template
+    value_template: '{{ ''Vacuum'' in trigger.calendar_event.summary }}'
+  actions:
+  - choose:
+    - conditions:
+      - condition: state
+        entity_id: vacuum.valetudo_unripeancientpig
+        state:
+        - unavailable
+        - unknown
+      sequence:
+      - action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+        data:
+          message: Timothy Offline-Vacuum not working?
+      - action: mqtt.publish
+        metadata: {}
+        data:
+          evaluate_payload: false
+          qos: 0
+          retain: false
+          topic: printer/commands
+          payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+            %H:%M:%S'') }}", "message": "Timothy is Offline-Go Check on him?"}'
+    - conditions:
+      - condition: not
+        conditions:
+        - condition: state
+          entity_id: vacuum.valetudo_unripeancientpig
+          state:
+          - unavailable
+          - unknown
+      sequence:
+      - device_id: e4ca49c3b62eaead4baa695efc7e582d
+        domain: vacuum
+        entity_id: 094995ac55eb890143da4d41728aa52b
+        type: clean
+      - action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+        data:
+          message: Timothy is starting to Vacuum Upstairs
+  mode: parallel
+  max: 10
+- id: '1721053740813'
+  alias: Notify Warning- C02 Levels
+  description: ''
+  triggers:
+  - entity_id:
+    - sensor.c02_monitor_mh_z19_co2_value
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+    above: 1500
+    trigger: numeric_state
+  conditions: []
+  actions:
+  - metadata: {}
+    data:
+      message: Warning! Current C02 Levels at {{ states ('sensor.c02_monitor_mh_z19_co2_value')
+        }} PPM
+    action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Warning! Current C02 Levels at {{ states (''sensor.c02_monitor_mh_z19_co2_value'')
+        }} PPM"}'
+  mode: single
+- id: '1721874638982'
+  alias: Dining Room Indicator On
+  description: ''
+  triggers:
+  - device_id: 62a7cd114b67941ac59352ed8e482977
+    domain: alarm_control_panel
+    entity_id: dea38360202c4e31a2376f4c3654eac8
+    type: armed_home
+    trigger: device
+  - device_id: 62a7cd114b67941ac59352ed8e482977
+    domain: alarm_control_panel
+    entity_id: dea38360202c4e31a2376f4c3654eac8
+    type: armed_away
+    trigger: device
+  - device_id: 62a7cd114b67941ac59352ed8e482977
+    domain: alarm_control_panel
+    entity_id: dea38360202c4e31a2376f4c3654eac8
+    type: arming
+    trigger: device
+  conditions: []
+  actions:
+  - type: turn_on
+    device_id: d2c4b8729e28bd4ea7fbd5294fcc4420
+    entity_id: bd46966d0716220bb06c28d64f5e9385
+    domain: light
+  - type: turn_on
+    device_id: fdce9f0341a3b3d5594bb4bd47dbedab
+    entity_id: 14af8b7957fc32b3f4e5c79316c87a29
+    domain: light
+  mode: single
+- id: '1721874662371'
+  alias: Dining Room Indicator Off
+  description: ''
+  triggers:
+  - device_id: 62a7cd114b67941ac59352ed8e482977
+    domain: alarm_control_panel
+    entity_id: dea38360202c4e31a2376f4c3654eac8
+    type: disarmed
+    trigger: device
+  conditions: []
+  actions:
+  - type: turn_off
+    device_id: d2c4b8729e28bd4ea7fbd5294fcc4420
+    entity_id: bd46966d0716220bb06c28d64f5e9385
+    domain: light
+  - type: turn_off
+    device_id: fdce9f0341a3b3d5594bb4bd47dbedab
+    entity_id: 14af8b7957fc32b3f4e5c79316c87a29
+    domain: light
+  mode: single
+- id: '1728320703368'
+  alias: Announce- Someones at the front door
+  description: ''
+  triggers:
+  - type: opened
+    device_id: 7f1a32373a119f23fb5ba81c5d6bd8b1
+    entity_id: ca19e54d04d530139674588ad6dd8e29
+    domain: binary_sensor
+    trigger: device
+  - type: value
+    device_id: 01dcadd70daf0c999962315b1ed276ba
+    entity_id: ed2cbf5fcfd54aeaebc8aa7c9d5a5c4a
+    domain: sensor
+    trigger: device
+    above: 1
+  conditions: []
+  actions:
+  - action: script.announce_garage
+    metadata: {}
+    data:
+      message: Someone's at the front door.
+  mode: single
+- id: '1735589861019'
+  alias: recycling day notification
+  description: ''
+  triggers:
+  - event: start
+    entity_id: calendar.google_smart_home_reminders
+    trigger: calendar
+  conditions:
+  - condition: template
+    value_template: '{{ ''Recycling'' in trigger.calendar_event.summary }}'
+  actions:
+  - data:
+      message: It's almost Recycling Day. Make sure all the recyling out!
+    action: notify.notify
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "It''s almost Recycling Day. Make sure all the
+        recyling out!"}'
+      qos: 0
+  mode: parallel
+  max: 10
+- id: '1736659176394'
+  alias: Notify-water leak
+  description: ''
+  triggers:
+  - type: moist
+    device_id: 8aa77cff7b5f39d46c55d20b903890d6
+    entity_id: 243c180aea6ee0704dc4f464b86c3cfd
+    domain: binary_sensor
+    trigger: device
+  - type: moist
+    device_id: 38ed1d6ae3d7563b69abd9409be8ac9f
+    entity_id: 216e2ebbafc9b659bc367cca7add7e3c
+    domain: binary_sensor
+    trigger: device
+  - type: moist
+    device_id: dbe2a4aa22a214e845eb7f3995656b29
+    entity_id: 22cea9239df7ea844c40f94a12278600
+    domain: binary_sensor
+    trigger: device
+  - type: moist
+    device_id: 4b2c8ff9e989bbec854f1e032c0da39a
+    entity_id: 6d87aefc06ceaf3c95f7068ffca29243
+    domain: binary_sensor
+    trigger: device
+  - type: moist
+    device_id: 1914950821045adbfa7d1b4249c8585d
+    entity_id: 6ad575d4410b45834c8e082486f566da
+    domain: binary_sensor
+    trigger: device
+  - type: moist
+    device_id: 03839a36f052ab44beb21451700c9536
+    entity_id: 7f933d2dcd39f5ca01b5f44da9a09d9b
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+    metadata: {}
+    data:
+      message: Water Leak at {{ trigger.to_state.name }}
+      title: Water Leak!
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Water Leak Detected!"}'
+  mode: single
+- id: '1739650812644'
+  alias: Notify- Shed Motion Detected
+  description: ''
+  triggers:
+  - type: occupied
+    device_id: 4796ca3fabd9131ad93c2eda953ade1f
+    entity_id: 17fa6fcbca437590a4f4416360bdc18c
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - metadata: {}
+    data:
+      data:
+        url: /dwains-dashboard/home#entryway
+        clickAction: /dwains-dashboard/home#entryway
+      message: Shed Motion Detected
+    action: notify.notify
+  mode: single
+- id: '1742396769931'
+  alias: Notify- Kettle Ready
+  description: ''
+  triggers:
+  - type: temperature
+    device_id: 36521c158abdfd67178f35a90ce1060b
+    entity_id: 8677512bdf5c56c12d4059320d3f8bac
+    domain: sensor
+    trigger: device
+    above: 175
+  conditions: []
+  actions:
+  - action: notify.homechat
+    metadata: {}
+    data:
+      message: The Kettle is ready!
+  mode: parallel
+  max: 10
+- id: '1742857666836'
+  alias: Champagne Room- Lights on
+  description: ''
+  triggers:
+  - trigger: time
+    at: '10:00:00'
+  conditions: []
+  actions:
+  - action: scene.turn_on
+    metadata: {}
+    data: {}
+    target:
+      entity_id: scene.champagne_room_morning
+  mode: single
+- id: '1742857766790'
+  alias: Champagne Room - Lights off at 10
+  description: ''
+  triggers:
+  - trigger: time
+    at: '22:00:00'
+  conditions: []
+  actions:
+  - type: turn_off
+    device_id: bd94162a3d470fdeb04541744c981496
+    entity_id: 38cb8a16c6683b50a38ba379628612b3
+    domain: light
+  - type: turn_off
+    device_id: 7e8ad75da61559fea27f311c1b7a76f1
+    entity_id: 1428850154fb3d998ada16ceff593779
+    domain: light
+  - type: turn_off
+    device_id: ac30890d27c2eeee461708e0bc957a0e
+    entity_id: 6bb2f98c839853e753fc09651bd34fd4
+    domain: light
+  - choose:
+    - conditions:
+      - type: is_not_occupied
+        condition: device
+        device_id: 696c8c9ee4e3eed86ac2a9f3c73f8d55
+        entity_id: 9f5c3cb1d386dcfd0df1e57a86a9d646
+        domain: binary_sensor
+        for:
+          hours: 0
+          minutes: 15
+          seconds: 0
+      sequence:
+      - type: turn_off
+        device_id: 7e8ad75da61559fea27f311c1b7a76f1
+        entity_id: 1428850154fb3d998ada16ceff593779
+        domain: light
+      - type: turn_off
+        device_id: ac30890d27c2eeee461708e0bc957a0e
+        entity_id: 6bb2f98c839853e753fc09651bd34fd4
+        domain: light
+      - type: turn_off
+        device_id: bd94162a3d470fdeb04541744c981496
+        entity_id: 38cb8a16c6683b50a38ba379628612b3
+        domain: light
+    - conditions:
+      - type: is_occupied
+        condition: device
+        device_id: 696c8c9ee4e3eed86ac2a9f3c73f8d55
+        entity_id: 9f5c3cb1d386dcfd0df1e57a86a9d646
+        domain: binary_sensor
+      sequence:
+      - delay:
+          hours: 1
+          minutes: 0
+          seconds: 0
+          milliseconds: 0
+      - type: turn_off
+        device_id: ac30890d27c2eeee461708e0bc957a0e
+        entity_id: 6bb2f98c839853e753fc09651bd34fd4
+        domain: light
+      - type: turn_off
+        device_id: 7e8ad75da61559fea27f311c1b7a76f1
+        entity_id: 1428850154fb3d998ada16ceff593779
+        domain: light
+      - type: turn_off
+        device_id: ac30890d27c2eeee461708e0bc957a0e
+        entity_id: 6bb2f98c839853e753fc09651bd34fd4
+        domain: light
+  mode: single
+- id: '1747752110205'
+  alias: Notify - Front Loader Washer Tub needs cleaning
+  description: ''
+  triggers:
+  - trigger: time
+    at: '17:30:00'
+  conditions:
+  - condition: numeric_state
+    entity_id: sensor.front_load_washer_tub_clean_counter
+    above: 35
+  actions:
+  - action: notify.notify
+    metadata: {}
+    data:
+      message: Please put a tide tub clean packet in the washer, rotate the knot to
+        "Tub Clean" and start the washer to reset the counter.
+      title: The Front Load Washer Needs a Tub Clean!
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "The LG-Washer needs to have it''s tub cleaned"}'
+  mode: single
+- id: '1748583582463'
+  alias: Voron E-STOP
+  description: ''
+  triggers:
+  - type: not_opened
+    device_id: 3fd8a7673dd84d8b4f4929745cc31b19
+    entity_id: dff09f8a16b95a12b364fe1641b410d2
+    domain: binary_sensor
+    trigger: device
+    for:
+      hours: 0
+      minutes: 2
+      seconds: 0
+  conditions: []
+  actions:
+  - action: button.press
+    metadata: {}
+    data: {}
+    target:
+      entity_id: button.voronklipper_emergency_stop
+  mode: single
+- id: '1749648425343'
+  alias: Notify- Check into Ridwell for the upcoming week
+  description: ''
+  triggers:
+  - trigger: time
+    at: '16:00:00'
+  conditions:
+  - condition: device
+    type: is_off
+    device_id: 9a34d8d8f307c0b5009ee5121372c626
+    entity_id: 0cb220ac26c4be3ca42a1a09311dafe1
+    domain: switch
+  - condition: template
+    value_template: "          {% set ridwell_date = states('sensor.ridwell_pickup_21_73rd_st_sw')
+      | as_datetime %}\n          {{ ridwell_date.date() == (now() + timedelta(days=4)).date()
+      }}"
+  actions:
+  - data:
+      message: Do we need them to come this upcomming week?
+      data:
+        url: /admin-dashboards/Home
+        clickAction: /admin-dashboards/Home
+      title: It's time to Opt-In to Ridwell!
+    action: notify.notify
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Mark Yes to get Ridwell! Currently Disabled"}'
+      qos: 0
+  mode: parallel
+  max: 10
+- id: '1750301863731'
+  alias: Bleat mergency
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: 47d205ca35d594e0e6f6297f1352e00c
+    type: action
+    subtype: 'on'
+    trigger: device
+  conditions: []
+  actions:
+  - action: script.goat_bleat
+    metadata: {}
+    data: {}
+  mode: single
+- id: '1751832085002'
+  alias: Notify- Power Outage
+  description: ''
+  triggers:
+  - type: battery_level
+    device_id: 41529c51c4f2be4c7c8f7ff07f97fd7e
+    entity_id: e4a619761e6ebdfe40adfef81160eb2e
+    domain: sensor
+    trigger: device
+    below: 95
+  conditions: []
+  actions:
+  - action: notify.notify
+    metadata: {}
+    data:
+      message: 'Help! The power may be out in either the garage/whole home! D:'
+  mode: single
+- id: '1757356801436'
+  alias: Notify- T Shot
+  description: ''
+  triggers:
+  - event: start
+    offset: -0:0:0
+    entity_id: calendar.google_smart_home_reminders
+    trigger: calendar
+  conditions:
+  - condition: template
+    value_template: '{{ ''T-Shot'' in trigger.calendar_event.summary }}'
+  actions:
+  - data:
+      message: Time to take your Testosterone shot!
+      title: Shot Day!
+    action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Time for your T-Shot!"}'
+      qos: 0
+  mode: parallel
+  max: 10
+- id: '1759978436228'
+  alias: Notify-Charlie Litter Full (new)
+  description: ''
+  triggers:
+  - type: problem
+    device_id: 1aaad0c3ee9661ecb86ba54d6490d053
+    entity_id: 5dc3ed0822a8b25c77284df3cf12bdbf
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - data:
+      message: Time to Empty Charlie's Littlerbox!
+      title: Litterbox full
+    action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+  - data:
+      message: Time to Empty Charlie's Littlerbox!
+      title: Charlie’s litterbox is full
+    action: notify.mobile_app_fox
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Charlie''s litter box is full"}'
+  mode: parallel
+  max: 10
+- id: '1759978545883'
+  alias: Notify- Barons Water Bowl needs filling
+  description: ''
+  triggers:
+  - type: problem
+    device_id: 694a2903aa7e3b4067b698e8a539f6d3
+    entity_id: 45c7e473f28678be339f632585d4232e
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - data:
+      message: 'Baron''s water bowl needs filling '
+    action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+  - data:
+      message: Baron's water bowl needs filling
+    action: notify.mobile_app_fox
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Barons out of water!"}'
+  mode: parallel
+  max: 10
+- id: '1759978577547'
+  alias: Notify- Baron's Water Filter needs replacing
+  description: ''
+  triggers:
+  - type: value
+    device_id: 694a2903aa7e3b4067b698e8a539f6d3
+    entity_id: 5a24b6915991ed04eb8c698782343023
+    domain: sensor
+    trigger: device
+    below: 10
+  conditions: []
+  actions:
+  - data:
+      message: Baron's water filter needs replacing!
+    action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+  - data:
+      message: Baron's water filter needs replacing!
+    action: notify.mobile_app_fox
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Baron needs to replace the filter"}'
+  mode: parallel
+  max: 10
+- id: '1759978610974'
+  alias: Notify - Charlie Water Dish Filter Change
+  description: ''
+  triggers:
+  - type: problem
+    device_id: 971c4490c49d5ec6bb6a797c1e2af611
+    entity_id: 30ee0b3a65fed255880b40c0ffcc2ce0
+    domain: binary_sensor
+    trigger: device
+  conditions: []
+  actions:
+  - data:
+      message: Charlie's water filter needs replacing!
+    action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+  - data:
+      message: Charlie's water filter needs replacing!
+    action: notify.mobile_app_fox
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Replace the water filter for charlie plz"}'
+  mode: parallel
+  max: 10
+- id: '1763337624891'
+  alias: HL2 Sign On
+  description: ''
+  use_blueprint:
+    path: kevinxw/state_based_entity_control.yaml
+    input:
+      trigger_entity: light.office_overhead_lights_2
+      trigger_timeout: '0'
+      target_entity: light.hl2sign_half_life_2_rgb_light
+- id: '1763422385654'
+  alias: SecurityTV On
+  description: ''
+  triggers:
+  - trigger: time
+    at: 05:00:00
+  conditions: []
+  actions:
+  - type: turn_on
+    device_id: ef200391ee5be8622844668c58a52d12
+    entity_id: c5e018c736470f68805326032aec744d
+    domain: switch
+  mode: single
+- id: '1763422407248'
+  alias: Security TV - Off
+  description: ''
+  triggers:
+  - trigger: time
+    at: 00:00:00
+  conditions: []
+  actions:
+  - type: turn_off
+    device_id: ef200391ee5be8622844668c58a52d12
+    entity_id: c5e018c736470f68805326032aec744d
+    domain: switch
+  mode: single
+- id: '1763501403514'
+  alias: Notify- Uptime Kuma- System Down
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - sensor.esphome_status
+    - sensor.audiobookshelf_status
+    - sensor.adguard_status
+    - sensor.authentik_status
+    - sensor.bazarr_status
+    - sensor.frigate_status_2
+    - sensor.grapfana_status
+    - sensor.heimendall_status
+    - sensor.homebridge_status
+    - sensor.huntarr_status
+    - sensor.hyperion_status
+    - sensor.jellyfin_status
+    - sensor.jellystat_status
+    - sensor.kiwix_status
+    - sensor.label_printer_print_server_status
+    - sensor.lidarr_status
+    - sensor.mariadb_status
+    - sensor.mcs_manager_status
+    - sensor.nginx_proxy_manager_status
+    - sensor.obico_status
+    - sensor.ombi_status
+    - sensor.openwebui_status
+    - sensor.plex_status
+    - sensor.prowlarr_status
+    - sensor.proxmox_backup_server_status
+    - sensor.proxmox_datacenter_manager_status
+    - sensor.qbittorrent_status
+    - sensor.radarr_status
+    - sensor.scrypted_status
+    - sensor.synology_status
+    - sensor.tar1090_status
+    - sensor.tautulli_status
+    - sensor.unmanic_status
+    - sensor.wireguard_status
+    - sensor.zigbee2mqtt_status
+    - sensor.subgen_status
+    for:
+      hours: 0
+      minutes: 45
+      seconds: 0
+    to:
+    - down
+  conditions: []
+  actions:
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "{{ state_attr(trigger.entity_id, ''friendly_name'')
+        }} is currently Down"}'
+  mode: single
+- id: '1763673963291'
+  alias: Water Plant Receipt Printer Automation
+  description: ''
+  triggers:
+  - at: 06:00:00
+    trigger: time
+    weekday:
+    - fri
+  conditions:
+  - condition: template
+    value_template: "{% set problematic_plants = states.plant | selectattr('state',
+      'eq', 'problem') | list %}\n      {{ problematic_plants | length > 0 }}"
+  actions:
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: "{\n          \"printer_name\": \"ReceiptPrinter\",\n          \"title\":
+        \"{{ now().strftime('%Y-%m-%d %H:%M:%S') }}\",\n          \"message\": \n
+        \           {% set problematic_plants = states.plant | selectattr('state',
+        'eq', 'problem') | list %}\n            {% if problematic_plants | length
+        > 0 %}\n              \"Plants in problem status: \n              {% for plant
+        in problematic_plants %}\n                {{ plant.name }} ({{ plant.entity_id
+        }}){% if not loop.last %}, {% endif %}\n              {% endfor %}\"\n            {%
+        else %}\n              \"All plants are healthy.\"\n            {% endif %}\n
+        \       }"
+  mode: single
+- id: '1765070006155'
+  alias: notify issue with vacuum
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - sensor.valetudo_unripeancientpig_error
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+    from:
+    - no error
+  conditions: []
+  actions:
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "{{ state_attr(trigger.entity_id, ''friendly_name'')
+        }} is currently {{ trigger.to_state.state }}"}'
+  mode: single
+- id: '1765242951808'
+  alias: Notify-Baron Food Needs Filling
+  description: ''
+  triggers:
+  - type: problem
+    device_id: 62fe8f8d7f83672c8ade9716515f0e9c
+    entity_id: cf53bbf9e68791d890a24f301eff40e4
+    domain: binary_sensor
+    trigger: device
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  conditions: []
+  actions:
+  - data:
+      message: 'Baron''s food bin needs filling '
+    action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+  - data:
+      message: 'Baron''s food bin needs filling '
+    action: notify.mobile_app_fox
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Baron''s food bin needs filling"}'
+  mode: parallel
+  max: 10
+- id: '1765243989480'
+  alias: Notify- Snake Cages Need Water
+  description: ''
+  triggers:
+  - trigger: numeric_state
+    entity_id:
+    - sensor.office_depth_sensor_full
+    below: 10
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  conditions: []
+  actions:
+  - data:
+      message: The Snake Cages need more water
+    action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+  - data:
+      message: The Snake Cages need more water
+    action: notify.mobile_app_fox
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "The Snake Cages need more water"}'
+  mode: parallel
+  max: 10
+- id: '1771971403129'
+  alias: Dogs toothbrush AM
+  description: ''
+  triggers:
+  - trigger: time
+    at: 06:05:00
+    weekday:
+    - mon
+    - tue
+    - wed
+  - trigger: time
+    at: 07:00:00
+    weekday:
+    - thu
+    - fri
+  - trigger: time
+    at: '10:30:00'
+    weekday:
+    - sat
+    - sun
+  conditions:
+  - condition: state
+    entity_id: sensor.smart_series_6000_99ec
+    state:
+    - idle
+    for:
+      hours: 1
+      minutes: 20
+      seconds: 0
+  - condition: zone
+    entity_id: person.rosco
+    zone: zone.home
+  actions:
+  - data:
+      message: Dont forget to brush your teeth!
+    action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Dont forget to brush your teeth!"}'
+  mode: parallel
+  max: 10
+- id: '1771971457296'
+  alias: Tooth Brush Reminder-PM
+  description: ''
+  triggers:
+  - trigger: time
+    at: '20:30:00'
+    weekday:
+    - mon
+    - tue
+    - wed
+    - thu
+    - sun
+  - trigger: time
+    at: '22:30:00'
+    weekday:
+    - sat
+    - fri
+  conditions:
+  - condition: state
+    entity_id: sensor.smart_series_6000_99ec
+    state:
+    - idle
+    for:
+      hours: 0
+      minutes: 40
+      seconds: 0
+  - condition: zone
+    entity_id: person.rosco
+    zone: zone.home
+  actions:
+  - data:
+      message: Dont forget to brush your teeth!
+    action: notify.mobile_app_medtronic_dp450_5g_pacemaker
+  - action: mqtt.publish
+    metadata: {}
+    data:
+      evaluate_payload: false
+      qos: 0
+      retain: false
+      topic: printer/commands
+      payload: '{"printer_name": "ReceiptPrinter", "title": "{{ now().strftime(''%Y-%m-%d
+        %H:%M:%S'') }}", "message": "Dont forget to brush your teeth!"}'
+  mode: parallel
+  max: 10
+- id: '1777426874559'
+  alias: Lock Front Door button
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: 8fe5cd29e0e873b3c5ff76cd675604b0
+    type: action
+    subtype: single
+    trigger: device
+  conditions: []
+  actions:
+  - device_id: 7f1a32373a119f23fb5ba81c5d6bd8b1
+    domain: lock
+    entity_id: f194bd5d822f4908f1aee77fcf5f2c04
+    type: lock
+  mode: single
+- id: '1777511652390'
+  alias: Entryway Button Open (Double Press)
+  description: ''
+  triggers:
+  - domain: mqtt
+    device_id: 8fe5cd29e0e873b3c5ff76cd675604b0
+    type: action
+    subtype: double
+    trigger: device
+  - trigger: state
+    entity_id: []
+  conditions: []
+  actions:
+  - device_id: 7f1a32373a119f23fb5ba81c5d6bd8b1
+    domain: lock
+    entity_id: f194bd5d822f4908f1aee77fcf5f2c04
+    type: unlock
+  mode: single
+- id: '1779805644189'
+  alias: ToothBrush Goodnight Nag
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - scene.goodnight
+    to:
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+  conditions:
+  - condition: zone
+    entity_id: person.rosco
+    zone: zone.home
+  - condition: state
+    entity_id: sensor.smart_series_6000_99ec
+    state:
+    - idle
+    for:
+      hours: 1
+      minutes: 20
+      seconds: 0
+  actions:
+  - action: script.announce_main_bedroom
+    metadata: {}
+    data:
+      message: Dont forget to brush your teeth, puppies!
+  mode: single
+- id: '1779805970879'
+  alias: Re-Calibrate if not ready
+  description: ''
+  triggers:
+  - type: humidity
+    device_id: b3fa687cc390071c31637738a65a1d4e
+    entity_id: 27e7dd211c59d905a2ac7d6781387d5b
+    domain: sensor
+    trigger: device
+    above: 35
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  conditions:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: sensor.gas_meter_2_calibration_status
+      state:
+      - Ready
+  actions:
+  - action: button.press
+    metadata: {}
+    target:
+      entity_id: button.gas_meter_2_calibrate_axis
+    data: {}
+  mode: single

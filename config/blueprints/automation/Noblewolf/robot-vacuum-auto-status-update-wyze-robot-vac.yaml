@@ -1,0 +1,111 @@
+blueprint:
+  name: Wyze Robot Vacuum State Sync
+  author: noblewolf
+  description: Update the state of the Wyze Robot Vacuum periodically with the option
+    of less frequent updates while it is not running.
+  domain: automation
+  input:
+    vacuum_name:
+      name: Your Wyze Robot Vacuum
+      description: Choose one Wyze Robot Vacuum per blueprint.
+      selector:
+        entity:
+          domain:
+          - vacuum
+          multiple: false
+    refresh_time_not_docked:
+      name: How often should status be refreshed when running and charging?
+      description: Choose in minutes. Suggestion is 2 minutes. This will update the
+        status periodically while the vacuum is not docked and charge is less than
+        100%.
+      default: 2
+      selector:
+        number:
+          min: 1.0
+          max: 60.0
+          step: 1.0
+          unit_of_measurement: minute(s)
+          mode: slider
+    refresh_when_docked:
+      name: Should the status update when docked and fully charged?
+      description: Turn this on if you plan to also use the Wyze app to control your
+        vacuum. Otherwise leave off.
+      default: false
+      selector:
+        boolean: {}
+    refresh_time_docked:
+      name: How often should status be refreshed when docked? (optional)
+      description: Choose in minutes. Suggestion is 10 minutes. Please update as only
+        as often as you think necessary to avoid Wyze blocking your IP address.
+      default: 10
+      selector:
+        number:
+          min: 1.0
+          max: 60.0
+          step: 1.0
+          unit_of_measurement: minute(s)
+          mode: slider
+  source_url: https://community.home-assistant.io/t/robot-vacuum-auto-status-update-wyze-robot-vac/358828
+trigger:
+- platform: state
+  entity_id: !input vacuum_name
+- platform: homeassistant
+  event: start
+variables:
+  refresh_docked_bool: !input refresh_when_docked
+action:
+- service: vacuum.send_command
+  data:
+    command: update
+  target:
+    entity_id: !input vacuum_name
+- choose:
+  - conditions:
+    - condition: and
+      conditions:
+      - condition: state
+        entity_id: !input vacuum_name
+        state: docked
+      - condition: template
+        value_template: '{{ refresh_docked_bool }}'
+    sequence:
+    - repeat:
+        while:
+        - condition: state
+          entity_id: !input vacuum_name
+          state: docked
+        sequence:
+        - delay:
+            hours: 0
+            minutes: !input refresh_time_docked
+            seconds: 0
+            milliseconds: 0
+        - service: vacuum.send_command
+          data:
+            command: update
+          target:
+            entity_id: !input vacuum_name
+  default:
+  - repeat:
+      until:
+      - condition: and
+        conditions:
+        - condition: state
+          entity_id: !input vacuum_name
+          state: docked
+        - condition: state
+          entity_id: !input vacuum_name
+          state: '100'
+          attribute: battery_level
+      sequence:
+      - delay:
+          hours: 0
+          minutes: !input refresh_time_not_docked
+          seconds: 0
+          milliseconds: 0
+      - service: vacuum.send_command
+        data:
+          command: update
+        target:
+          entity_id: !input vacuum_name
+mode: restart

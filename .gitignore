@@ -1,13 +1,39 @@
-config/wyze_config.ini,
-config/.cache/
+# --- credentials / secrets (urgent) ---
+config/secrets.yaml
+config/.google.token
+config/.*.august.conf
+config/gitupdate.sh
+config/wyze_config.ini
 config/.storage/
+config/additional_ca/
+
+# --- runtime state, not config ---
+config/.cache/
+config/.ha_run.lock
+config/.HA_VERSION
 config/*.db
 config/*.db-shm
 config/*.db-wal
 config/home-assistant.log*
 config/deps/
 config/tts/
-config/www/lovelace-flower-card/
-config/www/simple_wyze_vac/
+config/image/
+
+# --- reinstallable third-party assets ---
 config/custom_components/fontawesome/
 config/www/community/
+config/www/lovelace-flower-card/
+config/www/simple_wyze_vac/
+config/www/plantimages/
+config/www/icloud3/
+config/www/mail_and_packages/
+config/themes/ios-themes/*.jpg
+config/themes/animated-weather-card/icons/
+
+# --- media ---
+config/www/*.png
+config/www/*.jpg
+config/www/*.mp3
+config/www/*.wav
+config/www/*.gif
+config/www/sounds/

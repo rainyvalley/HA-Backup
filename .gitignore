@@ -1,2 +1,11 @@
-config/www/lovelace-flower-card/.*
 config/wyze_config.ini,
+config/.cache/
+config/.storage/
+config/*.db
+config/*.db-shm
+config/*.db-wal
+config/home-assistant.log*
+config/deps/
+config/tts/
+config/www/lovelace-flower-card/
+config/www/simple_wyze_vac/

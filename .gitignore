@@ -37,3 +37,4 @@ config/www/*.mp3
 config/www/*.wav
 config/www/*.gif
 config/www/sounds/
+config/custom_components/

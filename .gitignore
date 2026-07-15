@@ -1,0 +1,9 @@
+custom_components/.*
+blueprints/.*
+themes/.*
+lovelace/lovelace_resources\.yaml
+appdaemon/.*
+sensor\.yaml:.*baseoid
+sensor\.yaml:.*tar1090
+configuration\.yaml:.*homeassistant
+configuration\.yaml:.*192\.168\.

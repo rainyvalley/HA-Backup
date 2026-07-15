@@ -9,3 +9,5 @@ config/deps/
 config/tts/
 config/www/lovelace-flower-card/
 config/www/simple_wyze_vac/
+config/custom_components/fontawesome/
+config/www/community/
